@@ -1,0 +1,78 @@
+{
+  "router": {
+    "main": "홈",
+    "intro": "인트로",
+    "service": "서비스",
+    "room": "객실",
+    "reservation": "예약하기",
+    "reservation/check": "예약조회"
+  },
+  "floorPlan": {
+    "name": "객실",
+    "roomA": {
+      "name": "「여유」",
+      "titles": ["전체", "거실", "침실", "주방", "욕실", "뒷마당"],
+      "descriptions": [
+        "그 동안 수집한 다기류와 크고 작은 소품, 편안하게 입을 수 있는 생활 한복이 준비되어 있습니다.",
+        "숙면을 위한 80수 순면 침구류가 준비되어 있습니다.",
+        "발뮤다 토스트기와 네스프레소 커피머신, 간단한 조리가 가능한 가전제품이 있습니다.",
+        "몰튼브라운 제품과 정원이 보이는 욕실이 있습니다.",
+        "처마 밑에 앉아 쉴 수 있는, 밤에는 별이 잘 보이는 프라이빗한 뒷마당 입니다."
+      ]
+    },
+    "roomB": {
+      "name": "「여행」",
+      "titles": ["전체", "거실", "침실", "주방", "욕실", "뒷마당"],
+      "descriptions": [
+        "그 동안 수집한 다기류와 크고 작은 소품, 편안하게 입을 수 있는 생활 한복이 준비되어 있습니다.",
+        "숙면을 위한 80수 순면 침구류가 준비되어 있습니다.",
+        "발뮤다 토스트기와 네스프레소 커피머신, 간단한 조리가 가능한 가전제품이 있습니다.",
+        "몰튼브라운 제품과 정원이 보이는 욕실이 있습니다.",
+        "처마 밑에 앉아 쉴 수 있는, 밤에는 별이 잘 보이는 프라이빗한 뒷마당 입니다."
+      ]
+    },
+    "serviceDescription": "온전한 휴식이 필요한 그대에게 주는 선물.. 한옥스테이 여여"
+  },
+  "yeoyeo": "「한옥스테이 여여」",
+  "registration-number": "사업자등록번호 689-31-01484",
+  "ecommerce-registration": "통신판매업신고번호 제 2023-경북경주-0244호",
+  "owner": "대표자 김명숙 | 관리자 박정웅",
+  "address": "주소 경상북도 경주시 갯마을길 53",
+  "service": {
+    "name": "서비스",
+    "features": ["커피와 빵", "빔프로젝터", "욕조", "생활 한복"],
+    "coffeeBread": ["하루를 시작하는\n커피와 빵", "네스프레소 캡슐커피와 소금빵 제공"],
+    "projector": ["하루를 마무리하는\n영화 한 편", "넷플릭스, 유튜브 프리미엄 제공"],
+    "bath": ["소나무 숲을 배경으로\n피로를 푸는 욕실"],
+    "cloth": ["편안함과 아늑함을\n더해 주는 생활한복"]
+  },
+  "intro": {
+    "intro": {
+      "poem": [
+        "\"그와 같이 아름다운\", 여여 (如麗)",
+        "경주 남산 소나무숲 아래에서\n온전한 휴식이 필요한 그대에게 주는 특별한 선물"
+      ],
+      "title": "여여",
+      "desc": "여여를 방문해주신 여러분을 진심으로 환영합니다."
+    },
+    "service": {
+      "title": "서비스",
+      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque recusandae veniam alias amet laboriosam namsint eos corporis sunt rerum voluptate, deserunt molestiae sequi magnam accusamus quibusdam consequuntur esse vitae.",
+      "buttonTitle": "서비스 확인하기"
+    },
+    "room": {
+      "title": "객실",
+      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque recusandae veniam alias amet laboriosam namsint eos corporis sunt rerum voluptate, deserunt molestiae sequi magnam accusamus quibusdam consequuntur esse vitae.",
+      "buttonTitle": "방 둘러보기"
+    },
+    "reservation": {
+      "title": "예약하기",
+      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque recusandae veniam alias amet laboriosam namsint eos corporis sunt rerum voluptate, deserunt molestiae sequi magnam accusamus quibusdam consequuntur esse vitae.",
+      "buttonTitle": "예약하기"
+    }
+  },
+  "reservation": {
+    "checkoutOnly": "체크아웃만 가능",
+    "notAvailable": "예약불가"
+  }
+}

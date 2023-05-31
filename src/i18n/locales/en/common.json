@@ -1,0 +1,78 @@
+{
+  "router": {
+    "main": "Main",
+    "intro": "Intro",
+    "service": "Service",
+    "room": "Room",
+    "reservation": "Reservation",
+    "reservation/check": "Reservation Check"
+  },
+  "floorPlan": {
+    "name": "Room",
+    "roomA": {
+      "name": "「Yeo Yu」",
+      "titles": ["View All", "Living Room", "Bed Room", "Kitchen", "Bath Room", "Back Yard"],
+      "descriptions": [
+        "soft, pure cotton bedding and daily hanbok.",
+        "bedroom equipped with pure cotton bedding for sound sleep.",
+        "Home appliances for simple cooking, Balmuda toaster and nespresso coffee machine provided.",
+        "Bathroom equipped with MoltonBrown toiletries, overlooking front yard.",
+        "Private backyard to gaze upon the stars and rest under the eaves."
+      ]
+    },
+    "roomB": {
+      "name": "「Yeo Hang」",
+      "titles": ["View All", "Living Room", "Bedroom", "Kitchen", "Bathroom", "Back Yard"],
+      "descriptions": [
+        "soft, pure cotton bedding and daily hanbok.",
+        "bedroom equipped with pure cotton bedding for sound sleep.",
+        "Home appliances for simple cooking, Balmuda toaster and nespresso coffee machine provided.",
+        "Bathroom equipped with MoltonBrown toiletries, overlooking front yard.",
+        "Private backyard to gaze upon the stars and rest under the eaves."
+      ]
+    },
+    "serviceDescription": "Gift to those who need sound rest.. Traditional Korean stay YeoYeo"
+  },
+  "yeoyeo": "「Hanok stay Yeoyeo」",
+  "registration-number": "Business registration number 689-31-01484",
+  "ecommerce-registration": "Korean ecommerce registration number 제 2023-경북경주-0244호",
+  "owner": "Owner Kim Myoungsug | Manager Park Jeongwoong",
+  "address": "53, Gaenmaeul-gil, Gyeongju-si, Gyeongsangbuk-do, Republic of Korea",
+  "service": {
+    "name": "Services",
+    "features": ["Coffee and Bread", "Beam Projector", "Bath", "Modernized Hanbok"],
+    "coffeeBread": ["Coffee and bread for breakfast", "Nespresso coffee machine & Salt Bread"],
+    "projector": ["Movies at the end of the day", "Netflix & Youtube Premium"],
+    "bath": ["Bath with the pine forest"],
+    "cloth": ["Comfortable and cozy indoor wear"]
+  },
+  "intro": {
+    "intro": {
+      "poem": [
+        "\"Like that beautiful\", YeoYeo (如麗)",
+        "Under the pine forest of Mt. Namsan in Gyeongju,\nA special gift for you who needs a complete rest."
+      ],
+      "title": "YeoYeo",
+      "desc": "Sincerely welcome you to Korean Traditional Accomodation, YeoYeo"
+    },
+    "service": {
+      "title": "Service",
+      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque recusandae veniam alias amet laboriosam namsint eos corporis sunt rerum voluptate, deserunt molestiae sequi magnam accusamus quibusdam consequuntur esse vitae.",
+      "buttonTitle": "Show Service"
+    },
+    "room": {
+      "title": "Rooms",
+      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque recusandae veniam alias amet laboriosam namsint eos corporis sunt rerum voluptate, deserunt molestiae sequi magnam accusamus quibusdam consequuntur esse vitae.",
+      "buttonTitle": "Visit Rooms"
+    },
+    "reservation": {
+      "title": "Reservation",
+      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque recusandae veniam alias amet laboriosam namsint eos corporis sunt rerum voluptate, deserunt molestiae sequi magnam accusamus quibusdam consequuntur esse vitae.",
+      "buttonTitle": "Make Reservation"
+    }
+  },
+  "reservation": {
+    "checkoutOnly": "Checkout Only",
+    "notAvailable": "Not Available"
+  }
+}

@@ -1,0 +1,24 @@
+@import "./mixins";
+@import "./reset";
+@import "./variables";
+
+// layout
+@import "./layout/layout.scss";
+@import "./layout/header.scss";
+
+// pages
+@import "./pages/main.scss";
+@import "./pages/reservation.scss";
+@import "./pages/reservation-success.scss";
+@import "./pages/reservation-check.scss";
+@import "./pages/reservation-detail.scss";
+
+// footer
+@import "./footer.scss";
+
+// room
+@import "./pages/room.scss";
+@import "./pages/intro.scss";
+
+// service
+@import "./pages/service.scss";

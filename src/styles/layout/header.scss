@@ -1,0 +1,126 @@
+.header-wrap {
+  // padding: 20px 0;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  backdrop-filter: blur(0);
+  background: transparent;
+  transition: background 0.2s ease-in-out, backdrop-filter 0.2s ease-in-out;
+  will-change: background, backdrop-filter;
+
+  &.scroll {
+    backdrop-filter: blur(40px);
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+
+  .header {
+    width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include md {
+      width: calc(100% - 40px);
+      padding: 0 20px;
+    }
+    @include sm {
+      width: calc(100% - 40px);
+      padding: 0 20px;
+    }
+  }
+
+  svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .lang-btn {
+    border: 1px solid black;
+    padding: 8px;
+    width: 40px;
+    height: 40px;
+
+    border-radius: 50%;
+  }
+}
+
+.snb-wrap {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: transparent;
+  transition: z-index 0.2s step-end, background 0.2s ease-in-out;
+  will-change: z-index, background;
+
+  .snb-inner {
+    position: fixed;
+    background-color: #eee;
+    width: 360px;
+    height: 100%;
+    transform: translateX(-100%);
+    transition: transform 0.2s ease-in-out;
+    will-change: transform;
+    padding: 20px;
+
+    @include sm {
+      width: 90%;
+    }
+
+    .btn-wrap {
+      display: flex;
+      justify-content: flex-end;
+      svg {
+        width: 40px;
+        height: 40px;
+      }
+    }
+
+    .link-list {
+      display: flex;
+      flex-direction: column;
+      margin-top: 24px;
+
+      li + li {
+        margin-top: 12px;
+      }
+
+      li {
+        font-size: 24px;
+        line-height: 1.4em;
+        width: 100%;
+        text-align: center;
+
+        a {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &.open {
+    z-index: 300;
+    background: rgba(0, 0, 0, 0.4);
+    transition: z-index 0.2s step-start, background 0.2s ease-in-out;
+    will-change: z-index, background;
+
+    .snb-inner {
+      transform: translateX(0);
+    }
+  }
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+
+  img {
+    height: 120px;
+  }
+}

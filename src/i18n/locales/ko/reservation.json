@@ -1,0 +1,30 @@
+{
+  "datePicker" : {
+    "reset": "초기화",
+    "prev": "이전",
+    "next": "다음",
+    "startDate": "체크인 일자",
+    "endDate": "체크아웃 일자"
+  },
+  "form" : {
+    "name": "이름",
+    "email": "이메일",
+    "contact": "연락처",
+    "requestCode": "인증번호요청",
+    "validateCode": "인증확인",
+    "count": "인원",
+    "request": "요청사항"
+  },
+  "sidebar" : {
+    "date": "예약날짜",
+    "checkIn": "체크인",
+    "checkOut": "체크아웃",
+    "period": "숙박기간",
+    "price": "요금",
+    "regularPrice": "정상가(부가세포함)",
+    "additionalCharge": "추가금(인원추가)",
+    "discount": "연박할인",
+    "totalPrice": "총액",
+    "reserve": "예약하기"
+  }
+}

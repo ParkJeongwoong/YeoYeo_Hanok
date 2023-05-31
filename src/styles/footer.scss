@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&display=swap");
+
+.footer-wrap {
+  font-family: "Gowun Batang", serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 32px 0;
+  gap: 12px;
+
+  span {
+    text-align: center;
+    font-size: small;
+  }
+
+  .footer-wrap-link {
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+
+    img {
+      cursor: pointer;
+      width: 25px;
+      object-fit: contain;
+    }
+  }
+
+  .link-select-modal {
+    position: fixed;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    transform: translateX(0);
+    background-color: #fff;
+    border-radius: 4px;
+    z-index: 100;
+    width: 100vw;
+    height: 200px;
+    border: none;
+    box-sizing: border-box;
+    padding: 24px 12px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  
+    strong {
+      font-size: 16px;
+      font-weight: 500;
+      display: block;
+      border-bottom: 1px solid #d2d2d2;
+      padding-bottom: 12px;
+      line-height: 1.2em;
+    }
+  
+    &::before {
+      content: "";
+      position: absolute;
+      border-width: 5px;
+      border-style: solid;
+      border-color: transparent black transparent transparent;
+      left: -10px;
+      top: 10px;
+  
+      @include sm {
+        content: none;
+      }
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      border-width: 4px;
+      border-style: solid;
+      border-color: transparent #fff transparent transparent;
+      left: -8px;
+      top: 11px;
+      @include sm {
+        content: none;
+      }
+    }
+  
+    .link-select {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px;
+  
+      .link-button {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 50%;
+        height: 60px;
+        background-color: #f9f9f9;
+        border: 1px solid #d8d8d8;
+        border-radius: 4px;
+        transition: all 0.3s;
+        margin: 0 10px;
+
+  
+        &:hover {
+          background-color: #918f8f;
+        }
+      }
+    }
+  }
+}

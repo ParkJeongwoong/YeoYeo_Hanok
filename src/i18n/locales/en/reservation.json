@@ -1,0 +1,30 @@
+{
+  "datePicker" : {
+    "reset": "Reset",
+    "prev": "Prev",
+    "next": "Next",
+    "startDate": "Check-in Date",
+    "endDate": "Chek-out Date"
+  },
+  "form" : {
+    "name": "Name",
+    "email": "Email",
+    "contact": "Contact (Korean Phone Number Only)",
+    "requestCode": "Request Code",
+    "validateCode": "Validate Code",
+    "count": "Guests",
+    "request": "Request"
+  },
+  "sidebar" : {
+    "date": "Reservation Date",
+    "checkIn": "Check-In",
+    "checkOut": "Check-Out",
+    "period": "Stay",
+    "price": "Price",
+    "regularPrice": "Regular Price(+ VAT)",
+    "additionalCharge": "Additional Charge",
+    "discount": "Discount",
+    "totalPrice": "Total Price",
+    "reserve": "Reserve"
+  }
+}

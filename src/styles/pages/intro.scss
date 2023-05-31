@@ -1,0 +1,170 @@
+.intro {
+  .section-wrap {
+    .section {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background-repeat: no-repeat !important;
+      background-position: center !important;
+      background-size: cover !important;
+
+      &.service {
+        background: url("../../assets/@temp/service_banner.jpg");
+      }
+
+      &.room {
+        background: url("../../assets/@temp/yeoyeo_outside.jpg");
+      }
+
+      &.reservation {
+        background: url("../../assets/@temp/Coffeebread2.jpg");
+      }
+
+      .section-wrap {
+        width: 100%;
+        flex: 1;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        flex-direction: column;
+
+        .section-inner {
+          margin: 0 auto;
+          width: 1200px;
+
+          .section-title {
+            display: block;
+            font-size: 48px;
+            color: #fff;
+          }
+
+          .desc {
+            display: block;
+            font-size: 24px;
+            color: #fff;
+            margin-top: 12px;
+            line-height: 1.6em;
+          }
+        }
+      }
+
+      &.section123 {
+        .section-inner {
+          flex: 1;
+          justify-content: center;
+          display: flex;
+          flex-direction: column;
+          // background-color: rgba(0, 0, 0, 0.1);
+          padding: 0 40px;
+
+          @include md {
+            width: calc(100% - 80px);
+            padding: 0 40px;
+          }
+
+          @include sm {
+            width: calc(100% - 40px);
+            padding: 0 20px;
+          }
+
+          .section-title {
+            font-size: 28px;
+          }
+
+          .desc {
+            width: 45%;
+            font-size: 18px;
+            line-height: 1.6em;
+          }
+
+          .nav-btn {
+            margin-top: 24px;
+            padding: 12px 24px;
+            background: #e9e9e9;
+            border-radius: 2px;
+            transition: background-color 0.2s;
+            font-size: 14px;
+
+            &:hover {
+              background-color: #acacac;
+            }
+          }
+        }
+
+        &.room {
+          .section-inner {
+            align-items: flex-end;
+            .body {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-end;
+            }
+            .desc {
+              text-align: end;
+            }
+          }
+        }
+      }
+    }
+
+    .intro-top {
+      margin-top: $header-height;
+      min-height: calc(100vh - #{$header-height});
+      background: url("../../assets/@temp/Home.webp");
+
+      .section-wrap {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .section-inner {
+        justify-content: space-between;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding-bottom: 400px;
+        padding-top: 180px;
+
+        @include md {
+          width: calc(100% - 80px) !important;
+          padding: 10% 40px 10%;
+        }
+
+        @include sm {
+          width: calc(100% - 40px) !important;
+          padding: 10% 20px 20%;
+        }
+
+        .top .desc {
+          margin-top: 36px;
+        }
+
+        .desc {
+          @include sm {
+            margin-top: 12px !important;
+          }
+        }
+      }
+
+      .body {
+        // safe margin
+        margin-top: 40px;
+
+        .poem {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          white-space:pre-wrap;
+        }
+
+        p {
+          width: 80%;
+          color: #fff;
+          word-break: keep-all;
+          font-size: 16px;
+          line-height: 2em;
+          text-align: end;
+        }
+      }
+    }
+  }
+}

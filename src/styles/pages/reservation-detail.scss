@@ -1,0 +1,152 @@
+.reservation-detail-wrap {
+  font-family: "Gowun Batang", serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .section-wrap {
+    border: 1px solid black;
+    border-radius: 4px;
+    width: 600px;
+    max-width: 1240px;
+    box-sizing: border-box;
+    padding: 25px;
+    .content-wrap {
+      margin-bottom: 12px;
+      .header {
+        padding-bottom: 12px;
+        border-bottom: 1px solid rgb(148, 148, 148);
+        &.border-none {
+          border-bottom: none;
+        }
+        strong {
+          font-size: 18px;
+          font-weight: 600;
+        }
+      }
+      .content__schedule {
+        display: flex;
+        .content__schedule-content {
+          display: flex;
+          flex-direction: column;
+          strong {
+            font-size: 14px;
+            font-weight: 600;
+            padding-bottom: 8px;
+          }
+          .date {
+            font-weight: 600;
+          }
+          .time {
+            font-size: 14px;
+            color: rgb(129, 129, 129);
+          }
+          &.check-in {
+            width: 100%;
+            padding-right: 24px;
+          }
+          &.check-out {
+            width: 100%;
+            padding: 0 24px;
+          }
+        }
+        .content-contour {
+          content: "|";
+          color: #000;
+          background-color: #000;
+          margin: 0 0.25em;
+          display: inline-block;
+          width: 1px;
+        }
+      }
+      .content__normal {
+        .content__normal-content {
+          display: flex;
+          flex-direction: column;
+          strong {
+            padding-top: 12px;
+            font-weight: 600;
+          }
+          span {
+            padding-top: 8px;
+          }
+        }
+      }
+    }
+    .section {
+      padding-top: 25px;
+      padding-bottom: 12px;
+      .header {
+        strong {
+          font-size: 18px;
+          font-weight: 600;
+        }
+      }
+      .content__normal {
+        border-bottom: 1px solid rgb(148, 148, 148);
+        .content {
+          display: flex;
+          flex-direction: column;
+          strong {
+            padding-top: 12px;
+            font-weight: 600;
+          }
+          span {
+            padding-top: 8px;
+            padding-bottom: 12px;
+          }
+        }
+      }
+      .content__refund {
+        // border-bottom: 1px solid rgb(148, 148, 148);
+        .content {
+          display: flex;
+          flex-direction: column;
+          strong {
+            padding-top: 12px;
+            font-weight: 600;
+          }
+          span {
+            font-size: 14px;
+            line-height: 18px;
+            padding-top: 8px;
+            padding-bottom: 12px;
+          }
+        }
+        .button-wrap {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          // margin-bottom: 24px;
+          button {
+            width: 100%;
+            padding: 12px 24px;
+            font-size: 14px;
+            text-transform: uppercase;
+            border-radius: 12px;
+            box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease 0s;
+            border: 1px solid #3a3a3a;
+          }
+          button:hover {
+            background-color: #acacac;
+          }
+        }
+      }
+    }
+  }
+  .section-contour {
+    // width: 100%;
+    margin-left: -24px !important;
+    margin-right: -24px !important;
+    height: 8px !important;
+    background-color: rgb(235, 235, 235) !important;
+  }
+}
+
+@include sm {
+  .reservation-detail-wrap {
+    margin: 0 12px;
+    margin-top: $header-height;
+  }
+}
