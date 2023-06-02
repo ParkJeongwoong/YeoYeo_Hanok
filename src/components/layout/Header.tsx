@@ -1,12 +1,16 @@
 import { useState, useEffect, useRef, ReactElement } from "react";
-import Link from "next/link";
 import Image from "next/image";
 import i18next, { changeLanguage } from "i18next";
 
 // components
 import SNB from "./SNB";
+import { useRouter } from "next/router";
 
-function Header(): ReactElement {
+interface HeaderProps {
+  setFadeState: (fadeState: string) => void;
+}
+
+function Header({setFadeState}: HeaderProps): ReactElement {
   const IcoHamburger = "/assets/icons/ico_hamburger.svg";
   const logo = "/assets/temp/logo_long.png";
 
@@ -15,6 +19,7 @@ function Header(): ReactElement {
   const [isSNB, setIsSNB] = useState<boolean>(false);
 
   const headerRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   const handleLang = () => {
     if (i18next.language === "ko") {
@@ -35,6 +40,14 @@ function Header(): ReactElement {
     }
   };
 
+  const pageMove = (path: string) => {
+    setFadeState("fade-out");
+    router.push(path);
+    setTimeout(()=>{
+      setFadeState("fade-in");
+    }, 500)
+  }
+
   useEffect(() => {
     window.addEventListener("scroll", windowScroll);
     return () => {
@@ -51,16 +64,16 @@ function Header(): ReactElement {
             {/* <IcoHamburger /> */}
           </button>
           <h1 className="logo">
-            <Link href="/">
+            <button type="button" aria-label="Header Home button" onClick={() => pageMove("/")}>
               <Image src={logo} width={276.486} height={120} alt="홈 아이콘" />
-            </Link>
+            </button>
           </h1>
           <button type="button" aria-label="language button" className="lang-btn" onClick={() => handleLang()}>
             {lang}
           </button>
         </div>
       </div>
-      <SNB open={isSNB} setOpen={setIsSNB} />
+      <SNB open={isSNB} setOpen={setIsSNB} setFadeState={setFadeState} />
     </>
   );
 }

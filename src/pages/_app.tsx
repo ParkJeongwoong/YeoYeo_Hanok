@@ -8,15 +8,18 @@ import ScrollToTop from "@components/common/ScrollRestoration";
 import Header from "@components/layout/Header";
 import Footer from "@components/layout/Footer";
 import "../i18n";
+import { useState } from "react";
 
 axios.defaults.baseURL = "https://api.yeoyeo.co.kr";
 
 function App({ Component, pageProps }: AppProps) {
+  const [fadeState, setFadeState] = useState("fade-in");
+  
   return (
     <>
       <Head>
         <title>한옥스테이 여여</title>
-        <link rel="icon" href="%PUBLIC_URL%/logo.png" />
+        <link rel="icon" href="/assets/temp/logo.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="subject" content="경주여여,한옥스테이여여,경주한옥스테이,경주한옥펜션,경주한옥숙소,경주힐링펜션,경주조용한펜션" />
         <meta name="keywords" content="경주여여,한옥스테이여여,경주한옥스테이,경주한옥펜션,경주한옥숙소,경주힐링펜션,경주조용한펜션" />
@@ -31,8 +34,8 @@ function App({ Component, pageProps }: AppProps) {
       </Head>
       <div className="App">
         <MediaQueryProvider>
-          <Header />
-          <Component {...pageProps} />
+          <Header setFadeState={setFadeState} />
+          <Component {...pageProps} fadeState={fadeState} setFadeState={setFadeState} />
           <Footer />
           <ScrollToTop />
         </MediaQueryProvider>

@@ -15,11 +15,11 @@ const Bath2 = '/assets/images/service/Bath2.jpg';
 const Cloth1 = "/assets/images/service/Cloth1.jpg";
 const Cloth2 = "/assets/images/service/Cloth2.jpg";
 
-function Service() {
+function Service({ fadeState }: any) {
   const { t } = useTranslation("common");
 
   return (
-    <div className={cn("service-wrap")}>
+    <div className={cn(`service-wrap ${fadeState}`)}>
       {/* 배너 */}
       <div className={cn("banner-img-wrap")}>
         <h2 className={cn("service-main-title")}>{t("service.name")}</h2>

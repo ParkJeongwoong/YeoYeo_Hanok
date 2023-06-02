@@ -54,7 +54,7 @@ const roomB_yard4 = '/assets/images/room/roomB_yard4.jpg';
 
 // import { debounce } from "lodash";
 
-function Room() {
+function Room({ fadeState }: any) {
   const [ImgList, setImgList] = useState([outside1]);
   const [selectedRoom, setSelectedRoom] = useState<string | null>(null);
   const [selectedSpace, setSelectedSpace] = useState<number>(0);
@@ -179,7 +179,7 @@ function Room() {
   }, [selectedRoom, selectedSpace])
 
   return (
-    <div className={cn("room-wrap")}>
+    <div className={cn(`room-wrap ${fadeState}`)}>
       {/* 배너 */}
       <div
         ref={introRef} 

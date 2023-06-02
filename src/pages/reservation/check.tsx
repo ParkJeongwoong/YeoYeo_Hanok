@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { validReservationNumberPatter, validUserMobileNumber } from "src/utils/regEx";
 
-function ReservationCheck() {
+function ReservationCheck({ fadeState, setFadeState }: any) {
   const router = useRouter();
   const [userMobileNumber, setUserMobileNumber] = useState<string>("");
   const [reservationNumber, setReservationNumber] = useState<string>("");
@@ -31,6 +31,7 @@ function ReservationCheck() {
       })
         .then((res) => {
           if (res.data) {
+            setFadeState("fade-out");
             router.push(
               {
                 pathname: "/reservation/detail",
@@ -44,6 +45,9 @@ function ReservationCheck() {
               },
               "/reservation/detail"
             )
+            setTimeout(()=>{
+              setFadeState("fade-in");
+            }, 500)
           } else {
             alert(`해당 예약을 확인할 수 없습니다.`);
           }
@@ -57,7 +61,7 @@ function ReservationCheck() {
   };
 
   return (
-    <div className="reservation-check-wrap">
+    <div className={cn(`reservation-check-wrap ${fadeState}`)}>
       <div className="section-wrap">
         <div className={cn("header")}>
           <strong>예약 조회 / 취소 안내</strong>

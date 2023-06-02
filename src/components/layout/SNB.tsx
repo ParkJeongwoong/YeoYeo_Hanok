@@ -3,10 +3,12 @@ import Image from "next/image";
 import cn from "classnames";
 import { useTranslation } from "react-i18next";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 interface SNBProps {
   open: boolean;
   setOpen: (open: boolean) => void;
+  setFadeState: (fadeState: string) => void;
 }
 
 type LinkListItemType = {
@@ -14,8 +16,9 @@ type LinkListItemType = {
   path: string;
 };
 
-function SNB({ open, setOpen }: SNBProps): ReactElement {
+function SNB({ open, setOpen, setFadeState }: SNBProps): ReactElement {
   const IcoCross = "/assets/icons/ico_cross.svg";
+  const router = useRouter();
   const { t } = useTranslation("common");
 
   // 확장성 고려하여 우선 객체 리스트로 지정
@@ -45,6 +48,14 @@ function SNB({ open, setOpen }: SNBProps): ReactElement {
     },
   ];
 
+  const fadeMove = () => {
+    setFadeState("fade-out");
+    setOpen(false)
+    setTimeout(()=>{
+      setFadeState("fade-in");
+    }, 700)
+  }
+
   return (
     <div className={cn("snb-wrap", open && "open")}>
       <div className={cn("snb-inner")}>
@@ -56,7 +67,7 @@ function SNB({ open, setOpen }: SNBProps): ReactElement {
         <ul className={cn("link-list")}>
           {LinkList.map((el) => (
             <li key={el.id}>
-              <Link href={`${el.path}`} onClick={() => setOpen(false)}>
+              <Link href={`${el.path}`} onClick={() => fadeMove()}>
                 {t(`router.${el.id}`)}
               </Link>
             </li>

@@ -330,6 +330,7 @@
 .customer-form-wrap {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   width: 800px;
+  text-align: left;
 
   @include md {
     width: 100%;
@@ -592,6 +593,7 @@
 .reservation-sidebar-wrap {
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   width: 400px;
+  text-align: left;
 
   @include md {
     width: 100%;
@@ -852,7 +854,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        svg {
+        img {
           width: 25px;
           height: 25px;
         }
@@ -928,6 +930,7 @@
   border-top: 1px solid #404040;
   margin-top: 40px;
   padding-top: 40px;
+  text-align: left;
   @include md {
     flex-direction: column;
   }

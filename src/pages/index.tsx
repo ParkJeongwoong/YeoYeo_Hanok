@@ -3,7 +3,7 @@ import { useTranslation } from "react-i18next";
 import Section from "@components/Intro/Section";
 import cn from "classnames";
 
-function Intro() {
+function Intro({ fadeState }: any) {
   const sectionWrapRef = useRef<HTMLDivElement>(null);
   const introRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation("common");
@@ -14,7 +14,7 @@ function Intro() {
   }, []);
 
   return (
-    <div className="intro">
+    <div className={cn(`intro ${fadeState}`)}>
       <div ref={sectionWrapRef} className="section-wrap">
         <Section sectionType="intro-top" ref={introRef}>
           <div className="section-wrap">

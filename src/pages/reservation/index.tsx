@@ -13,7 +13,7 @@ import Agreement from "@components/reservation/Agreement";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 
-function Reservation() {
+function Reservation({ fadeState }: any) {
   const [selectedRoom, setSelectedRoom] = useState<"여유" | "여행" | null>(null);
   const [username, setUsername] = useState<string>("");
   const [userMobileNumber, setUserMobileNumber] = useState<string>("");
@@ -132,7 +132,7 @@ function Reservation() {
   }
 
   return (
-    <div className={cn("reservation-wrap")}>
+    <div className={cn(`reservation-wrap ${fadeState}`)}>
       <div className={cn("reservation-inner")}>
         <h2 className={cn("title")}>Reservation</h2>
         <DatePicker

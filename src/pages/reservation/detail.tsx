@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import dayjs from "dayjs";
 import axios from "axios";
 
-function ReservationDetail() {
+function ReservationDetail({ fadeState }: any) {
   const router = useRouter();
 
   const state = router.query as { phoneNumber: string, roomName: string, startDate: string, endDate: string, guestCount: string, paidAmount: string, reservationNumber: string };
@@ -41,7 +41,7 @@ function ReservationDetail() {
 
   if (state) {
     return (
-      <div className="reservation-detail-wrap">
+      <div className={cn(`reservation-detail-wrap ${fadeState}`)}>
         <div className="section-wrap">
           <div className={cn("content-wrap")}>
             <div className={cn("header border-none")}>

@@ -5,9 +5,9 @@
       "@styles/*": ["./src/styles/*"],
       "@components/*": ["./src/components/*"],
       "@hooks/*": ["./src/hooks/*"],
-      // "@images/*": ["./public/assets/images/*"],
-      // "@icons/*": ["./public/assets/icons/*"],
-      // "@temp/*": ["./public/assets/temp/*"],
+      "@images/*": ["./public/assets/images/*"],
+      "@icons/*": ["./public/assets/icons/*"],
+      "@temp/*": ["./public/assets/temp/*"],
     },
     "typeRoots": ["./node_modules/@types", "./@types"]
   }
