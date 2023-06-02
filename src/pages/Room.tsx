@@ -2,54 +2,55 @@ import cn from "classnames";
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Pagination, Navigation, Autoplay, type Swiper as swiperRef } from "swiper";
 import { useState, useRef, useEffect } from "react";
+import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { useTranslation } from "react-i18next";
 
 // 배너
-import RoomBanner from "@images/room/room_banner1.jpg";
+const RoomBanner = "/assets/images/room/room_banner1.jpg";
 
 // 배너와 공간도, 스와이퍼 이미지들
-import RoomAIntro from "@images/room/roomA_intro.jpg";
-import RoomBIntro from "@images/room/roomB_intro.jpg";
-import FloorPlanA from "@images/room/floor_plan_A.png";
-import FloorPlanB from "@images/room/floor_plan_B.png";
+const RoomAIntro = "/assets/images/room/roomA_intro.jpg";
+const RoomBIntro = "/assets/images/room/roomB_intro.jpg";
+const FloorPlanA = "/assets/images/room/floor_plan_A.png";
+const FloorPlanB = "/assets/images/room/floor_plan_B.png";
 
 // Room 이미지들
-import outside1 from '@images/room/outside1.jpg'
-import outside2 from '@images/room/outside2.jpg'
+const outside1 = '/assets/images/room/outside1.jpg';
+const outside2 = '/assets/images/room/outside2.jpg';
 
-import roomA_living1 from "@images/room/roomA_living1.jpg";
-import roomA_living2 from "@images/room/roomA_living2.jpg";
-import roomA_living3 from "@images/room/roomA_living3.jpg";
-import roomA_living4 from "@images/room/roomA_living4.jpg";
-import roomA_bed1 from "@images/room/roomA_bed1.jpg";
-import roomA_bed2 from "@images/room/roomA_bed2.jpg";
-import roomA_bed3 from "@images/room/roomA_bed3.jpg";
-import roomA_bed4 from "@images/room/roomA_bed4.jpg";
-import roomA_kitchen1 from "@images/room/roomA_kitchen1.jpg";
-import roomA_kitchen2 from "@images/room/roomA_kitchen2.jpg";
-import roomA_bath1 from "@images/room/roomA_bath1.jpg";
-import roomA_bath2 from "@images/room/roomA_bath2.jpg";
-import roomA_bath3 from "@images/room/roomA_bath3.jpg";
-import roomA_yard1 from '@images/room/roomA_yard1.jpg'
+const roomA_living1 = "/assets/images/room/roomA_living1.jpg";
+const roomA_living2 = "/assets/images/room/roomA_living2.jpg";
+const roomA_living3 = "/assets/images/room/roomA_living3.jpg";
+const roomA_living4 = "/assets/images/room/roomA_living4.jpg";
+const roomA_bed1 = "/assets/images/room/roomA_bed1.jpg";
+const roomA_bed2 = "/assets/images/room/roomA_bed2.jpg";
+const roomA_bed3 = "/assets/images/room/roomA_bed3.jpg";
+const roomA_bed4 = "/assets/images/room/roomA_bed4.jpg";
+const roomA_kitchen1 = "/assets/images/room/roomA_kitchen1.jpg";
+const roomA_kitchen2 = "/assets/images/room/roomA_kitchen2.jpg";
+const roomA_bath1 = "/assets/images/room/roomA_bath1.jpg";
+const roomA_bath2 = "/assets/images/room/roomA_bath2.jpg";
+const roomA_bath3 = "/assets/images/room/roomA_bath3.jpg";
+const roomA_yard1 = '/assets/images/room/roomA_yard1.jpg'
 
-import roomB_living1 from "@images/room/roomB_living1.jpg";
-import roomB_living2 from "@images/room/roomB_living2.jpg";
-import roomB_living3 from "@images/room/roomB_living3.jpg";
-import roomB_living4 from "@images/room/roomB_living4.jpg";
-import roomB_bed1 from "@images/room/roomB_bed1.jpg";
-import roomB_bed2 from "@images/room/roomB_bed2.jpg";
-import roomB_kitchen1 from '@images/room/roomB_kitchen1.jpg'
-import roomB_kitchen2 from '@images/room/roomB_kitchen2.jpg'
-import roomB_bath1 from "@images/room/roomB_bath1.jpg";
-import roomB_bath2 from "@images/room/roomB_bath2.jpg";
-import roomB_bath3 from "@images/room/roomB_bath3.jpg";
-import roomB_yard1 from '@images/room/roomB_yard1.jpg'
-import roomB_yard2 from '@images/room/roomB_yard2.jpg'
-import roomB_yard3 from '@images/room/roomB_yard3.jpg'
-import roomB_yard4 from '@images/room/roomB_yard4.jpg'
+const roomB_living1 = "/assets/images/room/roomB_living1.jpg";
+const roomB_living2 = "/assets/images/room/roomB_living2.jpg";
+const roomB_living3 = "/assets/images/room/roomB_living3.jpg";
+const roomB_living4 = "/assets/images/room/roomB_living4.jpg";
+const roomB_bed1 = "/assets/images/room/roomB_bed1.jpg";
+const roomB_bed2 = "/assets/images/room/roomB_bed2.jpg";
+const roomB_kitchen1 = '/assets/images/room/roomB_kitchen1.jpg';
+const roomB_kitchen2 = '/assets/images/room/roomB_kitchen2.jpg';
+const roomB_bath1 = "/assets/images/room/roomB_bath1.jpg";
+const roomB_bath2 = "/assets/images/room/roomB_bath2.jpg";
+const roomB_bath3 = "/assets/images/room/roomB_bath3.jpg";
+const roomB_yard1 = '/assets/images/room/roomB_yard1.jpg';
+const roomB_yard2 = '/assets/images/room/roomB_yard2.jpg';
+const roomB_yard3 = '/assets/images/room/roomB_yard3.jpg';
+const roomB_yard4 = '/assets/images/room/roomB_yard4.jpg';
 
 // import { debounce } from "lodash";
 
@@ -76,10 +77,14 @@ function Room() {
   const selectA3 = useRef<HTMLDivElement>(null);
   const selectA4 = useRef<HTMLDivElement>(null);
   const selectA5 = useRef<HTMLDivElement>(null);
+  
+  const swiperWrap1 = useRef<HTMLDivElement>(null);
+  const swiperWrap2 = useRef<HTMLDivElement>(null);
   const { t } = useTranslation("common");
 
   const swiperRef1 = useRef<swiperRef>();
   const swiperRef2 = useRef<swiperRef>();
+
   const selectSpace = (idx: number)=>{
     if (selectedRoom==="A" && swiperRef1.current) {
       swiperRef1.current.init();
@@ -91,63 +96,9 @@ function Room() {
     setSelectedSpace(idx);
   }
 
-  useEffect(()=>{
-    if (selectedRoom) {
-      switch (selectedRoom+selectedSpace) {
-        case "A0":
-          setImgList([outside1, outside2,
-            roomA_living1, roomA_living2, roomA_living3, roomA_living4,
-            roomA_bed1, roomA_bed2, roomA_bed3, roomA_bed4,
-            roomA_kitchen1, roomA_kitchen2,
-            roomA_bath1, roomA_bath2, roomA_bath3,
-            roomA_yard1])
-          break;
-        case "A1":
-          setImgList([roomA_living1, roomA_living2, roomA_living3, roomA_living4])
-          break;
-        case "A2":
-          setImgList([roomA_bed1, roomA_bed2, roomA_bed3, roomA_bed4])
-          break;
-        case "A3":
-          setImgList([roomA_kitchen1, roomA_kitchen2])
-          break;
-        case "A4":
-          setImgList([roomA_bath1, roomA_bath2, roomA_bath3])
-          break;
-        case "A5":
-          setImgList([roomA_yard1])
-          break;
-        case "B0":
-          setImgList([outside1, outside2,
-            roomB_living1, roomB_living2, roomB_living3, roomB_living4,
-            roomB_bed1, roomB_bed2,
-            roomB_kitchen1, roomB_kitchen2,
-            roomB_bath1, roomB_bath2, roomB_bath3,
-            roomB_yard1])
-          break;
-        case "B1":
-          setImgList([roomB_living1, roomB_living2, roomB_living3, roomB_living4])
-          break;
-        case "B2":
-          setImgList([roomB_bed1, roomB_bed2])
-          break;
-        case "B3":
-          setImgList([roomB_kitchen1, roomB_kitchen2])
-          break;
-        case "B4":
-          setImgList([roomB_bath1, roomB_bath2, roomB_bath3])
-          break;
-        case "B5":
-          setImgList([roomB_yard1, roomB_yard2, roomB_yard3, roomB_yard4])
-          break;
-        default:
-          alert("올바르지 않은 접근입니다.")
-          break;
-      }
-    }
-  }, [selectedRoom, selectedSpace])
-
   const selectRoom = (room: string) => {
+    swiperWrap1.current?.style.setProperty("opacity", '0');
+    swiperWrap2.current?.style.setProperty("opacity", '0');
     const roomA = document.querySelector(".roomA-info");
     const roomB = document.querySelector(".roomB-info");
     if (room==="A") {
@@ -163,6 +114,70 @@ function Room() {
     setSelectedSpace(0);
   }
 
+  useEffect(()=>{
+    swiperWrap1.current?.style.setProperty("opacity", '0');
+    swiperWrap2.current?.style.setProperty("opacity", '0');
+    if (selectedRoom && ImgList) {
+      setTimeout(()=>{
+        switch (selectedRoom+selectedSpace) {
+          case "A0":
+            setImgList([outside1, outside2,
+              roomA_living1, roomA_living2, roomA_living3, roomA_living4,
+              roomA_bed1, roomA_bed2, roomA_bed3, roomA_bed4,
+              roomA_kitchen1, roomA_kitchen2,
+              roomA_bath1, roomA_bath2, roomA_bath3,
+              roomA_yard1])
+            break;
+          case "A1":
+            setImgList([roomA_living1, roomA_living2, roomA_living3, roomA_living4])
+            break;
+          case "A2":
+            setImgList([roomA_bed1, roomA_bed2, roomA_bed3, roomA_bed4])
+            break;
+          case "A3":
+            setImgList([roomA_kitchen1, roomA_kitchen2])
+            break;
+          case "A4":
+            setImgList([roomA_bath1, roomA_bath2, roomA_bath3])
+            break;
+          case "A5":
+            setImgList([roomA_yard1])
+            break;
+          case "B0":
+            setImgList([outside1, outside2,
+              roomB_living1, roomB_living2, roomB_living3, roomB_living4,
+              roomB_bed1, roomB_bed2,
+              roomB_kitchen1, roomB_kitchen2,
+              roomB_bath1, roomB_bath2, roomB_bath3,
+              roomB_yard1])
+            break;
+          case "B1":
+            setImgList([roomB_living1, roomB_living2, roomB_living3, roomB_living4])
+            break;
+          case "B2":
+            setImgList([roomB_bed1, roomB_bed2])
+            break;
+          case "B3":
+            setImgList([roomB_kitchen1, roomB_kitchen2])
+            break;
+          case "B4":
+            setImgList([roomB_bath1, roomB_bath2, roomB_bath3])
+            break;
+          case "B5":
+            setImgList([roomB_yard1, roomB_yard2, roomB_yard3, roomB_yard4])
+            break;
+          default:
+            alert("올바르지 않은 접근입니다.")
+            break;
+        }
+        setTimeout(()=>{
+          swiperWrap1.current?.style.setProperty("opacity", "1");
+          swiperWrap2.current?.style.setProperty("opacity", "1");
+        }, 50)
+      }, 500)
+    }
+  }, [selectedRoom, selectedSpace])
+
   return (
     <div className={cn("room-wrap")}>
       {/* 배너 */}
@@ -172,7 +187,7 @@ function Room() {
         // onTouchStart={(e) => handleTouchStart(e)}
       >
         <h2 className={cn("room-main-title")}>{t("floorPlan.name")}</h2>
-        <img src={RoomBanner} alt="yeoyeo-outside" />
+        <Image src={RoomBanner} fill={true} alt="yeoyeo-outside" />
       </div>
 
       <section className={cn("room-inner")}>
@@ -182,13 +197,13 @@ function Room() {
             role="presentation" 
             onClick={() => selectRoom("A")}>
             <span>{t("floorPlan.roomA.name")}</span>
-            <img src={RoomAIntro} alt="roomA-intro" />
+            <Image src={RoomAIntro} fill={true} alt="roomA-intro" />
           </div>
           <div
             role="presentation" 
             onClick={() => selectRoom("B")}>
             <span>{t("floorPlan.roomB.name")}</span>
-            <img src={RoomBIntro} alt="roomB-intro" />
+            <Image src={RoomBIntro} fill={true} alt="roomB-intro" />
           </div>
         </div>
 
@@ -207,7 +222,7 @@ function Room() {
                 role="presentation" onClick={()=>selectSpace(4)} />
               <div ref={spaceA5} className={cn("floor-plan-A-yard", selectedSpace===5 && "selected")}
                 role="presentation" onClick={()=>selectSpace(5)} />
-              <img src={FloorPlanA} role="presentation" onClick={()=>selectSpace(0)} alt="floor-plan" />
+              <Image src={FloorPlanA} width={647.111} height={316.556} role="presentation" onClick={()=>selectSpace(0)} alt="floor-plan" />
             </div>
           </div>
 
@@ -228,7 +243,7 @@ function Room() {
           </div>
 
           {/* swiper */}
-          <div className={cn("swiper-wrap")}>
+          <div className={cn("swiper-wrap")} ref={swiperWrap1}>
             <Swiper
               navigation
               pagination={{
@@ -242,10 +257,10 @@ function Room() {
                 swiperRef1.current = swiper;
               }}
             >
-              {ImgList.map((el) => (
-                <SwiperSlide key={el}>
+              {ImgList.map((el, idx) => (
+                <SwiperSlide key={idx}>
                   <div className="img-wrap">
-                    <img src={el} alt="" />
+                    <Image src={el} fill={true} alt="" />
                   </div>
                 </SwiperSlide>
               ))}
@@ -274,7 +289,7 @@ function Room() {
                 role="presentation" onClick={()=>selectSpace(4)} />
               <div ref={spaceA5} className={cn("floor-plan-B-yard", selectedSpace===5 && "selected")}
                 role="presentation" onClick={()=>selectSpace(5)} />
-              <img src={FloorPlanB} alt="floor-plan" />
+              <Image src={FloorPlanB} width={540} height={392} role="presentation" onClick={()=>selectSpace(0)} alt="floor-plan" />
             </div>
           </div>
 
@@ -295,7 +310,7 @@ function Room() {
           </div>
 
           {/* swiper */}
-          <div className={cn("swiper-wrap")}>
+          <div className={cn("swiper-wrap")} ref={swiperWrap2}>
             <Swiper
               navigation
               pagination={{
@@ -309,10 +324,10 @@ function Room() {
                 swiperRef2.current = swiper;
               }}
             >
-              {ImgList.map((el) => (
-                <SwiperSlide key={el}>
+              {ImgList.map((el, idx) => (
+                <SwiperSlide key={idx}>
                   <div className="img-wrap">
-                    <img src={el} alt="" />
+                    <Image src={el} fill={true} alt="" />
                   </div>
                 </SwiperSlide>
               ))}

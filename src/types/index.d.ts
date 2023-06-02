@@ -98,3 +98,7 @@ declare global {
     IMP: any;
   }
 }
+
+declare module '*.png' {
+  const src: string;
+}

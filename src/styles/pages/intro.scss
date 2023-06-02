@@ -9,15 +9,15 @@
       background-size: cover !important;
 
       &.service {
-        background: url("../../assets/@temp/service_banner.jpg");
+        background: url("../../../public/assets/temp/service_banner.jpg");
       }
 
       &.room {
-        background: url("../../assets/@temp/yeoyeo_outside.jpg");
+        background: url("../../../public/assets/temp/yeoyeo_outside.jpg");
       }
 
       &.reservation {
-        background: url("../../assets/@temp/Coffeebread2.jpg");
+        background: url("../../../public/assets/temp/Coffeebread2.jpg");
       }
 
       .section-wrap {
@@ -109,7 +109,7 @@
     .intro-top {
       margin-top: $header-height;
       min-height: calc(100vh - #{$header-height});
-      background: url("../../assets/@temp/Home.webp");
+      background: url("../../../public/assets/temp/Home.webp");
 
       .section-wrap {
         display: flex;

@@ -2,11 +2,11 @@ import Input from "@components/common/Input";
 import axios from "axios";
 import cn from "classnames";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import { validReservationNumberPatter, validUserMobileNumber } from "src/utils/regEx";
 
 function ReservationCheck() {
-  const navigate = useNavigate();
+  const router = useRouter();
   const [userMobileNumber, setUserMobileNumber] = useState<string>("");
   const [reservationNumber, setReservationNumber] = useState<string>("");
   const [isInputAllValid, setIsInputAllValid] = useState<boolean>(false);
@@ -31,7 +31,19 @@ function ReservationCheck() {
       })
         .then((res) => {
           if (res.data) {
-            navigate("/reservation/detail", { state: { state: res.data, reservationNumber } });
+            router.push(
+              {
+                pathname: "/reservation/detail",
+                query: { phoneNumber: res.data.phoneNumber,
+                  roomName: res.data.roomName,
+                  startDate: res.data.startDate,
+                  endDate: res.data.endDate,
+                  guestCount: res.data.guestCount,
+                  paidAmount : res.data.paidAmount.toLocaleString(),
+                  reservationNumber },
+              },
+              "/reservation/detail"
+            )
           } else {
             alert(`해당 예약을 확인할 수 없습니다.`);
           }

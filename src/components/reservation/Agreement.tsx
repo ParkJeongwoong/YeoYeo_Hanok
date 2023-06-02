@@ -1,5 +1,4 @@
 import cn from "classnames";
-import { ReactComponent as ChevronDown } from "@icons/ico_chevrondown.svg";
 import { RefObject, useEffect, useRef, useState } from "react";
 
 interface AgreementProps {
@@ -7,6 +6,8 @@ interface AgreementProps {
 }
 
 function Agreement({ setAgreementCompleted }: AgreementProps) {
+  const ChevronDown = "/assets/icons/ico_chevrondown.svg";
+  
   const contentRef = useRef<HTMLDivElement>(null);
   const contentRef2 = useRef<HTMLDivElement>(null);
 

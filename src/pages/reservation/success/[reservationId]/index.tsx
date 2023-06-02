@@ -1,9 +1,9 @@
 import cn from "classnames";
-import { useNavigate, useParams } from "react-router-dom";
+import { useRouter } from "next/router";
 
 function ReservationSuccess() {
-  const params = useParams();
-  const navigate = useNavigate();
+  const router = useRouter();
+  const { reservationId } = router.query;
 
   return (
     <div className="reservation-success-wrap">
@@ -17,14 +17,14 @@ function ReservationSuccess() {
         </div>
 
         <div className={cn("contents")}>
-          <span>예약번호 : {params.reservationId}</span>
+          <span>예약번호 : {reservationId}</span>
         </div>
 
         <div className={cn("bottom-nav")}>
-          <button type="button" onClick={() => navigate("/reservation/check")}>
+          <button type="button" onClick={() => router.push("/reservation/check")}>
             <span>예약확인</span>
           </button>
-          <button type="button" onClick={() => navigate("/")}>
+          <button type="button" onClick={() => router.push("/")}>
             <span>홈으로 돌아가기</span>
           </button>
         </div>

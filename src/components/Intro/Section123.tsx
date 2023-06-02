@@ -1,5 +1,5 @@
 // import { useEffect } from "react";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import cn from "classnames";
 // import AOS from "aos";
 // import "aos/dist/aos.css";
@@ -11,7 +11,7 @@ interface Section123Type {
 }
 
 function Section123({ title, desc, buttonTitle }: Section123Type) {
-  const navigate = useNavigate();
+  const router = useRouter();
 
   // useEffect(() => {
   //   AOS.init();
@@ -20,13 +20,13 @@ function Section123({ title, desc, buttonTitle }: Section123Type) {
   const navigateToPurchase = (route: string) => {
     switch (route) {
       case "서비스":
-        navigate("/service");
+        router.push("/service");
         break;
       case "공간":
-        navigate("/room");
+        router.push("/room");
         break;
       case "예약하기":
-        navigate("/reservation");
+        router.push("/reservation");
         break;
       default:
         break;

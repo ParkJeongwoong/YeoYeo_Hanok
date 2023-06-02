@@ -1,13 +1,14 @@
 import cn from "classnames";
+import Image from "next/image";
 import { useTranslation } from "react-i18next";
-
-import instagram from '@icons/ico_instagram.png'
-import airbnb from '@icons/ico_airbnb.png'
-import naver from '@icons/ico_naver.png'
 import { useState } from "react";
 import LinkSelectModal from "@components/common/LinkSelectModal";
 
 function Footer() {
+  const instagram = "/assets/icons/ico_instagram.png";
+  const airbnb = "/assets/icons/ico_airbnb.png";
+  const naver = "/assets/icons/ico_naver.png";
+
   const [isModal, setIsModal] = useState<boolean>(false);
   const { t } = useTranslation("common");
 
@@ -15,13 +16,13 @@ function Footer() {
     <div className={cn("footer-wrap")}>
       <div className={cn("footer-wrap-link")}>
         <a type="button" href="https://www.instagram.com/yeoyeo9091/">
-          <img src={instagram} alt="인스타그램 바로가기" />
+          <Image src={instagram} width={25} height={25} alt="인스타그램 바로가기" />
         </a>
         <button type="button" onClick={()=>{setIsModal(true)}}>
-          <img src={airbnb} alt="에어비앤비 바로가기" />
+          <Image src={airbnb} width={25} height={25} alt="에어비앤비 바로가기" />
         </button>
         <a type="button" href="https://naver.me/GTS3ZojS">
-          <img src={naver} alt="네이버 바로가기" />
+          <Image src={naver} width={25} height={25} alt="네이버 바로가기" />
         </a>
       </div>
       <span>{t("yeoyeo")}</span>

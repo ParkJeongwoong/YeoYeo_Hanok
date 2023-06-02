@@ -126,12 +126,14 @@
       }
 
       span {
+        text-align: left;
         padding-left: 20px;
         margin: 10px;
         white-space: pre-line;
         line-height: 25px;
 
         @include sm {
+          text-align: center;
           padding-left: 10px;
           margin: 5px;
           line-height: 20px;
@@ -147,26 +149,24 @@
       display: flex;
 
       .service-detail-grid-item {
-        width: 100%;
-        padding: 10px;
-
-        @include sm {
-          padding: 5px;
-        }
-      }
-
-      img {
+        position: relative;
         width: 100%;
         height: 500px;
-        object-fit: cover;
-
+        margin: 10px;
+        
         @include sm {
+          margin: 5px;
           height: 250px;
         }
 
         @include md {
           height: 350px;
         }
+      }
+
+      img {
+        width: 100%;
+        object-fit: cover;
       }
     }
   }
@@ -200,17 +200,6 @@
       width: 80px;
       border: 1px solid #ebe5eb;
       margin: 5px;
-    }
-  }
-
-  .welcome-description {
-    margin-top: 30px;
-    text-align: center;
-    letter-spacing: 3px;
-
-    @include sm {
-      padding: 0 50px;
-      font-size: medium;
     }
   }
 

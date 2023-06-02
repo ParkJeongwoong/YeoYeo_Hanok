@@ -21,20 +21,24 @@
     "i18next": "^22.4.9",
     "jotai": "^2.0.0",
     "lodash": "^4.17.21",
+    "next": "^13.4.4",
+    "next-images": "^1.8.5",
     "react": "^18.2.0",
     "react-app-alias": "^2.2.2",
     "react-cookie": "^4.1.1",
     "react-dom": "^18.2.0",
     "react-i18next": "^12.1.5",
+    "sass": "^1.62.1",
     "swiper": "^9.0.3",
     "typescript": "*",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "craco start",
-    "build": "craco build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "dev": "next dev -p 3005",
+    "start": "next start",
+    "build": "next build",
+    "export": "next export",
+    "eject": "next eject"
   },
   "browserslist": {
     "production": [
@@ -51,7 +55,6 @@
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
-    "craco": "^0.0.3",
     "eslint": "^8.0.1",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.0.0",

@@ -4,10 +4,11 @@
     "paths": {
       "@styles/*": ["./src/styles/*"],
       "@components/*": ["./src/components/*"],
-      "@images/*": ["./src/assets/images/*"],
-      "@icons/*": ["./src/assets/icons/*"],
-      "@temp/*": ["./src/assets/@temp/*"],
-      "@hooks/*": ["./src/hooks/*"]
-    }
+      "@hooks/*": ["./src/hooks/*"],
+      // "@images/*": ["./public/assets/images/*"],
+      // "@icons/*": ["./public/assets/icons/*"],
+      // "@temp/*": ["./public/assets/temp/*"],
+    },
+    "typeRoots": ["./node_modules/@types", "./@types"]
   }
 }

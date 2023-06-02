@@ -1,8 +1,8 @@
 import { ReactElement } from "react";
-import { ReactComponent as IcoCross } from "@icons/ico_cross.svg";
+import Image from "next/image";
 import cn from "classnames";
 import { useTranslation } from "react-i18next";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 
 interface SNBProps {
   open: boolean;
@@ -11,30 +11,37 @@ interface SNBProps {
 
 type LinkListItemType = {
   id: string;
+  path: string;
 };
 
 function SNB({ open, setOpen }: SNBProps): ReactElement {
+  const IcoCross = "/assets/icons/ico_cross.svg";
   const { t } = useTranslation("common");
 
   // 확장성 고려하여 우선 객체 리스트로 지정
   const LinkList: LinkListItemType[] = [
     {
       id: "main",
+      path: "/",
     },
     // {
     //   id: "intro",
     // },
     {
       id: "service",
+      path: "/service",
     },
     {
       id: "room",
+      path: "/room",
     },
     {
       id: "reservation",
+      path: "/reservation",
     },
     {
       id: "reservation/check",
+      path: "/reservation/check",
     },
   ];
 
@@ -43,13 +50,13 @@ function SNB({ open, setOpen }: SNBProps): ReactElement {
       <div className={cn("snb-inner")}>
         <div className={cn("btn-wrap")}>
           <button type="button" aria-label="menu close" onClick={() => setOpen(false)}>
-            <IcoCross />
+            <Image src={IcoCross} width={40} height={40} alt="햄버거 아이콘" />
           </button>
         </div>
         <ul className={cn("link-list")}>
           {LinkList.map((el) => (
             <li key={el.id}>
-              <Link to={`/${el.id}`} onClick={() => setOpen(false)}>
+              <Link href={`${el.path}`} onClick={() => setOpen(false)}>
                 {t(`router.${el.id}`)}
               </Link>
             </li>

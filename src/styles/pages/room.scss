@@ -1,3 +1,8 @@
+.page {
+  opacity: 0;
+  transition: 0.7s;
+}
+
 .room-wrap {
   font-family: "Gowun Batang", serif;
   background-color: #f5f4f0;
@@ -361,6 +366,8 @@
   .swiper-wrap {
     border-top: 1px solid #e5e7eb;
     padding-top: 20px;
+    opacity: 1;
+    transition: 0.5s;
 
     .swiper-slide {
       .img-wrap {

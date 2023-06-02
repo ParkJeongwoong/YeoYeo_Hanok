@@ -1,20 +1,17 @@
 import cn from "classnames";
 import { useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import dayjs from "dayjs";
 import axios from "axios";
 
 function ReservationDetail() {
-  const location = useLocation();
-  const navigate = useNavigate();
+  const router = useRouter();
 
-  const state = location.state as { state: any; reservationNumber: string };
-  const response = state.state;
-  const reservationNum = state.reservationNumber;
+  const state = router.query as { phoneNumber: string, roomName: string, startDate: string, endDate: string, guestCount: string, paidAmount: string, reservationNumber: string };
 
   useEffect(() => {
-    if (!state.state) {
-      navigate("/");
+    if (!state||!state.reservationNumber) {
+      router.push("/");
     }
   });
 
@@ -22,9 +19,9 @@ function ReservationDetail() {
     const answer = window.confirm("해당 예약을 취소하시겠습니까?");
     if (answer) {
       const data = {
-        phoneNumber: response.phoneNumber,
+        phoneNumber: state.phoneNumber,
         reason: "",
-        reservationId: Number(reservationNum),
+        reservationId: Number(state.reservationNumber),
       };
       axios({
         method: "delete",
@@ -33,7 +30,7 @@ function ReservationDetail() {
       })
         .then(() => {
           alert("정상적으로 예약이 취소되었습니다.");
-          navigate("/");
+          router.push("/");
         })
         .catch(() => alert("정상적으로 취소되지 않았습니다."));
     } else {
@@ -48,18 +45,18 @@ function ReservationDetail() {
         <div className="section-wrap">
           <div className={cn("content-wrap")}>
             <div className={cn("header border-none")}>
-              <strong>{state.state.roomName} 예약이 완료되었습니다.</strong>
+              <strong>{state.roomName} 예약이 완료되었습니다.</strong>
             </div>
             <div className={cn("content__schedule")}>
               <div className={cn("content__schedule-content check-in")}>
                 <strong>체크인</strong>
-                <span className={cn("date")}>{state.state.startDate}</span>
+                <span className={cn("date")}>{state.startDate}</span>
                 <span className={cn("time")}>오후 3:00</span>
               </div>
               <div className={cn("content-contour")} />
               <div className={cn("content__schedule-content check-out")}>
                 <strong>체크아웃</strong>
-                <span className={cn("date")}>{state.state.endDate}</span>
+                <span className={cn("date")}>{state.endDate}</span>
                 <span className={cn("time")}>오전 11:00</span>
               </div>
             </div>
@@ -74,20 +71,20 @@ function ReservationDetail() {
             <div className={cn("content__normal")}>
               <div className={cn("content")}>
                 <strong>게스트</strong>
-                <span>게스트 {state.state.guestCount}명</span>
+                <span>게스트 {state.guestCount}명</span>
               </div>
             </div>
             <div className={cn("content__normal")}>
               <div className={cn("content")}>
                 <strong>예약 번호</strong>
-                <span>{reservationNum}</span>
+                <span>{state.reservationNumber}</span>
               </div>
             </div>
             <div className={cn("content__refund")}>
               <div className={cn("content")}>
                 <strong>환불정책</strong>
                 <span>
-                  {dayjs(state.state.startDate).subtract(10, "day").format("MM/DD")} 전에 취소하면 전액 환불을
+                  {dayjs(state.startDate).subtract(10, "day").format("MM/DD")} 이전에 취소하면 전액 환불을
                   받으실 수 있습니다. 그 이후에는 취소 시점에 따라 환불액이 결정됩니다.{" "}
                 </span>
                 <div className={cn("button-wrap")}>
@@ -108,7 +105,7 @@ function ReservationDetail() {
             <div className={cn("content__normal")}>
               <div className={cn("content")}>
                 <strong>총비용</strong>
-                <span>₩ {state.state.paidAmount.toLocaleString()} KRW</span>
+                <span>₩ {state.paidAmount} KRW</span>
               </div>
             </div>
           </div>
@@ -121,3 +118,9 @@ function ReservationDetail() {
 }
 
 export default ReservationDetail;
+
+export async function getStaticProps(context: any) {
+	return {
+		props: {},
+	}
+}

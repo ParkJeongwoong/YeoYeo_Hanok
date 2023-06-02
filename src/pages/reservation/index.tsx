@@ -5,7 +5,7 @@ import { Dayjs } from "dayjs";
 import DatePicker from "@components/reservation/date-picker/DatePicker";
 import CustomerForm from "@components/reservation/CustomerForm";
 import ReservationSidebar from "@components/reservation/ReservationSidebar";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/router";
 import axios from "axios";
 import { useAtom } from "jotai";
 import modalStatus from "src/state/modalStatus";
@@ -23,7 +23,7 @@ function Reservation() {
   const [formCompleted, setFormCompleted] = useState<boolean>(false);
   const [agreementCompleted, setAgreementCompleted] = useState<boolean>(false);
 
-  const navigate = useNavigate();
+  const router = useRouter();
   const [startDate, setStartDate] = useState<Dayjs | null>(null);
   const [endDate, setEndDate] = useState<Dayjs | null>(null);
   const [checkoutDate, setCheckoutDate] = useState<any | null>(null);
@@ -54,7 +54,7 @@ function Reservation() {
     })
     .then(() => {
       alert("예약이 완료되었습니다.")
-      navigate(`/reservation/success/${response.merchant_uid}`);
+      router.push(`/reservation/success/${response.merchant_uid}`);
     })
     .catch(() => console.log("서버 전송 결과에 문제가 있습니다."));
   }
