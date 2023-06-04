@@ -23,7 +23,6 @@ function DateCell({
   const [isModal, setIsModal] = useState<boolean>(false);
   const [modalOpen, setModalOpen] = useAtom(modalStatus);
 
-  // const [canReserve, setCanReserve] = useState<boolean>(true);
   const cellDate = dayjs(currentDate).set("date", day);
 
   const isPastAsSelectedDate = dayjs() < cellDate && startDate && cellDate < startDate;
@@ -37,10 +36,8 @@ function DateCell({
     if (startDate === null && cellData && selectedRoom === "여행" && (cellData[1].reservationState === 1 || !cellData[1].reservable)) return;
     if (startDate === null && cellData && (cellData[0].reservationState === 1 || !cellData[0].reservable) && (cellData[1].reservationState === 1 || !cellData[1].reservable))
       return;
-    console.log("a", isPastAsSelectedDate);
     if (isPastAsSelectedDate || isAfterAsSelectedDate) return;
     if (afterCheckoutDate) return;
-    console.log("b");
     if (
       cellData[0].reservationState === 0 &&
       cellData[1].reservationState === 0 &&

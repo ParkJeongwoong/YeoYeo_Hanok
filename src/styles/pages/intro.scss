@@ -8,18 +8,6 @@
       background-position: center !important;
       background-size: cover !important;
 
-      &.service {
-        background: url("../../../public/assets/temp/service_banner.jpg");
-      }
-
-      &.room {
-        background: url("../../../public/assets/temp/yeoyeo_outside.jpg");
-      }
-
-      &.reservation {
-        background: url("../../../public/assets/temp/Coffeebread2.jpg");
-      }
-
       .section-wrap {
         width: 100%;
         flex: 1;
@@ -31,7 +19,14 @@
           margin: 0 auto;
           width: 1200px;
 
-          .section-title {
+          .section-title1 {
+            margin-bottom: 10px;
+            display: block;
+            font-size: 36px;
+            color: #fff;
+          }
+
+          .section-title2 {
             display: block;
             font-size: 48px;
             color: #fff;
@@ -53,11 +48,6 @@
       min-height: calc(100vh - #{$header-height});
       background: url("../../../public/assets/temp/Home.webp");
 
-      .section-wrap {
-        display: flex;
-        flex-direction: column;
-      }
-
       .section-inner {
         justify-content: space-between;
         display: flex;
@@ -76,14 +66,8 @@
           padding: 10% 20px 20%;
         }
 
-        .top .desc {
-          margin-top: 36px;
-        }
-
-        .desc {
-          @include sm {
-            margin-top: 12px !important;
-          }
+        .top {
+          text-align: left;
         }
       }
 

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>한옥스테이 여여</title>
+    <link>https://yeoyeo.co.kr</link>
+    <description>그와 같이 아름다운, 여여(如麗)</description>
+    <language>ko</language>
+    <pubDate>Tue, 02 May 2023 00:00:00 +0900</pubDate>
+    <item>
+      <title>한옥스테이 여여</title>
+      <link>https://yeoyeo.co.kr/</link>
+      <description>그와 같이 아름다운, 여여(如麗)</description>
+      <pubDate>Tue, 02 May 2023 00:00:00 +0900</pubDate>
+      <guid>https://yeoyeo.co.kr/</guid>
+    </item>
+    <item>
+      <title>한옥스테이 여여 - 서비스</title>
+      <link>https://yeoyeo.co.kr/service</link>
+      <description>그와 같이 아름다운, 여여(如麗)</description>
+      <pubDate>Tue, 02 May 2023 00:00:00 +0900</pubDate>
+      <guid>https://yeoyeo.co.kr/service</guid>
+    </item>
+    <item>
+      <title>한옥스테이 여여 - 공간도</title>
+      <link>https://yeoyeo.co.kr/room</link>
+      <description>그와 같이 아름다운, 여여(如麗)</description>
+      <pubDate>Tue, 02 May 2023 00:00:00 +0900</pubDate>
+      <guid>https://yeoyeo.co.kr/room</guid>
+    </item>
+    <item>
+      <title>한옥스테이 여여 - 예약</title>
+      <link>https://yeoyeo.co.kr/reservation</link>
+      <description>그와 같이 아름다운, 여여(如麗)</description>
+      <pubDate>Tue, 02 May 2023 00:00:00 +0900</pubDate>
+      <guid>https://yeoyeo.co.kr/reservation</guid>
+    </item>
+    <item>
+      <title>한옥스테이 여여 - 예약 조회</title>
+      <link>https://yeoyeo.co.kr/reservation/check</link>
+      <description>그와 같이 아름다운, 여여(如麗)</description>
+      <pubDate>Tue, 02 May 2023 00:00:00 +0900</pubDate>
+      <guid>https://yeoyeo.co.kr/reservation/check</guid>
+    </item>
+  </channel>
+</rss>

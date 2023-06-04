@@ -21,8 +21,8 @@ function Intro({ fadeState }: any) {
             <div className={cn("section-inner")}>
               <div className="top">
               {/* <div className="top" data-aos="fade-down" data-aos-duration="1500"> */}
-                <strong className={cn("section-title")}>{t("intro.intro.title")}</strong>
-                <span className={cn("desc")}>{t("intro.intro.desc")}</span>
+                <h1 className={cn("section-title1")}>{t("intro.intro.title1")}</h1>
+                <h1 className={cn("section-title2")}>{t("intro.intro.title2")}</h1>
               </div>
               <div className="body">
               {/* <div className="body" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="1000"> */}

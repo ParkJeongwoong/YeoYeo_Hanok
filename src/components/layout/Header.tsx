@@ -1,10 +1,11 @@
 import { useState, useEffect, useRef, ReactElement } from "react";
 import Image from "next/image";
 import i18next, { changeLanguage } from "i18next";
+import imageLoader from "src/utils/loader";
 
 // components
-import SNB from "./SNB";
 import { useRouter } from "next/router";
+import SNB from "./SNB";
 
 interface HeaderProps {
   setFadeState: (fadeState: string) => void;
@@ -60,12 +61,12 @@ function Header({setFadeState}: HeaderProps): ReactElement {
       <div className={`header-wrap ${scroll ? "scroll" : "top"}`} ref={headerRef}>
         <div className="header">
           <button type="button" aria-label="SNB button" onClick={() => setIsSNB(!isSNB)}>
-            <Image src={IcoHamburger} width={24} height={24} alt="햄버거 버튼" />
+            <Image loader={imageLoader} src={IcoHamburger} width={24} height={24} alt="햄버거 버튼" />
             {/* <IcoHamburger /> */}
           </button>
           <h1 className="logo">
             <button type="button" aria-label="Header Home button" onClick={() => pageMove("/")}>
-              <Image src={logo} width={276.486} height={120} alt="홈 아이콘" />
+              <Image loader={imageLoader} src={logo} width={276.486} height={120} alt="홈 아이콘" />
             </button>
           </h1>
           <button type="button" aria-label="language button" className="lang-btn" onClick={() => handleLang()}>

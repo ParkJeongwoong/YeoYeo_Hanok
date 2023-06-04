@@ -1,6 +1,7 @@
 import cn from "classnames";
 import Image from "next/image";
 import { RefObject, useEffect, useRef, useState } from "react";
+import imageLoader from "src/utils/loader";
 
 interface AgreementProps {
   setAgreementCompleted: (userMobileNumber: boolean) => void;
@@ -178,7 +179,7 @@ function Agreement({ setAgreementCompleted }: AgreementProps) {
           <div className={cn("btn-wrap")}>
             <button type="button" aria-label="menu close" onClick={() => handleAgreementOpen(contentRef)}>
               <span>자세히보기</span>
-              <Image src={ChevronDown} width={13.33} height={13.33} alt="약관 열기" />
+              <Image loader={imageLoader} src={ChevronDown} width={13.33} height={13.33} alt="약관 열기" />
             </button>
           </div>
 
@@ -230,7 +231,7 @@ function Agreement({ setAgreementCompleted }: AgreementProps) {
           <div className={cn("btn-wrap")}>
             <button type="button" aria-label="menu close" onClick={() => handleAgreementOpen(contentRef2)}>
               <span>자세히보기</span>
-              <Image src={ChevronDown} width={13.33} height={13.33} alt="약관 열기" />
+              <Image loader={imageLoader} src={ChevronDown} width={13.33} height={13.33} alt="약관 열기" />
             </button>
           </div>
           <div className={cn("agreement-content-wrap border-none")} ref={contentRef2}>

@@ -52,23 +52,8 @@
         "\"그와 같이 아름다운\", 여여 (如麗)",
         "경주 남산 소나무숲 아래에서\n온전한 휴식이 필요한 그대에게 주는 특별한 선물"
       ],
-      "title": "여여",
-      "desc": "여여를 방문해주신 여러분을 진심으로 환영합니다."
-    },
-    "service": {
-      "title": "서비스",
-      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque recusandae veniam alias amet laboriosam namsint eos corporis sunt rerum voluptate, deserunt molestiae sequi magnam accusamus quibusdam consequuntur esse vitae.",
-      "buttonTitle": "서비스 확인하기"
-    },
-    "room": {
-      "title": "객실",
-      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque recusandae veniam alias amet laboriosam namsint eos corporis sunt rerum voluptate, deserunt molestiae sequi magnam accusamus quibusdam consequuntur esse vitae.",
-      "buttonTitle": "방 둘러보기"
-    },
-    "reservation": {
-      "title": "예약하기",
-      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque recusandae veniam alias amet laboriosam namsint eos corporis sunt rerum voluptate, deserunt molestiae sequi magnam accusamus quibusdam consequuntur esse vitae.",
-      "buttonTitle": "예약하기"
+      "title1": "한옥스테이",
+      "title2": "여여 (如麗)"
     }
   },
   "reservation": {

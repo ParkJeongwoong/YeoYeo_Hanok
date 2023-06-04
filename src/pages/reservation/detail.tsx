@@ -118,9 +118,3 @@ function ReservationDetail({ fadeState }: any) {
 }
 
 export default ReservationDetail;
-
-export async function getStaticProps(context: any) {
-	return {
-		props: {},
-	}
-}

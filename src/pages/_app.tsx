@@ -3,12 +3,14 @@ import Head from "next/head";
 import '@styles/App.css';
 import "@styles/common.scss";
 import axios from "axios";
-import { MediaQueryProvider } from "../hooks/useMediaQuery";
 import ScrollToTop from "@components/common/ScrollRestoration";
 import Header from "@components/layout/Header";
 import Footer from "@components/layout/Footer";
 import "../i18n";
 import { useState } from "react";
+import Script from "next/script";
+import { MediaQueryProvider } from "../hooks/useMediaQuery";
+import * as gtag from '../lib/gtag';
 
 axios.defaults.baseURL = "https://api.yeoyeo.co.kr";
 
@@ -33,8 +35,33 @@ function App({ Component, pageProps }: AppProps) {
         <meta property="og:url" content="https://yeoyeo.co.kr" />
       </Head>
       <div className="App">
+        {/* Global Site Tag (gtag.js) - Google Analytics */}
+        <Script
+          strategy="afterInteractive"
+          src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
+        />
+        <Script
+          id="gtag-init"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', '${gtag.GA_TRACKING_ID}', {
+                page_path: window.location.pathname,
+              });
+            `,
+          }}
+        />
+        {/* iamport.payment.js */}
+        <Script
+          strategy="afterInteractive"
+          src="https://cdn.iamport.kr/v1/iamport.js"
+        />
         <MediaQueryProvider>
           <Header setFadeState={setFadeState} />
+          {/* eslint-disable react/jsx-props-no-spreading */}
           <Component {...pageProps} fadeState={fadeState} setFadeState={setFadeState} />
           <Footer />
           <ScrollToTop />

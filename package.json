@@ -7,6 +7,7 @@
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
     "@types/aos": "^3.0.4",
+    "@types/gtag.js": "^0.0.12",
     "@types/jest": "^27.0.1",
     "@types/lodash": "^4.14.191",
     "@types/node": "^16.7.13",
@@ -35,9 +36,9 @@
   },
   "scripts": {
     "dev": "next dev -p 3005",
-    "start": "next start",
+    "start": "next start -p 3005",
     "build": "next build",
-    "export": "next export",
+    "export": "next build && next export",
     "eject": "next eject"
   },
   "browserslist": {

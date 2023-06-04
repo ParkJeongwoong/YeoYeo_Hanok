@@ -1,6 +1,7 @@
 import cn from "classnames";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
+import imageLoader from "src/utils/loader";
 
 // 서비스 배너
 const ServiceBanner = "/assets/images/service/service_banner.jpg";
@@ -23,7 +24,7 @@ function Service({ fadeState }: any) {
       {/* 배너 */}
       <div className={cn("banner-img-wrap")}>
         <h2 className={cn("service-main-title")}>{t("service.name")}</h2>
-        <Image src={ServiceBanner} fill={true} alt="services" />
+        <Image loader={imageLoader} src={ServiceBanner} fill alt="services" />
       </div>
 
       <section className={cn("service-inner")}>
@@ -38,10 +39,10 @@ function Service({ fadeState }: any) {
           </div>
           <div className={cn("service-detail-pictures")}>
             <div className={cn("service-detail-grid-item")}>
-              <Image src={Bread} fill={true} alt="야외 커피, 빵 이미지" />
+              <Image loader={imageLoader} src={Bread} fill alt="야외 커피, 빵 이미지" />
             </div>
             <div className={cn("service-detail-grid-item")}>
-              <Image src={Table} fill={true} alt="실내 커피, 빵 이미지" />
+              <Image loader={imageLoader} src={Table} fill alt="실내 커피, 빵 이미지" />
             </div>
           </div>
         </div>
@@ -57,10 +58,10 @@ function Service({ fadeState }: any) {
           </div>
           <div className={cn("service-detail-pictures")}>
             <div className={cn("service-detail-grid-item")}>
-              <Image src={Projector1} fill={true} alt="빔프로젝터 1" />
+              <Image loader={imageLoader} src={Projector1} fill alt="빔프로젝터 1" />
             </div>
             <div className={cn("service-detail-grid-item")}>
-              <Image src={Projector2} fill={true} alt="빔프로젝터 2 " />
+              <Image loader={imageLoader} src={Projector2} fill alt="빔프로젝터 2 " />
             </div>
           </div>
         </div>
@@ -75,10 +76,10 @@ function Service({ fadeState }: any) {
           </div>
           <div className={cn("service-detail-pictures")}>
             <div className={cn("service-detail-grid-item")}>
-              <Image src={Bath1} fill={true} alt="욕실 이미지 1" />
+              <Image loader={imageLoader} src={Bath1} fill alt="욕실 이미지 1" />
             </div>
             <div className={cn("service-detail-grid-item")}>
-              <Image src={Bath2} fill={true} alt="욕실 이미지 2 " />
+              <Image loader={imageLoader} src={Bath2} fill alt="욕실 이미지 2 " />
             </div>
           </div>
         </div>
@@ -93,10 +94,10 @@ function Service({ fadeState }: any) {
           </div>
           <div className={cn("service-detail-pictures")}>
             <div className={cn("service-detail-grid-item")} style={{widows: '100%'}}>
-              <Image src={Cloth1} fill={true} alt="생활한복 이미지 1" />
+              <Image loader={imageLoader} src={Cloth1} fill alt="생활한복 이미지 1" />
             </div>
             <div className={cn("service-detail-grid-item")}>
-              <Image src={Cloth2} fill={true} alt="생활한복 이미지 2 " />
+              <Image loader={imageLoader} src={Cloth2} fill alt="생활한복 이미지 2 " />
             </div>
           </div>
         </div>

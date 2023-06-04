@@ -52,23 +52,8 @@
         "\"Like that beautiful\", YeoYeo (如麗)",
         "Under the pine forest of Mt. Namsan in Gyeongju,\nA special gift for you who needs a complete rest."
       ],
-      "title": "YeoYeo",
-      "desc": "Sincerely welcome you to Korean Traditional Accomodation, YeoYeo"
-    },
-    "service": {
-      "title": "Service",
-      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque recusandae veniam alias amet laboriosam namsint eos corporis sunt rerum voluptate, deserunt molestiae sequi magnam accusamus quibusdam consequuntur esse vitae.",
-      "buttonTitle": "Show Service"
-    },
-    "room": {
-      "title": "Rooms",
-      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque recusandae veniam alias amet laboriosam namsint eos corporis sunt rerum voluptate, deserunt molestiae sequi magnam accusamus quibusdam consequuntur esse vitae.",
-      "buttonTitle": "Visit Rooms"
-    },
-    "reservation": {
-      "title": "Reservation",
-      "desc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque recusandae veniam alias amet laboriosam namsint eos corporis sunt rerum voluptate, deserunt molestiae sequi magnam accusamus quibusdam consequuntur esse vitae.",
-      "buttonTitle": "Make Reservation"
+      "title1": "Hanok-stay",
+      "title2": "YeoYeo"
     }
   },
   "reservation": {

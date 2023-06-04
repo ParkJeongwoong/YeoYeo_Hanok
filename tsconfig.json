@@ -23,6 +23,7 @@
     "typeRoots": [
       "./src/types"
     ],
+    "types": ["@types/gtag.js"],
     "incremental": true
   },
   "extends": "./tsconfig.paths.json",
