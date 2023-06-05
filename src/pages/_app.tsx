@@ -16,6 +16,37 @@ axios.defaults.baseURL = "https://api.yeoyeo.co.kr";
 
 function App({ Component, pageProps }: AppProps) {
   const [fadeState, setFadeState] = useState("fade-in");
+
+  const searchKeywords = "경주한옥숙소, 경주여여, 한옥스테이여여, 한옥스테이 여여, 경주 한옥스테이 여여, 경주한옥스테이, 경주한옥스테이여여, 경주한옥펜션,경주한옥숙소,경주힐링펜션,경주힐링한옥,경주조용한펜션";
+
+  const structuredData = {
+    "@context": "https://schema.org", // 데이터가 Schema.org 어휘를 사용하여 설명되고 있음을 나타냅니다.
+    "@type": ["Hotel","HotelRoom","House","Product"],
+    name: "한옥스테이 여여",
+    description: "그와 같이 아름다운, 여여(如麗)",
+    keywords: searchKeywords,
+    url: "https://yeoyeo.co.kr",
+    sameAs: [
+      "https://www.yeoyeo.co.kr",
+      "https://yeoyeo.kr",
+      "https://www.yeoyeo.kr",
+    ],
+    logo: "https://yeoyeo.co.kr/logo192.png",
+    publisher: {
+      "@type": "Person",
+      name: "dvlprjw",
+    },
+    telephone: "010-8959-9091",
+    email: "dvlprjw@gmail.com",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "갯마을길 53",
+      addressLocality: "경주시",
+      addressRegion: "경상북도",
+      postalCode: "38174",
+    },
+    datePublished: "2023-04-01",
+  };
   
   return (
     <>
@@ -23,8 +54,8 @@ function App({ Component, pageProps }: AppProps) {
         <title>한옥스테이 여여</title>
         <link rel="icon" href="/assets/temp/logo.png" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="subject" content="경주여여,한옥스테이여여,경주한옥스테이,경주한옥펜션,경주한옥숙소,경주힐링펜션,경주조용한펜션" />
-        <meta name="keywords" content="경주여여,한옥스테이여여,경주한옥스테이,경주한옥펜션,경주한옥숙소,경주힐링펜션,경주조용한펜션" />
+        <meta name="subject" content={searchKeywords} />
+        <meta name="keywords" content={searchKeywords} />
         <meta name="theme-color" content="#000000" />
         <meta name="description" content="그와 같이 아름다운, 여여(如麗)" />
         <meta name="author" content="dvlprjw" />
@@ -33,6 +64,10 @@ function App({ Component, pageProps }: AppProps) {
         <meta property="og:description" content="그와 같이 아름다운, 여여(如麗)" />
         <meta property="og:image" content="https://yeoyeo.co.kr/logo192.png" />
         <meta property="og:url" content="https://yeoyeo.co.kr" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       </Head>
       <div className="App">
         {/* Global Site Tag (gtag.js) - Google Analytics */}
