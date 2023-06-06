@@ -9,6 +9,7 @@ const nextConfig = {
   images: {
     loader: "custom",
   },
+  trailingSlash: true,
 };
 
 module.exports = withImages(nextConfig);
