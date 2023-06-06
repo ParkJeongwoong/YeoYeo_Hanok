@@ -32,7 +32,7 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}       
 
       - name: Delete S3 Files
-        run: aws s3 rm ./*
+        run: aws s3 rm ${{ secrets.AWS_S3_BUCKET_NAME }}
 
       - name: Deploy to S3
         run: aws s3 sync ./${{ secrets.BUILD_DIRECTORY }} ${{ secrets.AWS_S3_BUCKET_NAME }} --acl public-read --delete
