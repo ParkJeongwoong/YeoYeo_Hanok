@@ -64,11 +64,11 @@ function Header({setFadeState}: HeaderProps): ReactElement {
             <Image loader={imageLoader} src={IcoHamburger} width={24} height={24} alt="햄버거 버튼" />
             {/* <IcoHamburger /> */}
           </button>
-          <h1 className="logo">
+          <div className="logo">
             <button type="button" aria-label="Header Home button" onClick={() => pageMove("/")}>
               <Image loader={imageLoader} src={logo} width={276.486} height={120} alt="홈 아이콘" />
             </button>
-          </h1>
+          </div>
           <button type="button" aria-label="language button" className="lang-btn" onClick={() => handleLang()}>
             {lang}
           </button>
