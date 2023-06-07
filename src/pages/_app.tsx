@@ -21,7 +21,7 @@ function App({ Component, pageProps }: AppProps) {
 
   const structuredData = {
     "@context": "https://schema.org", // 데이터가 Schema.org 어휘를 사용하여 설명되고 있음을 나타냅니다.
-    "@type": ["Hotel","HotelRoom","House","Product"],
+    "@type": ["Hotel","HotelRoom","House"],
     name: "한옥스테이 여여",
     description: "그와 같이 아름다운, 여여(如麗)",
     keywords: searchKeywords,
