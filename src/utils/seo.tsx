@@ -1,6 +1,12 @@
 import Head from "next/head";
 
-export default function SEO({ description, title, siteTitle }) {
+interface SEOProps {
+  title: string;
+  description: string;
+  siteTitle: string;
+}
+
+export default function SEO({ title, description, siteTitle }: SEOProps) {
   return (
     <Head>
       <title>{`${title} | ${siteTitle}`}</title>
@@ -9,7 +15,6 @@ export default function SEO({ description, title, siteTitle }) {
       <meta property="og:title" content={title} />
       <meta property="og:description" content={description} />
       <meta property="og:site_name" content={siteTitle} />
-      <link rel="icon" href="/myLogo_transp.png" />
     </Head>
   );
 }
