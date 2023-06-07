@@ -44,8 +44,8 @@ function ReservationDetail({ fadeState }: any) {
     return (
       <>
         <SEO
-          title="예약 조회"
-          description="한옥스테이 여여의 예약 조회 페이지입니다."
+          title="예약 정보"
+          description="한옥스테이 여여의 예약 정보 조회 페이지입니다."
           siteTitle="한옥스테이 여여"
         />
         <div className={cn(`reservation-detail-wrap ${fadeState}`)}>

@@ -136,7 +136,7 @@ function Reservation({ fadeState }: any) {
   return (
     <>
       <SEO
-        title="예약"
+        title="예약하기"
         description="한옥스테이 여여의 실시간 예약 페이지입니다."
         siteTitle="한옥스테이 여여"
       />
