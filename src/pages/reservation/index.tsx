@@ -67,7 +67,8 @@ function Reservation({ fadeState }: any) {
     try {
       /* 1. 가맹점 식별하기 */
       const { IMP } = window;
-      IMP.init(process.env.NEXT_PUBLIC_IMP_UID);
+      // IMP.init(process.env.NEXT_PUBLIC_IMP_UID);
+      IMP.init("imp28607423");
 
       /* 2. 결제 데이터 정의하기 */
       const data = {
