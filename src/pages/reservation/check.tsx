@@ -4,6 +4,7 @@ import cn from "classnames";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import { validReservationNumberPatter, validUserMobileNumber } from "src/utils/regEx";
+import SEO from "src/utils/seo";
 
 function ReservationCheck({ fadeState, setFadeState }: any) {
   const router = useRouter();
@@ -61,57 +62,64 @@ function ReservationCheck({ fadeState, setFadeState }: any) {
   };
 
   return (
-    <div className={cn(`reservation-check-wrap ${fadeState}`)}>
-      <div className="section-wrap">
-        <div className={cn("header")}>
-          <strong>예약 조회 / 취소 안내</strong>
-          <ul>
-            <li>1. 예약상품의 세부내역은 각 상품의 상세보기 버튼을 클릭하시면 확인할 수 있습니다.</li>
-            <li>2. 예약취소는 각 상품의 상세보기 클릭 후 취소버튼을 클릭하시면 자동으로 환불요청 됩니다.</li>
-          </ul>
-        </div>
-
-        <div className={cn("contents")}>
-          <div>
-            <Input
-              title="핸드폰번호"
-              regEx={validUserMobileNumber}
-              placeholder="000-0000-0000"
-              inputValue={userMobileNumber}
-              setInputValue={setUserMobileNumber}
-              autoRegEx={autoRegExPhoneNumber}
-              errorText="번호가 올바르지 않습니다. 000-0000-0000 형식으로 작성해주세요."
-              //   classnames="user-mobile-input"
-              maxLength={13}
-            />
-            <Input
-              title="예약번호"
-              regEx={validReservationNumberPatter}
-              placeholder="예약번호 13자리를 입력해주세요."
-              inputValue={reservationNumber}
-              setInputValue={setReservationNumber}
-              errorText="문자로 전송된 예약번호 13자리를 입력해주세요."
-              //   classnames="reservation-number"
-              maxLength={13}
-            />
-            {/* <span>문자로 전송된 예약번호 13자리를 입력해주세요.</span> */}
+    <>
+      <SEO
+        title="예약 정보"
+        description="한옥스테이 여여의 예약 정보 조회 페이지입니다."
+        siteTitle="한옥스테이 여여"
+      />
+      <div className={cn(`reservation-check-wrap ${fadeState}`)}>
+        <div className="section-wrap">
+          <div className={cn("header")}>
+            <strong>예약 조회 / 취소 안내</strong>
+            <ul>
+              <li>1. 예약상품의 세부내역은 각 상품의 상세보기 버튼을 클릭하시면 확인할 수 있습니다.</li>
+              <li>2. 예약취소는 각 상품의 상세보기 클릭 후 취소버튼을 클릭하시면 자동으로 환불요청 됩니다.</li>
+            </ul>
           </div>
-          <div className={cn("button-wrap")}>
-            <button type="button" onClick={reqReservationCheck} disabled={!isInputAllValid}>
-              <span>예약확인</span>
-            </button>
-          </div>
-        </div>
 
-        {/* <div className={cn("bottom-nav")}>
-          <strong>유의사항</strong>
-          <ul>
-            <li>1. 예약상품의 세부내역은 각 상품의 상세보기 버튼을 클릭하시면 확인할 수 있습니다.</li>
-            <li>2. 예약취소는 각 상품의 상세보기 클릭 후 취소버튼을 클릭하시면 자동으로 환불요청 됩니다.</li>
-          </ul>
-        </div> */}
+          <div className={cn("contents")}>
+            <div>
+              <Input
+                title="핸드폰번호"
+                regEx={validUserMobileNumber}
+                placeholder="000-0000-0000"
+                inputValue={userMobileNumber}
+                setInputValue={setUserMobileNumber}
+                autoRegEx={autoRegExPhoneNumber}
+                errorText="번호가 올바르지 않습니다. 000-0000-0000 형식으로 작성해주세요."
+                //   classnames="user-mobile-input"
+                maxLength={13}
+              />
+              <Input
+                title="예약번호"
+                regEx={validReservationNumberPatter}
+                placeholder="예약번호 13자리를 입력해주세요."
+                inputValue={reservationNumber}
+                setInputValue={setReservationNumber}
+                errorText="문자로 전송된 예약번호 13자리를 입력해주세요."
+                //   classnames="reservation-number"
+                maxLength={13}
+              />
+              {/* <span>문자로 전송된 예약번호 13자리를 입력해주세요.</span> */}
+            </div>
+            <div className={cn("button-wrap")}>
+              <button type="button" onClick={reqReservationCheck} disabled={!isInputAllValid}>
+                <span>예약확인</span>
+              </button>
+            </div>
+          </div>
+
+          {/* <div className={cn("bottom-nav")}>
+            <strong>유의사항</strong>
+            <ul>
+              <li>1. 예약상품의 세부내역은 각 상품의 상세보기 버튼을 클릭하시면 확인할 수 있습니다.</li>
+              <li>2. 예약취소는 각 상품의 상세보기 클릭 후 취소버튼을 클릭하시면 자동으로 환불요청 됩니다.</li>
+            </ul>
+          </div> */}
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

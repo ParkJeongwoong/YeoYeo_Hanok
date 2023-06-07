@@ -12,6 +12,7 @@ import modalStatus from "src/state/modalStatus";
 import Agreement from "@components/reservation/Agreement";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
+import SEO from "src/utils/seo";
 
 function Reservation({ fadeState }: any) {
   const [selectedRoom, setSelectedRoom] = useState<"여유" | "여행" | null>(null);
@@ -132,64 +133,71 @@ function Reservation({ fadeState }: any) {
   }
 
   return (
-    <div className={cn(`reservation-wrap ${fadeState}`)}>
-      <div className={cn("reservation-inner")}>
-        <h2 className={cn("title")}>Reservation</h2>
-        <DatePicker
-          startDate={startDate}
-          endDate={endDate}
-          checkoutDate={checkoutDate}
-          setCheckoutDate={setCheckoutDate}
-          setStartDate={setStartDate}
-          setEndDate={setEndDate}
-          setPeriodData={setPeriodData}
-          selectedRoom={selectedRoom}
-          setSelectedRoom={setSelectedRoom}
-          translation={t}
-        />
-        {startDate && endDate && (
-          <>
-            <div ref={reservationFormRef} className={cn("reservation-form-wrap")}>
-              <CustomerForm
-                username={username}
-                setUsername={setUsername}
-                userMobileNumber={userMobileNumber}
-                setUserMobileNumber={setUserMobileNumber}
-                email={email}
-                setEmail={setEmail}
-                peopleNumber={peopleNumber}
-                setPeopleNumber={setPeopleNumber}
-                requestedTerm={requestedTerm}
-                setRequestedTerm={setRequestedTerm}
-                setCanReserve={setFormCompleted}
-                translation={t}
-              />
-              <ReservationSidebar
-                startDate={startDate}
-                endDate={endDate}
-                periodData={periodData}
-                peopleNumber={peopleNumber}
-                onClickPayment={() => validCheck()}
-                selectedRoom={selectedRoom}
-                translation={t}
-              />
-            </div>
-            <Agreement setAgreementCompleted={setAgreementCompleted} />
-          </>
+    <>
+      <SEO
+        title="예약"
+        description="한옥스테이 여여의 실시간 예약 페이지입니다."
+        siteTitle="한옥스테이 여여"
+      />
+      <div className={cn(`reservation-wrap ${fadeState}`)}>
+        <div className={cn("reservation-inner")}>
+          <h2 className={cn("title")}>Reservation</h2>
+          <DatePicker
+            startDate={startDate}
+            endDate={endDate}
+            checkoutDate={checkoutDate}
+            setCheckoutDate={setCheckoutDate}
+            setStartDate={setStartDate}
+            setEndDate={setEndDate}
+            setPeriodData={setPeriodData}
+            selectedRoom={selectedRoom}
+            setSelectedRoom={setSelectedRoom}
+            translation={t}
+          />
+          {startDate && endDate && (
+            <>
+              <div ref={reservationFormRef} className={cn("reservation-form-wrap")}>
+                <CustomerForm
+                  username={username}
+                  setUsername={setUsername}
+                  userMobileNumber={userMobileNumber}
+                  setUserMobileNumber={setUserMobileNumber}
+                  email={email}
+                  setEmail={setEmail}
+                  peopleNumber={peopleNumber}
+                  setPeopleNumber={setPeopleNumber}
+                  requestedTerm={requestedTerm}
+                  setRequestedTerm={setRequestedTerm}
+                  setCanReserve={setFormCompleted}
+                  translation={t}
+                />
+                <ReservationSidebar
+                  startDate={startDate}
+                  endDate={endDate}
+                  periodData={periodData}
+                  peopleNumber={peopleNumber}
+                  onClickPayment={() => validCheck()}
+                  selectedRoom={selectedRoom}
+                  translation={t}
+                />
+              </div>
+              <Agreement setAgreementCompleted={setAgreementCompleted} />
+            </>
+          )}
+          {/* <div className={cn("reservation-form-wrap")}>약관동의가 들어가야할 부분</div> */}
+        </div>
+        {isModalMask && (
+          <div
+            tabIndex={0}
+            role="button"
+            className={cn("modal-mask")}
+            onClick={() => setIsModalMask(false)}
+            onKeyDown={() => {}}
+            aria-label="close modal"
+          />
         )}
-        {/* <div className={cn("reservation-form-wrap")}>약관동의가 들어가야할 부분</div> */}
       </div>
-      {isModalMask && (
-        <div
-          tabIndex={0}
-          role="button"
-          className={cn("modal-mask")}
-          onClick={() => setIsModalMask(false)}
-          onKeyDown={() => {}}
-          aria-label="close modal"
-        />
-      )}
-    </div>
+    </>
   );
 }
 

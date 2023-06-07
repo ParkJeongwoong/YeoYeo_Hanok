@@ -8,6 +8,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { useTranslation } from "react-i18next";
 import imageLoader from "src/utils/loader";
+import SEO from "src/utils/seo";
 
 // 배너
 const RoomBanner = "/assets/images/room/room_banner1.jpg";
@@ -182,169 +183,176 @@ function Room({ fadeState }: any) {
   }, [selectedRoom, selectedSpace, ImgList, isChanged])
 
   return (
-    <div className={cn(`room-wrap ${fadeState}`)}>
-      {/* 배너 */}
-      <div
-        ref={introRef} 
-        className={cn("banner-img-wrap")}
-        // onTouchStart={(e) => handleTouchStart(e)}
-      >
-        <h2 className={cn("room-main-title")}>{t("floorPlan.name")}</h2>
-        <Image loader={imageLoader} src={RoomBanner} fill alt="yeoyeo-outside" />
+    <>
+      <SEO
+        title="객실"
+        description='한옥스테이 여여의 객실, "여유"와 "여행"을 소개합니다.'
+        siteTitle="한옥스테이 여여"
+      />
+      <div className={cn(`room-wrap ${fadeState}`)}>
+        {/* 배너 */}
+        <div
+          ref={introRef} 
+          className={cn("banner-img-wrap")}
+          // onTouchStart={(e) => handleTouchStart(e)}
+        >
+          <h2 className={cn("room-main-title")}>{t("floorPlan.name")}</h2>
+          <Image loader={imageLoader} src={RoomBanner} fill alt="yeoyeo-outside" />
+        </div>
+
+        <section className={cn("room-inner")}>
+          {/* 객실 선택 */}
+          <div ref={roomSelectionRef} className={cn("room-intro")}>
+            <div
+              role="presentation" 
+              onClick={() => selectRoom("A")}>
+              <span>{t("floorPlan.roomA.name")}</span>
+              <Image loader={imageLoader} src={RoomAIntro} fill alt="roomA-intro" />
+            </div>
+            <div
+              role="presentation" 
+              onClick={() => selectRoom("B")}>
+              <span>{t("floorPlan.roomB.name")}</span>
+              <Image loader={imageLoader} src={RoomBIntro} fill alt="roomB-intro" />
+            </div>
+          </div>
+
+          {/* A호실 */}
+          <div ref={roomARef} className={cn("roomA-info")}>
+            {/* 공간도 */}
+            <div className={cn("floor-plan")}>
+              <div>
+                <div ref={spaceA1} className={cn("floor-plan-A-living", selectedSpace===1 && "selected")}
+                  role="presentation" onClick={()=>selectSpace(1)} />
+                <div ref={spaceA2} className={cn("floor-plan-A-bed", selectedSpace===2 && "selected")}
+                  role="presentation" onClick={()=>selectSpace(2)} />
+                <div ref={spaceA3} className={cn("floor-plan-A-kitchen", selectedSpace===3 && "selected")}
+                  role="presentation" onClick={()=>selectSpace(3)} />
+                <div ref={spaceA4} className={cn("floor-plan-A-bath", selectedSpace===4 && "selected")}
+                  role="presentation" onClick={()=>selectSpace(4)} />
+                <div ref={spaceA5} className={cn("floor-plan-A-yard", selectedSpace===5 && "selected")}
+                  role="presentation" onClick={()=>selectSpace(5)} />
+                <Image loader={imageLoader} src={FloorPlanA} width={647.111} height={316.556} role="presentation" onClick={()=>selectSpace(0)} alt="floor-plan" />
+              </div>
+            </div>
+
+            {/* 공간 선택 */}
+            <div className={cn("space-selection")}>
+              <div ref={selectA0} className={cn(selectedSpace===0 && "selected")}
+              role="presentation" onClick={()=>selectSpace(0)}>{t("floorPlan.roomA.titles.0")}</div>
+              <div ref={selectA1} className={cn(selectedSpace===1 && "selected")}
+              role="presentation" onClick={()=>selectSpace(1)}>{t("floorPlan.roomA.titles.1")}</div>
+              <div ref={selectA2} className={cn(selectedSpace===2 && "selected")}
+              role="presentation" onClick={()=>selectSpace(2)}>{t("floorPlan.roomA.titles.2")}</div>
+              <div ref={selectA3} className={cn(selectedSpace===3 && "selected")}
+              role="presentation" onClick={()=>selectSpace(3)}>{t("floorPlan.roomA.titles.3")}</div>
+              <div ref={selectA4} className={cn(selectedSpace===4 && "selected")}
+              role="presentation" onClick={()=>selectSpace(4)}>{t("floorPlan.roomA.titles.4")}</div>
+              <div ref={selectA5} className={cn(selectedSpace===5 && "selected")}
+              role="presentation" onClick={()=>selectSpace(5)}>{t("floorPlan.roomA.titles.5")}</div>
+            </div>
+
+            {/* swiper */}
+            <div className={cn("swiper-wrap")} ref={swiperWrap1}>
+              <Swiper
+                navigation
+                pagination={{
+                  dynamicBullets: true,
+                }}
+                modules={[Pagination, Navigation, Autoplay]}
+                slidesPerView={1}
+                rewind
+                autoplay={{delay:10000, disableOnInteraction: false}}
+                onInit={(swiper: SwiperCore) => {
+                  swiperRef1.current = swiper;
+                }}
+              >
+                {ImgList.map((el) => (
+                  <SwiperSlide>
+                    <div className="img-wrap">
+                      <Image loader={imageLoader} src={el} fill alt="" />
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+            <p className={cn("space-description", selectedSpace===0 && "selected")}>{t("floorPlan.serviceDescription")}</p>
+            <p className={cn("space-description", selectedSpace===1 && "selected")}>{t("floorPlan.roomA.descriptions.0")}</p>
+            <p className={cn("space-description", selectedSpace===2 && "selected")}>{t("floorPlan.roomA.descriptions.1")}</p>
+            <p className={cn("space-description", selectedSpace===3 && "selected")}>{t("floorPlan.roomA.descriptions.2")}</p>
+            <p className={cn("space-description", selectedSpace===4 && "selected")}>{t("floorPlan.roomA.descriptions.3")}</p>
+            <p className={cn("space-description", selectedSpace===5 && "selected")}>{t("floorPlan.roomA.descriptions.4")}</p>
+          </div>        
+
+          {/* B호실 */}
+          <div ref={roomBRef} className={cn("roomB-info")}>
+            {/* 공간도 */}
+            <div className={cn("floor-plan")}>
+              <div>
+                <div ref={spaceA1} className={cn("floor-plan-B-living", selectedSpace===1 && "selected")}
+                  role="presentation" onClick={()=>selectSpace(1)} />
+                <div ref={spaceA2} className={cn("floor-plan-B-bed", selectedSpace===2 && "selected")}
+                  role="presentation" onClick={()=>selectSpace(2)} />
+                <div ref={spaceA3} className={cn("floor-plan-B-kitchen", selectedSpace===3 && "selected")}
+                  role="presentation" onClick={()=>selectSpace(3)} />
+                <div ref={spaceA4} className={cn("floor-plan-B-bath", selectedSpace===4 && "selected")}
+                  role="presentation" onClick={()=>selectSpace(4)} />
+                <div ref={spaceA5} className={cn("floor-plan-B-yard", selectedSpace===5 && "selected")}
+                  role="presentation" onClick={()=>selectSpace(5)} />
+                <Image loader={imageLoader} src={FloorPlanB} width={540} height={392} role="presentation" onClick={()=>selectSpace(0)} alt="floor-plan" />
+              </div>
+            </div>
+
+            {/* 공간 선택 */}
+            <div className={cn("space-selection")}>
+              <div ref={selectA0} className={cn(selectedSpace===0 && "selected")}
+              role="presentation" onClick={()=>selectSpace(0)}>{t("floorPlan.roomB.titles.0")}</div>
+              <div ref={selectA1} className={cn(selectedSpace===1 && "selected")}
+              role="presentation" onClick={()=>selectSpace(1)}>{t("floorPlan.roomB.titles.1")}</div>
+              <div ref={selectA2} className={cn(selectedSpace===2 && "selected")}
+              role="presentation" onClick={()=>selectSpace(2)}>{t("floorPlan.roomB.titles.2")}</div>
+              <div ref={selectA3} className={cn(selectedSpace===3 && "selected")}
+              role="presentation" onClick={()=>selectSpace(3)}>{t("floorPlan.roomB.titles.3")}</div>
+              <div ref={selectA4} className={cn(selectedSpace===4 && "selected")}
+              role="presentation" onClick={()=>selectSpace(4)}>{t("floorPlan.roomB.titles.4")}</div>
+              <div ref={selectA5} className={cn(selectedSpace===5 && "selected")}
+              role="presentation" onClick={()=>selectSpace(5)}>{t("floorPlan.roomB.titles.5")}</div>
+            </div>
+
+            {/* swiper */}
+            <div className={cn("swiper-wrap")} ref={swiperWrap2}>
+              <Swiper
+                navigation
+                pagination={{
+                  dynamicBullets: true,
+                }}
+                modules={[Pagination, Navigation, Autoplay]}
+                slidesPerView={1}
+                rewind
+                autoplay={{delay:10000, disableOnInteraction: false}}
+                onInit={(swiper: SwiperCore) => {
+                  swiperRef2.current = swiper;
+                }}
+              >
+                {ImgList.map((el) => (
+                  <SwiperSlide>
+                    <div className="img-wrap">
+                      <Image loader={imageLoader} src={el} fill alt="" />
+                    </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
+            </div>
+            <p className={cn("space-description", selectedSpace===0 && "selected")}>{t("floorPlan.serviceDescription")}</p>
+            <p className={cn("space-description", selectedSpace===1 && "selected")}>{t("floorPlan.roomB.descriptions.0")}</p>
+            <p className={cn("space-description", selectedSpace===2 && "selected")}>{t("floorPlan.roomB.descriptions.1")}</p>
+            <p className={cn("space-description", selectedSpace===3 && "selected")}>{t("floorPlan.roomB.descriptions.2")}</p>
+            <p className={cn("space-description", selectedSpace===4 && "selected")}>{t("floorPlan.roomB.descriptions.3")}</p>
+            <p className={cn("space-description", selectedSpace===5 && "selected")}>{t("floorPlan.roomB.descriptions.4")}</p>
+          </div>
+        </section>
       </div>
-
-      <section className={cn("room-inner")}>
-        {/* 객실 선택 */}
-        <div ref={roomSelectionRef} className={cn("room-intro")}>
-          <div
-            role="presentation" 
-            onClick={() => selectRoom("A")}>
-            <span>{t("floorPlan.roomA.name")}</span>
-            <Image loader={imageLoader} src={RoomAIntro} fill alt="roomA-intro" />
-          </div>
-          <div
-            role="presentation" 
-            onClick={() => selectRoom("B")}>
-            <span>{t("floorPlan.roomB.name")}</span>
-            <Image loader={imageLoader} src={RoomBIntro} fill alt="roomB-intro" />
-          </div>
-        </div>
-
-        {/* A호실 */}
-        <div ref={roomARef} className={cn("roomA-info")}>
-          {/* 공간도 */}
-          <div className={cn("floor-plan")}>
-            <div>
-              <div ref={spaceA1} className={cn("floor-plan-A-living", selectedSpace===1 && "selected")}
-                role="presentation" onClick={()=>selectSpace(1)} />
-              <div ref={spaceA2} className={cn("floor-plan-A-bed", selectedSpace===2 && "selected")}
-                role="presentation" onClick={()=>selectSpace(2)} />
-              <div ref={spaceA3} className={cn("floor-plan-A-kitchen", selectedSpace===3 && "selected")}
-                role="presentation" onClick={()=>selectSpace(3)} />
-              <div ref={spaceA4} className={cn("floor-plan-A-bath", selectedSpace===4 && "selected")}
-                role="presentation" onClick={()=>selectSpace(4)} />
-              <div ref={spaceA5} className={cn("floor-plan-A-yard", selectedSpace===5 && "selected")}
-                role="presentation" onClick={()=>selectSpace(5)} />
-              <Image loader={imageLoader} src={FloorPlanA} width={647.111} height={316.556} role="presentation" onClick={()=>selectSpace(0)} alt="floor-plan" />
-            </div>
-          </div>
-
-          {/* 공간 선택 */}
-          <div className={cn("space-selection")}>
-            <div ref={selectA0} className={cn(selectedSpace===0 && "selected")}
-             role="presentation" onClick={()=>selectSpace(0)}>{t("floorPlan.roomA.titles.0")}</div>
-            <div ref={selectA1} className={cn(selectedSpace===1 && "selected")}
-             role="presentation" onClick={()=>selectSpace(1)}>{t("floorPlan.roomA.titles.1")}</div>
-            <div ref={selectA2} className={cn(selectedSpace===2 && "selected")}
-             role="presentation" onClick={()=>selectSpace(2)}>{t("floorPlan.roomA.titles.2")}</div>
-            <div ref={selectA3} className={cn(selectedSpace===3 && "selected")}
-             role="presentation" onClick={()=>selectSpace(3)}>{t("floorPlan.roomA.titles.3")}</div>
-            <div ref={selectA4} className={cn(selectedSpace===4 && "selected")}
-             role="presentation" onClick={()=>selectSpace(4)}>{t("floorPlan.roomA.titles.4")}</div>
-            <div ref={selectA5} className={cn(selectedSpace===5 && "selected")}
-             role="presentation" onClick={()=>selectSpace(5)}>{t("floorPlan.roomA.titles.5")}</div>
-          </div>
-
-          {/* swiper */}
-          <div className={cn("swiper-wrap")} ref={swiperWrap1}>
-            <Swiper
-              navigation
-              pagination={{
-                dynamicBullets: true,
-              }}
-              modules={[Pagination, Navigation, Autoplay]}
-              slidesPerView={1}
-              rewind
-              autoplay={{delay:10000, disableOnInteraction: false}}
-              onInit={(swiper: SwiperCore) => {
-                swiperRef1.current = swiper;
-              }}
-            >
-              {ImgList.map((el) => (
-                <SwiperSlide>
-                  <div className="img-wrap">
-                    <Image loader={imageLoader} src={el} fill alt="" />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-          <p className={cn("space-description", selectedSpace===0 && "selected")}>{t("floorPlan.serviceDescription")}</p>
-          <p className={cn("space-description", selectedSpace===1 && "selected")}>{t("floorPlan.roomA.descriptions.0")}</p>
-          <p className={cn("space-description", selectedSpace===2 && "selected")}>{t("floorPlan.roomA.descriptions.1")}</p>
-          <p className={cn("space-description", selectedSpace===3 && "selected")}>{t("floorPlan.roomA.descriptions.2")}</p>
-          <p className={cn("space-description", selectedSpace===4 && "selected")}>{t("floorPlan.roomA.descriptions.3")}</p>
-          <p className={cn("space-description", selectedSpace===5 && "selected")}>{t("floorPlan.roomA.descriptions.4")}</p>
-        </div>        
-
-        {/* B호실 */}
-        <div ref={roomBRef} className={cn("roomB-info")}>
-          {/* 공간도 */}
-          <div className={cn("floor-plan")}>
-            <div>
-              <div ref={spaceA1} className={cn("floor-plan-B-living", selectedSpace===1 && "selected")}
-                role="presentation" onClick={()=>selectSpace(1)} />
-              <div ref={spaceA2} className={cn("floor-plan-B-bed", selectedSpace===2 && "selected")}
-                role="presentation" onClick={()=>selectSpace(2)} />
-              <div ref={spaceA3} className={cn("floor-plan-B-kitchen", selectedSpace===3 && "selected")}
-                role="presentation" onClick={()=>selectSpace(3)} />
-              <div ref={spaceA4} className={cn("floor-plan-B-bath", selectedSpace===4 && "selected")}
-                role="presentation" onClick={()=>selectSpace(4)} />
-              <div ref={spaceA5} className={cn("floor-plan-B-yard", selectedSpace===5 && "selected")}
-                role="presentation" onClick={()=>selectSpace(5)} />
-              <Image loader={imageLoader} src={FloorPlanB} width={540} height={392} role="presentation" onClick={()=>selectSpace(0)} alt="floor-plan" />
-            </div>
-          </div>
-
-          {/* 공간 선택 */}
-          <div className={cn("space-selection")}>
-            <div ref={selectA0} className={cn(selectedSpace===0 && "selected")}
-            role="presentation" onClick={()=>selectSpace(0)}>{t("floorPlan.roomB.titles.0")}</div>
-            <div ref={selectA1} className={cn(selectedSpace===1 && "selected")}
-            role="presentation" onClick={()=>selectSpace(1)}>{t("floorPlan.roomB.titles.1")}</div>
-            <div ref={selectA2} className={cn(selectedSpace===2 && "selected")}
-            role="presentation" onClick={()=>selectSpace(2)}>{t("floorPlan.roomB.titles.2")}</div>
-            <div ref={selectA3} className={cn(selectedSpace===3 && "selected")}
-            role="presentation" onClick={()=>selectSpace(3)}>{t("floorPlan.roomB.titles.3")}</div>
-            <div ref={selectA4} className={cn(selectedSpace===4 && "selected")}
-            role="presentation" onClick={()=>selectSpace(4)}>{t("floorPlan.roomB.titles.4")}</div>
-            <div ref={selectA5} className={cn(selectedSpace===5 && "selected")}
-            role="presentation" onClick={()=>selectSpace(5)}>{t("floorPlan.roomB.titles.5")}</div>
-          </div>
-
-          {/* swiper */}
-          <div className={cn("swiper-wrap")} ref={swiperWrap2}>
-            <Swiper
-              navigation
-              pagination={{
-                dynamicBullets: true,
-              }}
-              modules={[Pagination, Navigation, Autoplay]}
-              slidesPerView={1}
-              rewind
-              autoplay={{delay:10000, disableOnInteraction: false}}
-              onInit={(swiper: SwiperCore) => {
-                swiperRef2.current = swiper;
-              }}
-            >
-              {ImgList.map((el) => (
-                <SwiperSlide>
-                  <div className="img-wrap">
-                    <Image loader={imageLoader} src={el} fill alt="" />
-                  </div>
-                </SwiperSlide>
-              ))}
-            </Swiper>
-          </div>
-          <p className={cn("space-description", selectedSpace===0 && "selected")}>{t("floorPlan.serviceDescription")}</p>
-          <p className={cn("space-description", selectedSpace===1 && "selected")}>{t("floorPlan.roomB.descriptions.0")}</p>
-          <p className={cn("space-description", selectedSpace===2 && "selected")}>{t("floorPlan.roomB.descriptions.1")}</p>
-          <p className={cn("space-description", selectedSpace===3 && "selected")}>{t("floorPlan.roomB.descriptions.2")}</p>
-          <p className={cn("space-description", selectedSpace===4 && "selected")}>{t("floorPlan.roomB.descriptions.3")}</p>
-          <p className={cn("space-description", selectedSpace===5 && "selected")}>{t("floorPlan.roomB.descriptions.4")}</p>
-        </div>
-      </section>
-    </div>
+    </>
   );
 }
 
