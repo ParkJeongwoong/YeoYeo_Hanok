@@ -6,7 +6,12 @@ import { useRouter } from "next/router";
 import { validReservationNumberPatter, validUserMobileNumber } from "src/utils/regEx";
 import SEO from "src/utils/seo";
 
-function ReservationCheck({ fadeState, setFadeState }: any) {
+interface ReservationCheckProps {
+  fadeState: string;
+  setFadeState: (fadeState: string) => void;
+}
+
+function ReservationCheck({ fadeState, setFadeState }: ReservationCheckProps) {
   const router = useRouter();
   const [userMobileNumber, setUserMobileNumber] = useState<string>("");
   const [reservationNumber, setReservationNumber] = useState<string>("");
@@ -21,6 +26,8 @@ function ReservationCheck({ fadeState, setFadeState }: any) {
   useEffect(() => {
     if (validUserMobileNumber.test(userMobileNumber) && validReservationNumberPatter.test(reservationNumber)) {
       setIsInputAllValid(true);
+    } else {
+      setIsInputAllValid(false);
     }
   }, [userMobileNumber, reservationNumber]);
 

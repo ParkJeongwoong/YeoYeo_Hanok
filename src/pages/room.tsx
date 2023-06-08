@@ -56,7 +56,11 @@ const ROOM_B_YARD_4 = '/assets/images/room/roomB_yard4.jpg';
 
 // import { debounce } from "lodash";
 
-function Room({ fadeState }: any) {
+interface RoomProps {
+  fadeState: string;
+}
+
+function Room({ fadeState }: RoomProps) {
   const [ImgList, setImgList] = useState([OUTSIDE_1]);
   const [selectedRoom, setSelectedRoom] = useState<string | null>(null);
   const [selectedSpace, setSelectedSpace] = useState<number>(0);
@@ -170,7 +174,7 @@ function Room({ fadeState }: any) {
             setImgList([ROOM_B_YARD_1, ROOM_B_YARD_2, ROOM_B_YARD_3, ROOM_B_YARD_4])
             break;
           default:
-            alert("올바르지 않은 접근입니다.")
+            console.log("올바르지 않은 접근입니다.")
             break;
         }
         setTimeout(()=>{

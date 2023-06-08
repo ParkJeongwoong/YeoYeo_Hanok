@@ -3,7 +3,11 @@ import { useTranslation } from "react-i18next";
 import Section from "@components/Intro/Section";
 import cn from "classnames";
 
-function Intro({ fadeState }: any) {
+interface IntroProps {
+  fadeState: string;
+}
+
+function Intro({ fadeState }: IntroProps) {
   const sectionWrapRef = useRef<HTMLDivElement>(null);
   const introRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation("common");

@@ -17,7 +17,11 @@ const Bath2 = '/assets/images/service/Bath2.jpg';
 const Cloth1 = "/assets/images/service/Cloth1.jpg";
 const Cloth2 = "/assets/images/service/Cloth2.jpg";
 
-function Service({ fadeState }: any) {
+interface ServiceProps {
+  fadeState: string;
+}
+
+function Service({ fadeState }: ServiceProps) {
   const { t } = useTranslation("common");
 
   return (

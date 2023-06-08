@@ -109,8 +109,6 @@ function DatePicker({
           startDate={startDate}
           endDate={endDate}
           checkoutDate={checkoutDate}
-          setStartDate={setStartDate}
-          setEndDate={setEndDate}
           setCheckoutDate={setCheckoutDate}
           data={roomMonthData?.month}
           twoMonthsData={twoMonthsData}
@@ -124,8 +122,6 @@ function DatePicker({
             startDate={startDate}
             endDate={endDate}
             checkoutDate={checkoutDate}
-            setStartDate={setStartDate}
-            setEndDate={setEndDate}
             setCheckoutDate={setCheckoutDate}
             data={roomMonthData?.nextMonth}
             twoMonthsData={twoMonthsData}

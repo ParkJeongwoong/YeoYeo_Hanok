@@ -27,19 +27,17 @@ declare global {
     handleDateClick: (day: number, date: Dayjs) => void;
     startDate: Dayjs | null;
     endDate: Dayjs | null;
-    checkoutDate: any | null;
+    checkoutDate: Dayjs | null;
     currentDate: Dayjs;
     selectedRoom: "여유" | "여행" | null;
     setSelectedRoom: (selectedRoom: "여유" | "여행") => void;
-    setCheckoutDate: (checkoutDate: any | null) => void;
+    setCheckoutDate: (checkoutDate: Dayjs | null) => void;
   }
   interface CalendarProps {
     startDate: Dayjs | null;
     endDate: Dayjs | null;
-    checkoutDate: any | null;
-    setStartDate: (startDate: Dayjs | null) => void;
-    setEndDate: (endDate: Dayjs | null) => void;
-    setCheckoutDate: (checkoutDate: any | null) => void;
+    checkoutDate: Dayjs | null;
+    setCheckoutDate: (checkoutDate: Dayjs | null) => void;
     data: MonthRoomDataItem[];
     twoMonthsData: MonthRoomDataItem[];
     currentDate: Dayjs;
@@ -69,11 +67,11 @@ declare global {
   interface DatePickerProps {
     startDate: Dayjs | null;
     endDate: Dayjs | null;
-    checkoutDate: any | null;
+    checkoutDate: Dayjs | null;
     setStartDate: (startDate: Dayjs | null) => void;
     setEndDate: (endDate: Dayjs | null) => void;
     setPeriodData: (periodData: PeriodDataType) => void;
-    setCheckoutDate: (checkoutDate: any | null) => void;
+    setCheckoutDate: (checkoutDate: Dayjs | null) => void;
     selectedRoom: "여유" | "여행" | null;
     setSelectedRoom: (selectedRoom: "여유" | "여행" | null) => void;
     translation: TFunction;

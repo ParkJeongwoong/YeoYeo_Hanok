@@ -59,11 +59,11 @@ function CustomerForm({
   }
 
   useEffect(() => {
-    if (!validUsername.test(username)) return;
-    if (!validUserMobileNumber.test(userMobileNumber)) return;
-    if (!validEmail.test(email)) return;
-    if (!isAuthorized) return;
-    setCanReserve(true);
+    if (validUsername.test(username) 
+      && validUserMobileNumber.test(userMobileNumber)
+      && validEmail.test(email)
+      && isAuthorized) setCanReserve(true);
+    else setCanReserve(false);
   }, [username, userMobileNumber, email, isAuthorized, setCanReserve]);
 
   return (

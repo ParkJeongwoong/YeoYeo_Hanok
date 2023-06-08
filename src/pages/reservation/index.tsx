@@ -14,7 +14,11 @@ import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import SEO from "src/utils/seo";
 
-function Reservation({ fadeState }: any) {
+interface ReservationProps {
+  fadeState: string;
+}
+
+function Reservation({ fadeState }: ReservationProps) {
   const [selectedRoom, setSelectedRoom] = useState<"여유" | "여행" | null>(null);
   const [username, setUsername] = useState<string>("");
   const [userMobileNumber, setUserMobileNumber] = useState<string>("");
@@ -27,7 +31,7 @@ function Reservation({ fadeState }: any) {
   const router = useRouter();
   const [startDate, setStartDate] = useState<Dayjs | null>(null);
   const [endDate, setEndDate] = useState<Dayjs | null>(null);
-  const [checkoutDate, setCheckoutDate] = useState<any | null>(null);
+  const [checkoutDate, setCheckoutDate] = useState<Dayjs | null>(null);
   const [periodData, setPeriodData] = useState<PeriodDataType>({} as PeriodDataType);
 
   const [isModalMask, setIsModalMask] = useAtom(modalStatus);
@@ -103,7 +107,6 @@ function Reservation({ fadeState }: any) {
     const dateRoomIdList: string[] = [];
     periodData.infoDtoList.map((item) => dateRoomIdList.push(item.dateRoomId));
 
-    // dataRoomIdList, email, guestCount, name, phoneNumber, request
     const data = {
       dateRoomIdList,
       email,
@@ -125,7 +128,6 @@ function Reservation({ fadeState }: any) {
   }
 
   function validCheck() {
-    // return // 제거 예정
     if (formCompleted && agreementCompleted) {
       getReservationId();
     } else {

@@ -5,7 +5,11 @@ import dayjs from "dayjs";
 import axios from "axios";
 import SEO from "src/utils/seo";
 
-function ReservationDetail({ fadeState }: any) {
+interface ReservationDetailProps {
+  fadeState: string;
+}
+
+function ReservationDetail({ fadeState }: ReservationDetailProps) {
   const router = useRouter();
 
   const state = router.query as { phoneNumber: string, roomName: string, startDate: string, endDate: string, guestCount: string, paidAmount: string, reservationNumber: string };

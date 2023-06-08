@@ -48,7 +48,7 @@ function App({ Component, pageProps }: AppProps) {
       <Head>
         <title>한옥스테이 여여</title>
         <link rel="icon" href="/assets/temp/logo.png" />
-        <link rel="canonical" href="https://yeoyeo.kr"></link>
+        <link rel="canonical" href="https://yeoyeo.kr" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="subject" content={searchKeywords} />
         <meta name="keywords" content={searchKeywords} />
