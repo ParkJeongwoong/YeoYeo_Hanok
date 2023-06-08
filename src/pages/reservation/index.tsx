@@ -83,7 +83,7 @@ function Reservation({ fadeState }: any) {
         buyer_tel: userMobileNumber,
         currency: 'KRW',
         locale: i18next.language,
-        m_redirect_url: `https://yeoyeo.co.kr/reservation/success/${merchantUid}`,
+        m_redirect_url: `https://yeoyeo.kr/reservation/success/${merchantUid}`,
         confirm_url: "https://api.yeoyeo.co.kr/payment/confirm",
         bypass: {
           tosspayments: {

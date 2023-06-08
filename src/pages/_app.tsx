@@ -25,17 +25,13 @@ function App({ Component, pageProps }: AppProps) {
     name: "한옥스테이 여여",
     description: "그와 같이 아름다운, 여여(如麗)",
     keywords: searchKeywords,
-    url: "https://yeoyeo.co.kr",
+    url: "https://yeoyeo.kr",
     sameAs: [
-      "https://www.yeoyeo.co.kr",
-      "https://yeoyeo.kr",
       "https://www.yeoyeo.kr",
+      "https://yeoyeo.co.kr",
+      "https://www.yeoyeo.co.kr",
     ],
-    logo: "https://yeoyeo.co.kr/logo192.png",
-    publisher: {
-      "@type": "Person",
-      name: "dvlprjw",
-    },
+    logo: "https://yeoyeo.kr/logo192.png",
     telephone: "010-8959-9091",
     email: "dvlprjw@gmail.com",
     address: {
@@ -45,7 +41,6 @@ function App({ Component, pageProps }: AppProps) {
       addressRegion: "경상북도",
       postalCode: "38174",
     },
-    datePublished: "2023-04-01",
   };
   
   return (
@@ -53,6 +48,7 @@ function App({ Component, pageProps }: AppProps) {
       <Head>
         <title>한옥스테이 여여</title>
         <link rel="icon" href="/assets/temp/logo.png" />
+        <link rel="canonical" href="https://yeoyeo.kr"></link>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="subject" content={searchKeywords} />
         <meta name="keywords" content={searchKeywords} />
@@ -62,8 +58,8 @@ function App({ Component, pageProps }: AppProps) {
         <meta property="og:type" content="website" />
         <meta property="og:title" content="한옥스테이 여여(如麗)" />
         <meta property="og:description" content="그와 같이 아름다운, 여여(如麗)" />
-        <meta property="og:image" content="https://yeoyeo.co.kr/logo192.png" />
-        <meta property="og:url" content="https://yeoyeo.co.kr" />
+        <meta property="og:image" content="https://yeoyeo.kr/logo192.png" />
+        <meta property="og:url" content="https://yeoyeo.kr" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
