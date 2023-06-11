@@ -274,7 +274,7 @@ function Room({ fadeState }: RoomProps) {
                 {ImgList.map((el) => (
                   <SwiperSlide>
                     <div className="img-wrap">
-                      <Image loader={imageLoader} src={el} fill alt="" />
+                      <Image loader={imageLoader} src={el} fill alt="여유 방 사진" />
                     </div>
                   </SwiperSlide>
                 ))}
@@ -341,7 +341,7 @@ function Room({ fadeState }: RoomProps) {
                 {ImgList.map((el) => (
                   <SwiperSlide>
                     <div className="img-wrap">
-                      <Image loader={imageLoader} src={el} fill alt="" />
+                      <Image loader={imageLoader} src={el} fill alt="여행 방 사진" />
                     </div>
                   </SwiperSlide>
                 ))}

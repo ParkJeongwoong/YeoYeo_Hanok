@@ -64,15 +64,11 @@ function Reservation({ fadeState }: ReservationProps) {
     .catch(() => console.log("서버 전송 결과에 문제가 있습니다."));
   }
 
-  // TODO : 결제모듈 열기전
   function onClickPayment(merchantUid: number) {
-    // TODO: 서버에 예약 정보 보낸 뒤 unique_id get
-
     try {
       /* 1. 가맹점 식별하기 */
       const { IMP } = window;
-      IMP.init("imp28607423");
-      // IMP.init(process.env.NEXT_PUBLIC_IMP_UID);
+      IMP.init(process.env.NEXT_PUBLIC_IMP_UID);
 
       /* 2. 결제 데이터 정의하기 */
       const data = {
@@ -85,13 +81,13 @@ function Reservation({ fadeState }: ReservationProps) {
         buyer_name: username,
         buyer_email: email,
         buyer_tel: userMobileNumber,
-        currency: 'KRW',
+        currency: "KRW",
         locale: i18next.language,
         m_redirect_url: `https://yeoyeo.kr/reservation/success/${merchantUid}`,
         confirm_url: "https://api.yeoyeo.co.kr/payment/confirm",
         bypass: {
           tosspayments: {
-            useInternationalCardOnly: i18next.language === "en" // 영어 결제창 활성화
+            useInternationalCardOnly: i18next.language === "en", // 영어 결제창 활성화
           }
         },
       };
@@ -103,7 +99,6 @@ function Reservation({ fadeState }: ReservationProps) {
   }
 
   function getReservationId() {
-    // [o]TODO: CustomerForm.tsx에 있는 state 옮기기
     const dateRoomIdList: string[] = [];
     periodData.infoDtoList.map((item) => dateRoomIdList.push(item.dateRoomId));
 
@@ -121,7 +116,6 @@ function Reservation({ fadeState }: ReservationProps) {
       data,
     })
       .then((res) => {
-        console.log("reservation/reserve complete", res);
         onClickPayment(res.data.resultId);
       })
       .catch((err) => console.log("err", err));
@@ -187,7 +181,6 @@ function Reservation({ fadeState }: ReservationProps) {
               <Agreement setAgreementCompleted={setAgreementCompleted} />
             </>
           )}
-          {/* <div className={cn("reservation-form-wrap")}>약관동의가 들어가야할 부분</div> */}
         </div>
         {isModalMask && (
           <div

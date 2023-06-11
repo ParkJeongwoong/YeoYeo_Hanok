@@ -29,9 +29,7 @@ function DateCell({
   const isAfterAsSelectedDate = endDate && cellDate > endDate;
   const afterCheckoutDate = checkoutDate !== null && checkoutDate.isBefore(cellDate, "date");
   const { t } = useTranslation("common");
-  // TODO: useContext datePicker에 생성. Provider로 내려주기.
   const handleCellClick = () => {
-    console.log("현재startDate", startDate, "현재CheckoutDate", checkoutDate);
     if (startDate === null && cellData && selectedRoom === "여유" && (cellData[0].reservationState === 1 || !cellData[0].reservable)) return;
     if (startDate === null && cellData && selectedRoom === "여행" && (cellData[1].reservationState === 1 || !cellData[1].reservable)) return;
     if (startDate === null && cellData && (cellData[0].reservationState === 1 || !cellData[0].reservable) && (cellData[1].reservationState === 1 || !cellData[1].reservable))
@@ -52,7 +50,6 @@ function DateCell({
       return;
     }
     if (!(dayjs() > dayjs(currentDate).set("date", day) && "passed-date")) {
-      // handleDateClick(day, currentDate);
       // A방만 예약된 경우 => B방으로 설정
       // B방만 예약된 경우 => A방으로 설정
       // 두 방 모두 예약된 경우 => startDate로 선택불가, 체크아웃만 가능
@@ -69,7 +66,6 @@ function DateCell({
         }
       } else if (startDate !== null && (cellData[0].reservationState === 1 || !cellData[0].reservable) && (cellData[1].reservationState === 1 || !cellData[1].reservable)) {
         handleDateClick(day, currentDate);
-        // setCanReserve(false);
       } else handleDateClick(day, currentDate);
     }
   };
@@ -79,21 +75,6 @@ function DateCell({
       setIsModal(false);
     }
   }, [modalOpen]);
-
-  // useEffect(() => {
-  //   if (startDate && selectedRoom !== null) {
-  //     const roomNum = selectedRoom === "A" ? 0 : 1;
-  //     const index = data.findIndex((e) => e.date === startDate.format("YYYY-MM-DD"));
-  //     const reserved = data.slice(index).find(({ rooms }) => rooms[roomNum].reservationState);
-  //     if (reserved) {
-  //       setCheckoutDate(dayjs(reserved.date));
-  //     } else {
-  //       setCheckoutDate(null);
-  //     }
-  //   } else {
-  //     setCheckoutDate(null);
-  //   }
-  // }, [data, selectedRoom, startDate]);
 
   useEffect(() => {
     if (data && startDate && selectedRoom !== null) {

@@ -3,6 +3,7 @@ import { useEffect } from "react";
 import { useRouter } from "next/router";
 import dayjs from "dayjs";
 import axios from "axios";
+import { useTranslation } from "react-i18next";
 import SEO from "src/utils/seo";
 
 interface ReservationDetailProps {
@@ -12,7 +13,16 @@ interface ReservationDetailProps {
 function ReservationDetail({ fadeState }: ReservationDetailProps) {
   const router = useRouter();
 
-  const state = router.query as { phoneNumber: string, roomName: string, startDate: string, endDate: string, guestCount: string, paidAmount: string, reservationNumber: string };
+  const state = router.query as { 
+    phoneNumber: string, 
+    roomName: string, 
+    startDate: string, 
+    endDate: string, 
+    guestCount: string, 
+    paidAmount: string, 
+    reservationNumber: string 
+  };
+  const { t } = useTranslation("reservation");
 
   useEffect(() => {
     if (!state||!state.reservationNumber) {
@@ -40,7 +50,6 @@ function ReservationDetail({ fadeState }: ReservationDetailProps) {
         .catch(() => alert("정상적으로 취소되지 않았습니다."));
     } else {
       // Do nothing!
-      console.log("Thing was not saved to the database.");
     }
   };
 
@@ -56,19 +65,19 @@ function ReservationDetail({ fadeState }: ReservationDetailProps) {
           <div className="section-wrap">
             <div className={cn("content-wrap")}>
               <div className={cn("header border-none")}>
-                <strong>{state.roomName} 예약이 완료되었습니다.</strong>
+                <strong>{state.roomName} {t("detail.completeReservation")}</strong>
               </div>
               <div className={cn("content__schedule")}>
                 <div className={cn("content__schedule-content check-in")}>
-                  <strong>체크인</strong>
+                  <strong>{t("detail.checkIn")}</strong>
                   <span className={cn("date")}>{state.startDate}</span>
-                  <span className={cn("time")}>오후 3:00</span>
+                  <span className={cn("time")}>{t("detail.3pm")}</span>
                 </div>
                 <div className={cn("content-contour")} />
                 <div className={cn("content__schedule-content check-out")}>
-                  <strong>체크아웃</strong>
+                  <strong>{t("detail.checkOut")}</strong>
                   <span className={cn("date")}>{state.endDate}</span>
-                  <span className={cn("time")}>오전 11:00</span>
+                  <span className={cn("time")}>{t("detail.11am")}</span>
                 </div>
               </div>
             </div>
@@ -77,30 +86,30 @@ function ReservationDetail({ fadeState }: ReservationDetailProps) {
 
             <div className={cn("section")}>
               <div className={cn("header")}>
-                <strong>예약 세부정보</strong>
+                <strong>{t("detail.reservationDetails")}</strong>
               </div>
               <div className={cn("content__normal")}>
                 <div className={cn("content")}>
-                  <strong>게스트</strong>
-                  <span>게스트 {state.guestCount}명</span>
+                  <strong>{t("detail.guest")}</strong>
+                  <span>{t("detail.guest")} {state.guestCount}{t("detail.peopleCount")}</span>
                 </div>
               </div>
               <div className={cn("content__normal")}>
                 <div className={cn("content")}>
-                  <strong>예약 번호</strong>
+                  <strong>{t("detail.reservationNumber")}</strong>
                   <span>{state.reservationNumber}</span>
                 </div>
               </div>
               <div className={cn("content__refund")}>
                 <div className={cn("content")}>
-                  <strong>환불정책</strong>
+                  <strong>{t("detail.refundPolicy")}</strong>
                   <span>
-                    {dayjs(state.startDate).subtract(10, "day").format("MM/DD")} 이전에 취소하면 전액 환불을
-                    받으실 수 있습니다. 그 이후에는 취소 시점에 따라 환불액이 결정됩니다.{" "}
+                    {t("detail.refundGuideMessage1")}
+                    {dayjs(state.startDate).subtract(10, "day").format("MM/DD")} {t("detail.refundGuideMessage2")}{" "}
                   </span>
                   <div className={cn("button-wrap")}>
                     <button type="button" onClick={handleReqRefund}>
-                      예약 취소
+                      {t("detail.cancelReservation")}
                     </button>
                   </div>
                 </div>
@@ -111,12 +120,14 @@ function ReservationDetail({ fadeState }: ReservationDetailProps) {
 
             <div className={cn("section")}>
               <div className={cn("header")}>
-                <strong>결제 정보</strong>
+                <strong>{t("detail.paymentInformation")}</strong>
               </div>
               <div className={cn("content__normal")}>
                 <div className={cn("content")}>
-                  <strong>총비용</strong>
-                  <span>₩ {state.paidAmount} KRW</span>
+                  <strong>{t("detail.totalCost")}</strong>
+                  <span>
+                    {t("detail.currencyUnit")} {state.paidAmount.toLocaleString()} {t("detail.currency")}
+                  </span>
                 </div>
               </div>
             </div>

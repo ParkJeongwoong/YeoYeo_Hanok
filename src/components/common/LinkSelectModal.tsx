@@ -1,9 +1,7 @@
-// import {  } from "react";
 import { useEffect } from "react";
 import cn from "classnames";
 
 function LinkSelectModal({ setIsModal }: LinkSelectModalProps) {
-
   const pushEscape = (e: KeyboardEvent) => {
     if (e.key === "Escape") {
       setIsModal(false);
@@ -16,8 +14,7 @@ function LinkSelectModal({ setIsModal }: LinkSelectModalProps) {
   });
 
   return (
-    
-      <div
+    <div
       tabIndex={0}
       role="button"
       className={cn("modal-mask")}

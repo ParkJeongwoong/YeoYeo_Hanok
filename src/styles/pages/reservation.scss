@@ -161,7 +161,7 @@
                 display: none;
                 box-sizing: border-box;
                 width: calc(100% - 30px);
-                height: calc(100% - 57px);
+                height: calc(100% - 45px);
                 background-color: #808080;
                 color: #fff;
                 text-align: center;
@@ -180,8 +180,10 @@
             }
             &.notAvailable:hover {
               .tooltip-text-b {
-                display: inline-block;
+                display: flex;
                 visibility: visible;
+                justify-content: center;
+                align-items: center;
                 @include sm {
                   display: none;
                 }
@@ -218,8 +220,10 @@
             }
             &.checkout-only:hover {
               .tooltip-text-a {
-                display: inline-block;
+                display: flex;
                 visibility: visible;
+                justify-content: center;
+                align-items: center;
                 @include sm {
                   display: none;
                 }
@@ -246,7 +250,7 @@
                 display: none;
                 box-sizing: border-box;
                 width: calc(100% - 30px);
-                height: calc(100% - 53px);
+                height: calc(100% - 45px);
                 background-color: #808080;
                 color: #fff;
                 text-align: center;
@@ -269,8 +273,10 @@
                 visibility: hidden;
               }
               .tooltip-text-b {
-                display: inline-block;
+                display: flex;
                 visibility: visible;
+                justify-content: center;
+                align-items: center;
                 @include sm {
                   display: none;
                 }

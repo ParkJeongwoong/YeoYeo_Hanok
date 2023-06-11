@@ -1,21 +1,37 @@
 {
-  "datePicker" : {
+  "datePicker": {
     "reset": "Reset",
     "prev": "Prev",
     "next": "Next",
     "startDate": "Check-in Date",
     "endDate": "Chek-out Date"
   },
-  "form" : {
+  "form": {
     "name": "Name",
     "email": "Email",
     "contact": "Contact (Korean Phone Number Only)",
     "requestCode": "Request Code",
     "validateCode": "Validate Code",
     "count": "Guests",
-    "request": "Request"
+    "request": "Request",
+    "placeholderText": {
+      "name": "Input your name, please.",
+      "email": "Enter your e-mail, please.",
+      "verificationNumber": "Vertificaiton Number",
+      "request": "Please write your request. (up to 200 characters)"
+    },
+    "errorText": {
+      "name": "Please write only in English or Korean.",
+      "email": "Please fill in the correct email form.",
+      "mobileNumber": "Number is incorrect. Please fill in the format 000-0000-0000.",
+      "verificationNumber": "The verification code is incorrect.",
+      "verification": "An error occurred during authentication. Please try again in a few minutes."
+    },
+    "successText": {
+      "verification": "Authentication completed successfully."
+    }
   },
-  "sidebar" : {
+  "sidebar": {
     "date": "Reservation Date",
     "checkIn": "Check-In",
     "checkOut": "Check-Out",
@@ -26,5 +42,85 @@
     "discount": "Discount",
     "totalPrice": "Total Price",
     "reserve": "Reserve"
+  },
+  "agreement": {
+    "agreement": "Agreement",
+    "agreeAll": "full agreement",
+    "consent(required)": "Consent(required)",
+    "consent(optional)": "Consent(optional)",
+    "numberOfPeople": "Number of people: Exceeding the reserved number of people and visitors are not allowed to enter the room. In case of violation, move out without refund",
+    "nonSmokingInformation": "Non-smoking information: Absolutely no smoking, including e-cigarettes, in all areas of the accommodation. In case of violation, immediate eviction without refund and cleaning fee charged",
+    "reimbursementInformation": "Reimbursement Information: Compensation fees are charged in case of property damage or contamination of bedding in the accommodation.",
+    "cookingRegulations": "Cooking regulations: This is an accommodation where cooking with open fire is not allowed, and eating smelly food (meat, fish, seafood, etc.) is prohibited",
+    "refundPolicy": "Refund Policy: I agree to the refund policy provided.",
+    "personalInformation": "Consent to collection and use of personal information (required)",
+    "seeDetails": "see details",
+    "personalInfoContents": {
+      "collectionItems": "1. Collection items: [Required] Name, contact information, e-mail address, personnel information",
+      "purposeOfCollection": "2. Purpose of collection and use: Smooth transaction between business members and reservation users, customer consultation, complaint handling, record preservation for dispute resolution, stay portfolio membership and promotion, event information",
+      "retentionPeriod": "3. Retention period: Until the purpose of using personal information such as membership withdrawal is achieved. However, if storage is required for a certain period of time in accordance with relevant laws such as the Commercial Act and the ‘Act on Consumer Protection in Electronic Commerce, etc.’, it is stored for that period.",
+      "rightToRefuse": "4. Notice on the right to refuse consent: The information subject has the right to refuse consent to the collection and use of personal information, but in this case, product and service reservations may be restricted."
+    },
+    "alarmAgreement": "Agree to notification of benefits such as coupons and events (optional)",
+    "alarmAgreementContents": {
+      "subscribe": "Subscribe to Hanok Stay Yeo-yeo's benefits, promotions, and event news"
+    },
+    "refundPolicyInformation": "Refund policy information",
+    "refundPolicyInformationContents": {
+      "before10days": "10 days ago: 100% refund of the payment amount",
+      "before9days": "9 days ago: 90% refund of payment amount",
+      "before8days": "8 days ago: 80% refund of payment amount",
+      "before7days": "7 days ago: 70% refund of payment amount",
+      "before6days": "6 days ago: 60% refund of payment amount",
+      "before5days": "5 days ago: 50% refund of payment amount",
+      "before4days": "4 days ago: 40% refund of payment amount",
+      "before3days": "3 days ago: 30% refund of payment amount",
+      "before2days": "2 days ago: 20% refund of payment amount",
+      "before1days": "1 days ago: 10% refund of payment amount",
+      "dDay": "On the day: non-refundable"
+    }
+  },
+  "check": {
+    "title": "Reservation confirmation / Cancellation information",
+    "guideMessage1": "Details of reservation products can be checked by clicking the Confirm Reservation button of each product.",
+    "guideMessage2": "To cancel a reservation, click the Cancel button after clicking Confirm Reservation for each product, and a refund will be requested automatically.",
+    "mobileNumber": "Mobile Number",
+    "placeholderText": {
+      "mobileNumber": "000-0000-0000",
+      "reservationNumber": "Please enter the 13 digit reservation number."
+    },
+    "errorText": {
+      "mobileNumber": "Number is incorrect. Please fill in the format 000-0000-0000.",
+      "reservationNumber": "Please enter the 13-digit reservation number sent by text message."
+    },
+    "reservationNumber": "Reservation Number",
+    "confirmReservation": "confirm reservation"
+  },
+  "success": {
+    "welcomeMessage": "Thank you for your reservation.",
+    "guideMessage1": "Your reservation has been successfully completed.",
+    "guideMessage2": "For detailed reservation information, click the 'Confirm Reservation' button to check.",
+    "reservationNumber": "Reservation Number",
+    "confirmReservation": "confirm reservation",
+    "backToHome": "back home"
+  },
+  "detail": {
+    "completeReservation": "reservation is complete.",
+    "checkIn": "check-in",
+    "3pm": "3:00 p.m.",
+    "checkOut": "check-out",
+    "11am": "11:00 a.m.",
+    "reservationDetails": "Reservation Details",
+    "guest": "guest",
+    "peopleCount": " person(people)",
+    "reservationNumber": "Reservation Number",
+    "refundPolicy": "Refund Policy",
+    "refundGuideMessage1": "if you cancel before ",
+    "refundGuideMessage2": ", you will receive a full refund. After that, the refund amount will be determined according to the time of cancellation.",
+    "cancelReservation": "cancel reservation",
+    "paymentInformation": "Payment Information",
+    "totalCost": "Total Cost",
+    "currencyUnit": "₩",
+    "currency": "KRW"
   }
 }

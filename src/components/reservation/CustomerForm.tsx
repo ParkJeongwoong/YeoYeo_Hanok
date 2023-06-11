@@ -36,7 +36,7 @@ function CustomerForm({
   requestedTerm,
   setRequestedTerm,
   setCanReserve,
-  translation
+  translation,
 }: CustomerFormProps) {
   const [userAuthNumber, setUserAuthNumber] = useState<string>("");
   const [authResultMsg, setAuthResultMsg] = useState<string>("");
@@ -52,11 +52,13 @@ function CustomerForm({
     const { value } = e.target;
     setUserAuthNumber(value);
   };
-  const autoRegExPhoneNumber = (inputValue: string) : string => {
-    if (inputValue.length > 8) return inputValue.replace(/[^0-9]/g,'').replace(/^(\d{3})(\d{4})(\d{1,4})$/,`$1-$2-$3`);
-    if (inputValue.length > 3) return inputValue.replace(/[^0-9]/g,'').replace(/^(\d{3})(\d{1,4})$/,`$1-$2`);
-    return inputValue.replace(/[^0-9]/g,'').replace(/^(\d{3})(\d{1,4})(\d{4})$/,`$1-$2-$3`);
-  }
+  const autoRegExPhoneNumber = (inputValue: string): string => {
+    if (inputValue.length > 8)
+      return inputValue.replace(/[^0-9]/g, "").replace(/^(\d{3})(\d{4})(\d{1,4})$/, `$1-$2-$3`);
+    if (inputValue.length > 3)
+      return inputValue.replace(/[^0-9]/g, "").replace(/^(\d{3})(\d{1,4})$/, `$1-$2`);
+    return inputValue.replace(/[^0-9]/g, "").replace(/^(\d{3})(\d{1,4})(\d{4})$/, `$1-$2-$3`);
+  };
 
   useEffect(() => {
     if (validUsername.test(username) 
@@ -71,18 +73,18 @@ function CustomerForm({
       <Input
         title={translation("form.name")}
         regEx={validUsername}
-        placeholder="이름을 입력해주세요"
+        placeholder={`${translation("form.placeholderText.name")}`}
         inputValue={username}
         setInputValue={setUsername}
-        errorText="영문이나 한글로만 작성해주세요."
+        errorText={`${translation("form.errorText.name")}`}
       />
       <Input
         title={translation("form.email")}
         regEx={validEmail}
-        placeholder="이메일을 입력해주세요"
+        placeholder={`${translation("form.placeholderText.email")}`}
         inputValue={email}
         setInputValue={setEmail}
-        errorText="올바른 이메일 양식으로 작성해주세요."
+        errorText={`${translation("form.errorText.email")}`}
         type="email"
       />
       <InputForm title={translation("form.contact")}>
@@ -105,7 +107,7 @@ function CustomerForm({
                 disabled={isAuthorized}
                 value={userAuthNumber}
                 onChange={(e) => handleAuthNumber(e)}
-                placeholder="인증번호"
+                placeholder={`${translation("form.placeholderText.verificationNumber")}`}
                 maxLength={6}
                 type="number"
               />
@@ -126,18 +128,17 @@ function CustomerForm({
                   .then((res) => {
                     if (res.data) {
                       setIsAuthorized(true);
-                      setAuthResultMsg("인증이 성공적으로 완료되었습니다.");
+                      setAuthResultMsg(`${translation("form.successText.verification")}`);
                       const msgDiv = document.getElementsByClassName("certification-result-msg");
                       msgDiv[0].classList.add("success");
                     } else if (res.data === false) {
-                      setAuthResultMsg("인증번호가 올바르지 않습니다.");
+                      setAuthResultMsg(`${translation("form.errorText.verificationNumber")}`);
                       const msgDiv = document.getElementsByClassName("certification-result-msg");
                       msgDiv[0].classList.add("error");
                     }
                   })
-                  .catch((err) => {
-                    console.log("인증번호에러", err);
-                    setAuthResultMsg("인증도중 오류가 발생했습니다. 잠시후 다시 시도해주세요.");
+                  .catch(() => {
+                    setAuthResultMsg(`${translation("form.errorText.verification")}`);
                   });
               }}
             >
@@ -156,7 +157,7 @@ function CustomerForm({
               inputValue={userMobileNumber}
               setInputValue={setUserMobileNumber}
               autoRegEx={autoRegExPhoneNumber}
-              errorText="번호가 올바르지 않습니다. 000-0000-0000 형식으로 작성해주세요."
+              errorText={`${translation("form.errorText.mobileNumber")}`}
               classnames="user-mobile-input"
               maxLength={13}
               type="tel"
@@ -187,7 +188,7 @@ function CustomerForm({
             cols={5}
             rows={4}
             maxLength={200}
-            placeholder="요청사항을 적어주세요. (최대 200자)"
+            placeholder={`${translation("form.placeholderText.request")}`}
             className={cn("input-text-area")}
             value={requestedTerm}
             onChange={(e) => handleTextAreaInput(e)}

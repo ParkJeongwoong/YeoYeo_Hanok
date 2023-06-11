@@ -2,6 +2,7 @@ import Input from "@components/common/Input";
 import axios from "axios";
 import cn from "classnames";
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
 import { validReservationNumberPatter, validUserMobileNumber } from "src/utils/regEx";
 import SEO from "src/utils/seo";
@@ -16,11 +17,14 @@ function ReservationCheck({ fadeState, setFadeState }: ReservationCheckProps) {
   const [userMobileNumber, setUserMobileNumber] = useState<string>("");
   const [reservationNumber, setReservationNumber] = useState<string>("");
   const [isInputAllValid, setIsInputAllValid] = useState<boolean>(false);
+  const { t } = useTranslation("reservation");
 
-  const autoRegExPhoneNumber = (inputValue: string) : string => {
-    if (inputValue.length > 8) return inputValue.replace(/[^0-9]/g,'').replace(/^(\d{3})(\d{4})(\d{1,4})$/,`$1-$2-$3`);
-    if (inputValue.length > 3) return inputValue.replace(/[^0-9]/g,'').replace(/^(\d{3})(\d{1,4})$/,`$1-$2`);
-    return inputValue.replace(/[^0-9]/g,'').replace(/^(\d{3})(\d{1,4})(\d{4})$/,`$1-$2-$3`);
+  const autoRegExPhoneNumber = (inputValue: string): string => {
+    if (inputValue.length > 8)
+      return inputValue.replace(/[^0-9]/g, "").replace(/^(\d{3})(\d{4})(\d{1,4})$/, `$1-$2-$3`);
+    if (inputValue.length > 3)
+      return inputValue.replace(/[^0-9]/g, "").replace(/^(\d{3})(\d{1,4})$/, `$1-$2`);
+    return inputValue.replace(/[^0-9]/g, "").replace(/^(\d{3})(\d{1,4})(\d{4})$/, `$1-$2-$3`);
   }
 
   useEffect(() => {
@@ -78,52 +82,41 @@ function ReservationCheck({ fadeState, setFadeState }: ReservationCheckProps) {
       <div className={cn(`reservation-check-wrap ${fadeState}`)}>
         <div className="section-wrap">
           <div className={cn("header")}>
-            <strong>예약 조회 / 취소 안내</strong>
+          <strong>{t("check.title")}</strong>
             <ul>
-              <li>1. 예약상품의 세부내역은 각 상품의 상세보기 버튼을 클릭하시면 확인할 수 있습니다.</li>
-              <li>2. 예약취소는 각 상품의 상세보기 클릭 후 취소버튼을 클릭하시면 자동으로 환불요청 됩니다.</li>
+              <li>1. {t("check.guideMessage1")}</li>
+              <li>2. {t("check.guideMessage2")}</li>
             </ul>
           </div>
 
           <div className={cn("contents")}>
             <div>
               <Input
-                title="핸드폰번호"
+                title={`${t("check.mobileNumber")}`}
                 regEx={validUserMobileNumber}
                 placeholder="000-0000-0000"
                 inputValue={userMobileNumber}
                 setInputValue={setUserMobileNumber}
                 autoRegEx={autoRegExPhoneNumber}
-                errorText="번호가 올바르지 않습니다. 000-0000-0000 형식으로 작성해주세요."
-                //   classnames="user-mobile-input"
+                errorText={`${t("check.errorText.mobileNumber")}`}
                 maxLength={13}
               />
               <Input
-                title="예약번호"
+                title={`${t("check.reservationNumber")}`}
                 regEx={validReservationNumberPatter}
-                placeholder="예약번호 13자리를 입력해주세요."
+                placeholder={`${t("check.placeholderText.reservationNumber")}`}
                 inputValue={reservationNumber}
                 setInputValue={setReservationNumber}
-                errorText="문자로 전송된 예약번호 13자리를 입력해주세요."
-                //   classnames="reservation-number"
+                errorText={`${t("check.errorText.reservationNumber")}`}
                 maxLength={13}
               />
-              {/* <span>문자로 전송된 예약번호 13자리를 입력해주세요.</span> */}
             </div>
             <div className={cn("button-wrap")}>
               <button type="button" onClick={reqReservationCheck} disabled={!isInputAllValid}>
-                <span>예약확인</span>
+                <span>{t("check.confirmReservation")}</span>
               </button>
             </div>
           </div>
-
-          {/* <div className={cn("bottom-nav")}>
-            <strong>유의사항</strong>
-            <ul>
-              <li>1. 예약상품의 세부내역은 각 상품의 상세보기 버튼을 클릭하시면 확인할 수 있습니다.</li>
-              <li>2. 예약취소는 각 상품의 상세보기 클릭 후 취소버튼을 클릭하시면 자동으로 환불요청 됩니다.</li>
-            </ul>
-          </div> */}
         </div>
       </div>
     </>

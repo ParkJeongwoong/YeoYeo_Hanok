@@ -1,10 +1,12 @@
 import cn from "classnames";
 import { useRouter } from "next/router";
+import { useTranslation } from "react-i18next";
 import SEO from "src/utils/seo";
 
 function ReservationSuccess() {
   const router = useRouter();
   const { reservationId } = router.query;
+  const { t } = useTranslation("reservation");
 
   return (
     <>
@@ -16,23 +18,25 @@ function ReservationSuccess() {
       <div className="reservation-success-wrap">
         <div className="section-wrap">
           <div className={cn("header")}>
-            <h1>예약해주셔서 감사합니다.</h1>
+            <h1>{t("success.welcomeMessage")}</h1>
             <h2>
-              <span>예약이 성공적으로 완료되었습니다.</span>
-              <span>상세한 예약정보는 &apos;예약확인&apos; 버튼을 눌러 확인하세요.</span>
+              <span>{t("success.guideMessage1")}</span>
+              <span>{t("success.guideMessage2")}</span>
             </h2>
           </div>
 
           <div className={cn("contents")}>
-            <span>예약번호 : {reservationId}</span>
+            <span>
+              {t("success.reservationNumber")} : {reservationId}
+            </span>
           </div>
 
           <div className={cn("bottom-nav")}>
             <button type="button" onClick={() => router.push("/reservation/check")}>
-              <span>예약확인</span>
+              <span>{t("success.confirmReservation")}</span>
             </button>
             <button type="button" onClick={() => router.push("/")}>
-              <span>홈으로 돌아가기</span>
+              <span>{t("success.backToHome")}</span>
             </button>
           </div>
         </div>

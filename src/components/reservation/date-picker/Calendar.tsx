@@ -56,7 +56,6 @@ function Calendar({
                 {Array.from({ length: 7 }, (__, j) => {
                   const day = 7 * i + j + 1 - getFirstDayOfMonth(currentDate.get("M"), currentDate.get("year"));
                   if (day > 0 && day <= getDaysInMonth(currentDate.get("M"), currentDate.get("year"))) {
-                    // const cellDate = dayjs(currentDate).set("date", day);
                     return (
                       <DateCell
                         key={currentDate.toString() + day}
