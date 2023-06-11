@@ -126,7 +126,7 @@ function ReservationDetail({ fadeState }: ReservationDetailProps) {
                 <div className={cn("content")}>
                   <strong>{t("detail.totalCost")}</strong>
                   <span>
-                    {t("detail.currencyUnit")} {state.paidAmount.toLocaleString()} {t("detail.currency")}
+                    {t("detail.currencyUnit")} {state.paidAmount} {t("detail.currency")}
                   </span>
                 </div>
               </div>
