@@ -41,7 +41,7 @@ function Table({ removeCookie }: TableProps) {
     .catch(() => {
       removeCookie("SESSION", { path: "/admin" })
     });
-  }, [selectedDate, roomName]);
+  }, [selectedDate, roomName, removeCookie]);
 
   const roomNameStr = roomName === 1 ? "여유" : "여행";
   const dash = "-";

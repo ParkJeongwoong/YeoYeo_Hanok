@@ -29,7 +29,7 @@ function App() {
   };
 
   return (
-    <>
+    <div>
       {cookie.SESSION === undefined?
         (
           <div style={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "100vh" }}>
@@ -70,7 +70,7 @@ function App() {
           <Table removeCookie={removeCookie} />
         )
       }
-    </>
+    </div>
   );
 }
 
