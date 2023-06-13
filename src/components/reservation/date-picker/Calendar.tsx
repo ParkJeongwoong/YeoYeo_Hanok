@@ -73,7 +73,7 @@ function Calendar({
                       />
                     );
                   }
-                  return <td key={j} className={cn("no-date")} />;
+                  return <td key={j} aria-label="no-date" className={cn("no-date")} />;
                 })}
               </tr>
             ))}
