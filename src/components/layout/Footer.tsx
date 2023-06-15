@@ -26,7 +26,7 @@ function Footer() {
           <Image loader={imageLoader} src={naver} width={25} height={25} alt="네이버 바로가기" />
         </a>
       </div>
-      <span>{t("yeoyeo")}</span>
+      <h1>{t("yeoyeo")}</h1>
       <span>{t("registration-number")}</span>
       <span>{t("ecommerce-registration")}</span>
       <span>{t("address")}</span>

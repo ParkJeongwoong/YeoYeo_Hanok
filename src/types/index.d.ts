@@ -93,6 +93,7 @@ declare global {
 
 declare global {
   interface Window {
+    gtag: any;
     IMP: any;
   }
 }
