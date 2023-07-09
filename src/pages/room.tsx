@@ -22,6 +22,10 @@ const FloorPlanB = "/assets/images/room/floor_plan_B.png";
 // Room 이미지들
 const OUTSIDE_1 = '/assets/images/room/outside1.jpg';
 const OUTSIDE_2 = '/assets/images/room/outside2.jpg';
+const OUTSIDE_3 = '/assets/images/room/outside3.jpg';
+const OUTSIDE_4 = '/assets/images/room/outside4.jpg';
+const OUTSIDE_5 = '/assets/images/room/outside5.jpg';
+const OUTSIDE_6 = '/assets/images/room/outside6.jpg';
 
 const ROOM_A_LIVING_1 = "/assets/images/room/roomA_living1.jpg";
 const ROOM_A_LIVING_2 = "/assets/images/room/roomA_living2.jpg";
@@ -42,10 +46,16 @@ const ROOM_B_LIVING_1 = "/assets/images/room/roomB_living1.jpg";
 const ROOM_B_LIVING_2 = "/assets/images/room/roomB_living2.jpg";
 const ROOM_B_LIVING_3 = "/assets/images/room/roomB_living3.jpg";
 const ROOM_B_LIVING_4 = "/assets/images/room/roomB_living4.jpg";
+const ROOM_B_LIVING_5 = "/assets/images/room/roomB_living5.jpg";
+const ROOM_B_LIVING_6 = "/assets/images/room/roomB_living6.jpg";
 const ROOM_B_BED_1 = "/assets/images/room/roomB_bed1.jpg";
 const ROOM_B_BED_2 = "/assets/images/room/roomB_bed2.jpg";
+const ROOM_B_BED_3 = "/assets/images/room/roomB_bed3.jpg";
 const ROOM_B_KITCHEN_1 = '/assets/images/room/roomB_kitchen1.jpg';
 const ROOM_B_KITCHEN_2 = '/assets/images/room/roomB_kitchen2.jpg';
+const ROOM_B_KITCHEN_3 = '/assets/images/room/roomB_kitchen3.jpg';
+const ROOM_B_KITCHEN_4 = '/assets/images/room/roomB_kitchen4.jpg';
+const ROOM_B_KITCHEN_5 = '/assets/images/room/roomB_kitchen5.jpg';
 const ROOM_B_BATH_1 = "/assets/images/room/roomB_bath1.jpg";
 const ROOM_B_BATH_2 = "/assets/images/room/roomB_bath2.jpg";
 const ROOM_B_BATH_3 = "/assets/images/room/roomB_bath3.jpg";
@@ -128,7 +138,7 @@ function Room({ fadeState }: RoomProps) {
       setTimeout(()=>{
         switch (selectedRoom+selectedSpace) {
           case "A0":
-            setImgList([OUTSIDE_1, OUTSIDE_2,
+            setImgList([OUTSIDE_1, OUTSIDE_2, OUTSIDE_3, OUTSIDE_4, OUTSIDE_5, OUTSIDE_6,
               ROOM_A_LIVING_1, ROOM_A_LIVING_2, ROOM_A_LIVING_3, ROOM_A_LIVING_4,
               ROOM_A_BED_1, ROOM_A_BED_2, ROOM_A_BED_3, ROOM_A_BED_4,
               ROOM_A_KITCHEN_1, ROOM_A_KITCHEN_2,
@@ -151,21 +161,21 @@ function Room({ fadeState }: RoomProps) {
             setImgList([ROOM_A_YARD_1])
             break;
           case "B0":
-            setImgList([OUTSIDE_1, OUTSIDE_2,
-              ROOM_B_LIVING_1, ROOM_B_LIVING_2, ROOM_B_LIVING_3, ROOM_B_LIVING_4,
-              ROOM_B_BED_1, ROOM_B_BED_2,
-              ROOM_B_KITCHEN_1, ROOM_B_KITCHEN_2,
+            setImgList([OUTSIDE_1, OUTSIDE_2, OUTSIDE_3, OUTSIDE_4, OUTSIDE_5, OUTSIDE_6,
+              ROOM_B_LIVING_1, ROOM_B_LIVING_2, ROOM_B_LIVING_3, ROOM_B_LIVING_4,ROOM_B_LIVING_5, ROOM_B_LIVING_6,
+              ROOM_B_BED_1, ROOM_B_BED_2, ROOM_B_BED_3,
+              ROOM_B_KITCHEN_1, ROOM_B_KITCHEN_2, ROOM_B_KITCHEN_3, ROOM_B_KITCHEN_4, ROOM_B_KITCHEN_5,
               ROOM_B_BATH_1, ROOM_B_BATH_2, ROOM_B_BATH_3,
               ROOM_B_YARD_1, ROOM_B_YARD_2, ROOM_B_YARD_3, ROOM_B_YARD_4])
             break;
           case "B1":
-            setImgList([ROOM_B_LIVING_1, ROOM_B_LIVING_2, ROOM_B_LIVING_3, ROOM_B_LIVING_4])
+            setImgList([ROOM_B_LIVING_1, ROOM_B_LIVING_2, ROOM_B_LIVING_3, ROOM_B_LIVING_4, ROOM_B_LIVING_5, ROOM_B_LIVING_6])
             break;
           case "B2":
-            setImgList([ROOM_B_BED_1, ROOM_B_BED_2])
+            setImgList([ROOM_B_BED_1, ROOM_B_BED_2, ROOM_B_BED_3])
             break;
           case "B3":
-            setImgList([ROOM_B_KITCHEN_1, ROOM_B_KITCHEN_2])
+            setImgList([ROOM_B_KITCHEN_1, ROOM_B_KITCHEN_2, ROOM_B_KITCHEN_3, ROOM_B_KITCHEN_4, ROOM_B_KITCHEN_5])
             break;
           case "B4":
             setImgList([ROOM_B_BATH_1, ROOM_B_BATH_2, ROOM_B_BATH_3])
