@@ -13,6 +13,7 @@ import Agreement from "@components/reservation/Agreement";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import SEO from "src/utils/seo";
+import LinkSelectModal from "@components/common/LinkSelectModal";
 
 interface ReservationProps {
   fadeState: string;
@@ -35,6 +36,7 @@ function Reservation({ fadeState }: ReservationProps) {
   const [periodData, setPeriodData] = useState<PeriodDataType>({} as PeriodDataType);
 
   const [isModalMask, setIsModalMask] = useAtom(modalStatus);
+  const [isModal, setIsModal] = useState<boolean>(false);
   const reservationFormRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation("reservation");
 
@@ -150,6 +152,7 @@ function Reservation({ fadeState }: ReservationProps) {
             selectedRoom={selectedRoom}
             setSelectedRoom={setSelectedRoom}
             translation={t}
+            setIsModal={setIsModal}
           />
           {startDate && endDate && (
             <>
@@ -191,6 +194,9 @@ function Reservation({ fadeState }: ReservationProps) {
             onKeyDown={() => {}}
             aria-label="close modal"
           />
+        )}
+        {isModal && (
+          <LinkSelectModal setIsModal={setIsModal} />
         )}
       </div>
     </>

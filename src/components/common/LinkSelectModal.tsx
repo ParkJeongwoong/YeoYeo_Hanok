@@ -1,7 +1,11 @@
 import { useEffect } from "react";
 import cn from "classnames";
+import Image from "next/image";
+import imageLoader from "src/utils/loader";
 
 function LinkSelectModal({ setIsModal }: LinkSelectModalProps) {
+  const airbnb = "/assets/icons/ico_airbnb.png";
+
   const pushEscape = (e: KeyboardEvent) => {
     if (e.key === "Escape") {
       setIsModal(false);
@@ -31,6 +35,7 @@ function LinkSelectModal({ setIsModal }: LinkSelectModalProps) {
         aria-hidden
       >
         <div className={cn("link-select-modal")}>
+          <Image className={cn("link-select-icon")} loader={imageLoader} src={airbnb} width={35} height={35} alt="에어비앤비 아이콘" />
           <strong>방을 선택해주세요</strong>
           <div className={cn("link-select")}>
             <a type="button" className={cn("link-button")} href="https://airbnb.co.kr/h/yeoyeo1">

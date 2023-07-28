@@ -75,6 +75,7 @@ declare global {
     selectedRoom: "여유" | "여행" | null;
     setSelectedRoom: (selectedRoom: "여유" | "여행" | null) => void;
     translation: TFunction;
+    setIsModal: (isModal: boolean) => void;
   }
 
   interface LinkSelectModalProps {

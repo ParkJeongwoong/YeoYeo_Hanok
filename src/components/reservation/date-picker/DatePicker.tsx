@@ -17,6 +17,7 @@ function DatePicker({
   selectedRoom,
   setSelectedRoom,
   translation,
+  setIsModal
 }: DatePickerProps) {
   const [currentDate, setCurrentDate] = useState(dayjs().set("date", 1));
   const [nextMonth, setNextMonth] = useState(dayjs(currentDate).add(1, "month"));
@@ -42,6 +43,8 @@ function DatePicker({
     }).then((res) => {
       setTwoMonthsData([...res.data.month, ...res.data.nextMonth]);
       setRoomMonthData(res.data);
+    }).catch(()=>{
+      failover();
     });
   }, [currentDate]);
 
@@ -56,6 +59,11 @@ function DatePicker({
       }).then((res) => setPeriodData(res.data));
     }
   }, [startDate, endDate, setPeriodData, selectedRoom]);
+
+  const failover = () => {
+    alert("현재 홈페이지 서버 접속이 원활하지 않습니다.\n예약을 진행하시려면 에어비앤비를 이용해주시길 바랍니다.")
+    setIsModal(true);
+  }
 
   const resetSelect = () => {
     setStartDate(null);
