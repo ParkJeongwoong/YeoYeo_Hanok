@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import cn from "classnames";
 import dayjs, { Dayjs } from "dayjs";
 import axios from "axios";
@@ -26,6 +26,11 @@ function DatePicker({
 
   const isDesktop = useMediaQuery("desktop");
 
+  const failover = useCallback(() => {
+    alert("현재 홈페이지 서버 접속이 원활하지 않습니다.\n예약을 진행하시려면 에어비앤비를 이용해주시길 바랍니다.")
+    setIsModal(true);
+  },[setIsModal])
+
   const handlePrevMonth = () => {
     if (currentDate < dayjs().set("date", 1)) return;
     setCurrentDate((prevState) => dayjs(prevState).add(-1, "month").set("date", 1));
@@ -46,7 +51,7 @@ function DatePicker({
     }).catch(()=>{
       failover();
     });
-  }, [currentDate]);
+  }, [currentDate, failover]);
 
   // TODO: start/end date 모두 설정 시 데이터 계산해서 넘겨주기
   useEffect(() => {
@@ -59,11 +64,6 @@ function DatePicker({
       }).then((res) => setPeriodData(res.data));
     }
   }, [startDate, endDate, setPeriodData, selectedRoom]);
-
-  const failover = () => {
-    alert("현재 홈페이지 서버 접속이 원활하지 않습니다.\n예약을 진행하시려면 에어비앤비를 이용해주시길 바랍니다.")
-    setIsModal(true);
-  }
 
   const resetSelect = () => {
     setStartDate(null);
