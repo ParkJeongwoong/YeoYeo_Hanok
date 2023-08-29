@@ -163,6 +163,23 @@ function Agreement({ setAgreementCompleted }: AgreementProps) {
                     </div>
                   </li>
                   <li>
+                    {t("agreement.petRegulations")}
+                    <div className={cn("agree-checkbox")}>
+                      <div className="check">
+                        <input
+                          type="checkbox"
+                          id="check4"
+                          checked={necessaryCheckBox.cooking}
+                          onChange={({ target: { checked } }) => {
+                            setNecessaryCheckBox((state) => ({ ...state, cooking: checked }));
+                          }}
+                        />
+                        {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
+                        <label htmlFor="check4">{t("agreement.consent(required)")}</label>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
                     {t("agreement.refundPolicy")}
                     <div className={cn("agree-checkbox")}>
                       <div className="check">
