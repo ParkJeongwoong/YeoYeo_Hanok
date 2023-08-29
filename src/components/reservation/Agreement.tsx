@@ -20,6 +20,7 @@ function Agreement({ setAgreementCompleted }: AgreementProps) {
     smoking: false,
     reimbursement: false,
     cooking: false,
+    pet: false,
     refund: false,
     personalInfo: false,
     eventAlarm: false,
@@ -44,8 +45,8 @@ function Agreement({ setAgreementCompleted }: AgreementProps) {
   }
 
   useEffect(() => {
-    const { numberOfPeople, smoking, reimbursement, cooking, refund, personalInfo } = necessaryCheckBox;
-    if (numberOfPeople && smoking && reimbursement && cooking && refund && personalInfo) {
+    const { numberOfPeople, smoking, reimbursement, cooking, pet, refund, personalInfo } = necessaryCheckBox;
+    if (numberOfPeople && smoking && reimbursement && cooking && pet && refund && personalInfo) {
       setAgreementCompleted(true);
     } else {
       setAgreementCompleted(false);
@@ -70,6 +71,7 @@ function Agreement({ setAgreementCompleted }: AgreementProps) {
                     necessaryCheckBox.smoking &&
                     necessaryCheckBox.reimbursement &&
                     necessaryCheckBox.cooking &&
+                    necessaryCheckBox.pet &&
                     necessaryCheckBox.refund &&
                     necessaryCheckBox.allCheck
                   }
@@ -80,6 +82,7 @@ function Agreement({ setAgreementCompleted }: AgreementProps) {
                       smoking: checked,
                       reimbursement: checked,
                       cooking: checked,
+                      pet: checked,
                       refund: checked,
                       allCheck: checked,
                     }));
@@ -168,10 +171,10 @@ function Agreement({ setAgreementCompleted }: AgreementProps) {
                       <div className="check">
                         <input
                           type="checkbox"
-                          id="check4"
-                          checked={necessaryCheckBox.cooking}
+                          id="check5"
+                          checked={necessaryCheckBox.pet}
                           onChange={({ target: { checked } }) => {
-                            setNecessaryCheckBox((state) => ({ ...state, cooking: checked }));
+                            setNecessaryCheckBox((state) => ({ ...state, pet: checked }));
                           }}
                         />
                         {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
@@ -185,7 +188,7 @@ function Agreement({ setAgreementCompleted }: AgreementProps) {
                       <div className="check">
                         <input
                           type="checkbox"
-                          id="check5"
+                          id="check6"
                           checked={necessaryCheckBox.refund}
                           onChange={({ target: { checked } }) => {
                             setNecessaryCheckBox((state) => ({ ...state, refund: checked }));
@@ -210,14 +213,14 @@ function Agreement({ setAgreementCompleted }: AgreementProps) {
               <div className="check">
                 <input
                   type="checkbox"
-                  id="check6"
+                  id="check7"
                   checked={necessaryCheckBox.personalInfo}
                   onChange={({ target: { checked } }) => {
                     setNecessaryCheckBox((state) => ({ ...state, personalInfo: checked }));
                   }}
                 />
                 {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-                <label htmlFor="check6">{t("agreement.consent(required)")}</label>
+                <label htmlFor="check7">{t("agreement.consent(required)")}</label>
               </div>
             </div>
           </div>
@@ -252,14 +255,14 @@ function Agreement({ setAgreementCompleted }: AgreementProps) {
               <div className="check">
                 <input
                   type="checkbox"
-                  id="check7"
+                  id="check8"
                   checked={necessaryCheckBox.eventAlarm}
                   onChange={({ target: { checked } }) => {
                     setNecessaryCheckBox((state) => ({ ...state, eventAlarm: checked }));
                   }}
                 />
                 {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-                <label htmlFor="check7">{t("agreement.consent(optional)")}</label>
+                <label htmlFor="check8">{t("agreement.consent(optional)")}</label>
               </div>
             </div>
           </div>
