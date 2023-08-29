@@ -17,18 +17,18 @@
     "placeholderText": {
       "name": "이름을 입력해주세요.",
       "email": "이메일을 입력해주세요.",
-      "certificationNumber": "인증번호",
+      "verificationNumber": "인증번호",
       "request": "요청사항을 적어주세요. (최대 200자)"
     },
     "errorText": {
       "name": "영문이나 한글로만 작성해주세요.",
       "email": "올바른 이메일 양식으로 작성해주세요.",
       "mobileNumber": "번호가 올바르지 않습니다. 000-0000-0000 형식으로 작성해주세요.",
-      "certificationNumber": "인증번호가 올바르지 않습니다.",
-      "certification": "인증도중 오류가 발생했습니다. 잠시후 다시 시도해주세요."
+      "verificationNumber": "인증번호가 올바르지 않습니다.",
+      "verification": "인증도중 오류가 발생했습니다. 잠시후 다시 시도해주세요."
     },
     "successText": {
-      "certification": "인증이 성공적으로 완료되었습니다."
+      "verification": "인증이 성공적으로 완료되었습니다."
     }
   },
   "sidebar": {

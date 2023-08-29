@@ -178,7 +178,7 @@ function Agreement({ setAgreementCompleted }: AgreementProps) {
                           }}
                         />
                         {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-                        <label htmlFor="check4">{t("agreement.consent(required)")}</label>
+                        <label htmlFor="check5">{t("agreement.consent(required)")}</label>
                       </div>
                     </div>
                   </li>
@@ -195,7 +195,7 @@ function Agreement({ setAgreementCompleted }: AgreementProps) {
                           }}
                         />
                         {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-                        <label htmlFor="check5">{t("agreement.consent(required)")}</label>
+                        <label htmlFor="check6">{t("agreement.consent(required)")}</label>
                       </div>
                     </div>
                   </li>
