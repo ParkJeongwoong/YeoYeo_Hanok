@@ -73,6 +73,7 @@ function Agreement({ setAgreementCompleted }: AgreementProps) {
                     necessaryCheckBox.cooking &&
                     necessaryCheckBox.pet &&
                     necessaryCheckBox.refund &&
+                    necessaryCheckBox.personalInfo &&
                     necessaryCheckBox.allCheck
                   }
                   onChange={({ target: { checked } }) => {
@@ -84,6 +85,7 @@ function Agreement({ setAgreementCompleted }: AgreementProps) {
                       cooking: checked,
                       pet: checked,
                       refund: checked,
+                      personalInfo: checked,
                       allCheck: checked,
                     }));
                   }}
