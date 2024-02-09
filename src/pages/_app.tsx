@@ -32,7 +32,7 @@ function App({ Component, pageProps }: AppProps) {
       "https://www.yeoyeo.co.kr",
     ],
     logo: "https://yeoyeo.kr/logo192.png",
-    telephone: "010-8959-9091",
+    telephone: "010-4695-9094",
     email: "dvlprjw@gmail.com",
     address: {
       "@type": "PostalAddress",
