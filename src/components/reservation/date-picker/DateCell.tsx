@@ -116,6 +116,8 @@ function DateCell({
         isAfterAsSelectedDate && "passed-date",
 
         cellData && (cellData[0].reservationState === 1 || !cellData[0].reservable) && (cellData[1].reservationState === 1 || !cellData[1].reservable) && "soldOut",
+        cellData && (cellData[0].reservationState === 1 || !cellData[0].reservable) && (cellData[1].reservationState === 0 || !cellData[1].reservable) && "oneLeft",
+        cellData && (cellData[0].reservationState === 0 || !cellData[0].reservable) && (cellData[1].reservationState === 1 || !cellData[1].reservable) && "oneLeft",
 
         ((cellData && selectedRoom === "여유" && (cellData[0].reservationState === 1 || !cellData[0].reservable)) ||
           (cellData && selectedRoom === "여행" && (cellData[1].reservationState === 1 || !cellData[1].reservable))) &&
@@ -142,6 +144,7 @@ function DateCell({
       <div className={cn("day")}>{day}</div>
       <span className={cn("tooltip-text-a")}>{t("reservation.checkoutOnly")}</span>
       <span className={cn("tooltip-text-b")}>{t("reservation.soldOut")}</span>
+      <span className={cn("tooltip-text-c")}>{t("reservation.notAvailable")}</span>
       {cellData && (
         <>
           {/* <div>{!data[day - 1] && data[day - 1].rooms[0].price}</div> */}
@@ -155,8 +158,10 @@ function DateCell({
             )}
             {!isPassed && (selectedRoom === "여행" || selectedRoom === null) && (
               <li className={cn("room-item", cellData[1].reservationState === 0 && "available" || "notAvailable")}>
-                <strong className={cn("room-name")}>여행</strong>
-                <span className={cn("price")}>{cellData[1].price / 10000}</span>
+                <div className={cn(cellData[1].reservationState === 0 && "available-date" || "notAvailable-date")}>
+                  <strong className={cn("room-name")}>여행</strong>
+                  <span className={cn("price")}>{cellData[1].price / 10000}</span>
+                </div>
               </li>
             )}
           </ul>

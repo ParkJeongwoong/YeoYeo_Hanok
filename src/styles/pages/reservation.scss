@@ -111,13 +111,14 @@
           td {
             position: relative;
             height: 50px;
-            padding: 12px;
+            padding-top: 12px;
             cursor: pointer;
             transition: background-color 0.2s;
             border: 1px solid #d0d0d0;
             
             @include sm {
-              padding: 5px;
+              padding-top: 5px;
+              padding-bottom: 5px;
             }
 
             &:first-child {
@@ -129,11 +130,12 @@
 
             &:hover,
             &.room-selecting {
-              background-color: #d0d0d0;
+              background-color: rgb(181, 255, 230);
             }
 
             &.selected {
-              background-color: #202020 !important;
+              // background-color: #202020 !important;
+              background-color: aquamarine !important;
               color: #fff;
 
               div {
@@ -154,11 +156,21 @@
             .tooltip-text-b {
               display: none;
             }
+            .tooltip-text-c {
+              display: none;
+            }
+
+            &.oneLeft {
+              background-color: #f0f0f0;
+              &:hover,
+              &.room-selecting {
+                background-color: rgb(181, 255, 230);
+              }
+            }
             
             &.soldOut {
-              position: relative;
-              // background-color: #f96c6c;
-              background-color: #f0f0f0;
+              // background-color: #f0f0f0;
+              background-color: #b9b9b9;
               cursor: no-drop;
               .tooltip-text-b {
                 font-size: 10px;
@@ -196,7 +208,6 @@
             }
 
             &.checkout-only {
-              position: relative;
               // background-color: #f96c6c;
               background-color: #f0f0f0;
               cursor: no-drop;
@@ -237,6 +248,10 @@
                 display: none;
                 visibility: hidden;
               }
+              .tooltip-text-c {
+                display: none;
+                visibility: hidden;
+              }
             }
             &.one-day-selected {
               // background-color: white;
@@ -244,12 +259,11 @@
             }
 
             &.passed-date {
-              background-color: #9e9e9e;
+              background-color: #555555;
               // pointer-events: none;
               cursor: no-drop;
-              // position: relative;
               // z-index: 10;
-              .tooltip-text-b {
+              .tooltip-text-c {
                 font-size: 10px;
                 visibility: hidden;
                 display: none;
@@ -273,11 +287,16 @@
               }
             }
             &.passed-date:hover {
+              background-color: #555555;
               .tooltip-text-a {
                 display: none;
                 visibility: hidden;
               }
               .tooltip-text-b {
+                display: none;
+                visibility: hidden;
+              }
+              .tooltip-text-c {
                 display: flex;
                 visibility: visible;
                 justify-content: center;
@@ -289,7 +308,7 @@
             }
 
             &.no-date {
-              background-color: #f0f0f0;
+              background-color: gainsboro;
               cursor: no-drop;
             }
 
