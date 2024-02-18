@@ -58,6 +58,6 @@
   },
   "reservation": {
     "checkoutOnly": "체크아웃만 가능",
-    "notAvailable": "예약불가"
+    "soldOut": "예약불가"
   }
 }

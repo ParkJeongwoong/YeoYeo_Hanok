@@ -97,6 +97,11 @@
 
       tbody {
         tr {
+          height: 79.45px;
+          @include sm {
+            height: 50px;
+          }
+
           &:first-child td {
             border-top: none;
           }
@@ -150,7 +155,7 @@
               display: none;
             }
             
-            &.notAvailable {
+            &.soldOut {
               position: relative;
               // background-color: #f96c6c;
               background-color: #f0f0f0;
@@ -178,7 +183,7 @@
                 color: #bcbcbc;
               }
             }
-            &.notAvailable:hover {
+            &.soldOut:hover {
               .tooltip-text-b {
                 display: flex;
                 visibility: visible;

@@ -55,13 +55,13 @@ function DateCell({
       // 두 방 모두 예약된 경우 => startDate로 선택불가, 체크아웃만 가능
       if ((cellData[0].reservationState === 1 || !cellData[0].reservable) && cellData[1].reservationState === 0) {
         handleDateClick(day, currentDate);
-        if (selectedRoom !== "여유") {
+        if (selectedRoom !== "여유" && checkoutDate === null) {
           // 체크아웃으로 선택되지않을경우 => B로 선택
           setSelectedRoom("여행");
         }
       } else if (cellData[0].reservationState === 0 && (cellData[1].reservationState === 1 || !cellData[1].reservable)) {
         handleDateClick(day, currentDate);
-        if (selectedRoom !== "여행") {
+        if (selectedRoom !== "여행" && checkoutDate === null) {
           setSelectedRoom("여유");
         }
       } else if (startDate !== null && (cellData[0].reservationState === 1 || !cellData[0].reservable) && (cellData[1].reservationState === 1 || !cellData[1].reservable)) {
@@ -115,7 +115,7 @@ function DateCell({
         isPastAsSelectedDate && "passed-date",
         isAfterAsSelectedDate && "passed-date",
 
-        cellData && (cellData[0].reservationState === 1 || !cellData[0].reservable) && (cellData[1].reservationState === 1 || !cellData[1].reservable) && "notAvailable",
+        cellData && (cellData[0].reservationState === 1 || !cellData[0].reservable) && (cellData[1].reservationState === 1 || !cellData[1].reservable) && "soldOut",
 
         ((cellData && selectedRoom === "여유" && (cellData[0].reservationState === 1 || !cellData[0].reservable)) ||
           (cellData && selectedRoom === "여행" && (cellData[1].reservationState === 1 || !cellData[1].reservable))) &&
@@ -141,20 +141,20 @@ function DateCell({
     >
       <div className={cn("day")}>{day}</div>
       <span className={cn("tooltip-text-a")}>{t("reservation.checkoutOnly")}</span>
-      <span className={cn("tooltip-text-b")}>{t("reservation.notAvailable")}</span>
+      <span className={cn("tooltip-text-b")}>{t("reservation.soldOut")}</span>
       {cellData && (
         <>
           {/* <div>{!data[day - 1] && data[day - 1].rooms[0].price}</div> */}
           <ul className={cn("room-list")}>
             {/* {selectedRoom} */}
             {!isPassed && (selectedRoom === "여유" || selectedRoom === null) && (
-              <li className={cn("room-item", cellData[0].reservationState === 0 && "available")}>
+              <li className={cn("room-item", cellData[0].reservationState === 0 && "available" || "notAvailable")}>
                 <strong className={cn("room-name")}>여유</strong>
                 <span className={cn("price")}>{cellData[0].price / 10000}</span>
               </li>
             )}
-            {cellData[1].reservationState === 0 && !isPassed && (selectedRoom === "여행" || selectedRoom === null) && (
-              <li className={cn("room-item", cellData[1].reservationState === 0 && "available")}>
+            {!isPassed && (selectedRoom === "여행" || selectedRoom === null) && (
+              <li className={cn("room-item", cellData[1].reservationState === 0 && "available" || "notAvailable")}>
                 <strong className={cn("room-name")}>여행</strong>
                 <span className={cn("price")}>{cellData[1].price / 10000}</span>
               </li>

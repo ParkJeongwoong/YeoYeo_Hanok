@@ -58,6 +58,6 @@
   },
   "reservation": {
     "checkoutOnly": "Checkout Only",
-    "notAvailable": "Not Available"
+    "soldOut": "Not Available"
   }
 }
