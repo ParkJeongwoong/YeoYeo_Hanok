@@ -307,6 +307,49 @@
               }
             }
 
+            &.notOpen {
+              background-color: #b9b9b9;
+              cursor: no-drop;
+              .tooltip-text-c {
+                font-size: 10px;
+                visibility: hidden;
+                display: none;
+                box-sizing: border-box;
+                width: calc(100% - 30px);
+                height: calc(100% - 45px);
+                background-color: #808080;
+                color: #fff;
+                text-align: center;
+                padding: 5px 0;
+                border-radius: 6px;
+                white-space: normal;
+                /* Position the tooltip text - see examples below! */
+                position: absolute;
+                top: 32px;
+                left: 15px;
+                z-index: 1;
+              }
+            }
+            &.notOpen:hover {
+              .tooltip-text-a {
+                display: none;
+                visibility: hidden;
+              }
+              .tooltip-text-b {
+                display: none;
+                visibility: hidden;
+              }
+              .tooltip-text-c {
+                display: flex;
+                visibility: visible;
+                justify-content: center;
+                align-items: center;
+                @include sm {
+                  display: none;
+                }
+              }
+            }
+
             &.no-date {
               background-color: gainsboro;
               cursor: no-drop;

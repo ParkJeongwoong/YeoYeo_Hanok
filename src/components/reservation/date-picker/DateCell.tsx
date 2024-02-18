@@ -115,9 +115,10 @@ function DateCell({
         isPastAsSelectedDate && "passed-date",
         isAfterAsSelectedDate && "passed-date",
 
-        cellData && (cellData[0].reservationState === 1 || !cellData[0].reservable) && (cellData[1].reservationState === 1 || !cellData[1].reservable) && "soldOut",
-        cellData && (cellData[0].reservationState === 1 || !cellData[0].reservable) && (cellData[1].reservationState === 0 || !cellData[1].reservable) && "oneLeft",
-        cellData && (cellData[0].reservationState === 0 || !cellData[0].reservable) && (cellData[1].reservationState === 1 || !cellData[1].reservable) && "oneLeft",
+        cellData && !cellData[0].reservable && !cellData[1].reservable && "notOpen",
+        cellData && cellData[0].reservationState === 1 && cellData[1].reservationState === 1 && "soldOut",
+        cellData && cellData[0].reservationState === 1 && cellData[1].reservationState === 0 && "oneLeft",
+        cellData && cellData[0].reservationState === 0 && cellData[1].reservationState === 1 && "oneLeft",
 
         ((cellData && selectedRoom === "여유" && (cellData[0].reservationState === 1 || !cellData[0].reservable)) ||
           (cellData && selectedRoom === "여행" && (cellData[1].reservationState === 1 || !cellData[1].reservable))) &&
