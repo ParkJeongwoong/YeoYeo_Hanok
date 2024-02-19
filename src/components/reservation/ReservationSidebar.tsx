@@ -35,7 +35,7 @@ function ReservationSidebar({
 
   return (
     <div className={cn("reservation-sidebar-wrap")}>
-      <strong style={{ fontSize: 24, fontWeight: 600 }}>{t("yeoyeo-normal")} - {selectedRoom=="여유"?t("floorPlan.roomA.name"):t("floorPlan.roomB.name")}</strong>
+      <strong style={{ fontSize: 24, fontWeight: 600 }}>{t("yeoyeo-normal")} - {selectedRoom==="여유"?t("floorPlan.roomA.name"):t("floorPlan.roomB.name")}</strong>
 
       <InputForm title={translation("sidebar.date")}>
         <div className={cn("reservation-info-box")}>
