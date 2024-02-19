@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import cn from "classnames";
 import dayjs, { Dayjs } from "dayjs";
+import { useTranslation } from "react-i18next";
 import axios from "axios";
 import useMediaQuery from "@hooks/useMediaQuery";
 
@@ -25,6 +26,7 @@ function DatePicker({
   const [twoMonthsData, setTwoMonthsData] = useState<any>();
 
   const isDesktop = useMediaQuery("desktop");
+  const { t } = useTranslation("common");
 
   const failover = useCallback(() => {
     alert("현재 홈페이지 서버 접속이 원활하지 않습니다.\n예약을 진행하시려면 에어비앤비를 이용해주시길 바랍니다.")
@@ -144,10 +146,13 @@ function DatePicker({
         <input
           type="text"
           value={startDate?.format("YYYY-MM-DD") || ""}
-          placeholder="Start Date"
+          placeholder={t("reservation.date.checkIn") || ""}
           onChange={() => null}
         />
-        <input type="text" value={endDate?.format("YYYY-MM-DD") || ""} placeholder="End Date" onChange={() => null} />
+        <input type="text"
+          value={endDate?.format("YYYY-MM-DD") || ""}
+          placeholder={t("reservation.date.checkOut") || ""}
+          onChange={() => null} />
       </div>
     </div>
   );

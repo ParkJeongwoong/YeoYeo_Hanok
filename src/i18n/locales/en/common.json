@@ -65,6 +65,10 @@
       "chooseRoom": "Choose a Room",
       "roomA": "Y.  yu",
       "roomB": "Y.hang"
+    },
+    "date": {
+      "checkIn": "Check-in",
+      "checkOut": "Check-out"
     }
   }
 }

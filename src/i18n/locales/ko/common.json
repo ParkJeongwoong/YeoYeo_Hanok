@@ -65,6 +65,10 @@
       "chooseRoom": "방을 선택해 주세요",
       "roomA": "여유",
       "roomB": "여행"
+    },
+    "date": {
+      "checkIn": "체크인 날짜",
+      "checkOut": "체크아웃 날짜"
     }
   }
 }

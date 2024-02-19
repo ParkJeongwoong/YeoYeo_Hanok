@@ -1,4 +1,5 @@
 import cn from "classnames";
+import i18next from "i18next";
 
 import DateCell from "./DateCell";
 
@@ -17,18 +18,18 @@ function Calendar({
   const weekdays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 
   const monthNames = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
+    ["January","1월"],
+    ["February","2월"],
+    ["March","3월"],
+    ["April","4월"],
+    ["May","5월"],
+    ["June","6월"],
+    ["July","7월"],
+    ["August","8월"],
+    ["September","9월"],
+    ["October","10월"],
+    ["November","11월"],
+    ["December","12월"],
   ];
 
   const getDaysInMonth = (month: number, year: number) => new Date(year, month + 1, 0).getDate();
@@ -39,7 +40,7 @@ function Calendar({
   return (
     <div className={cn("calendar-item")}>
       <span className={cn("month-year")}>
-        {monthNames[currentDate.get("month")]} {currentDate.get("year")}
+        {i18next.language === "en" ? `${monthNames[currentDate.get("month")][0]} ${currentDate.get("year")}` : `${currentDate.get("year")}년 ${monthNames[currentDate.get("month")][1]}`}
       </span>
       <table className={cn("calendar")}>
         <thead>
