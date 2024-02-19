@@ -2,9 +2,11 @@ import { useEffect } from "react";
 import cn from "classnames";
 import Image from "next/image";
 import imageLoader from "src/utils/loader";
+import { useTranslation } from "react-i18next";
 
 function LinkSelectModal({ setIsModal }: LinkSelectModalProps) {
   const airbnb = "/assets/icons/ico_airbnb.png";
+  const { t } = useTranslation("common");
 
   const pushEscape = (e: KeyboardEvent) => {
     if (e.key === "Escape") {
@@ -36,13 +38,13 @@ function LinkSelectModal({ setIsModal }: LinkSelectModalProps) {
       >
         <div className={cn("link-select-modal")}>
           <Image className={cn("link-select-icon")} loader={imageLoader} src={airbnb} width={35} height={35} alt="에어비앤비 아이콘" />
-          <strong>방을 선택해주세요</strong>
+          <strong>{t("reservation.product.chooseRoom")}</strong>
           <div className={cn("link-select")}>
             <a type="button" className={cn("link-button")} href="https://airbnb.co.kr/h/yeoyeo1">
-              여유
+            {t("floorPlan.roomA.name")}
             </a>
             <a type="button" className={cn("link-button")} href="https://airbnb.co.kr/h/yeoyeo2">
-              여행
+            {t("floorPlan.roomB.name")}
             </a>
           </div>
         </div>

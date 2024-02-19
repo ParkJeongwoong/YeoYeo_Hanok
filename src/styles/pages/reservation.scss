@@ -117,6 +117,7 @@
             border: 1px solid #d0d0d0;
             
             @include sm {
+              font-size: 13px;
               padding-top: 5px;
               padding-bottom: 5px;
             }

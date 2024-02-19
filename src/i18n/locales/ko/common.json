@@ -34,6 +34,7 @@
     "serviceDescription": "온전한 휴식이 필요한 그대에게 주는 선물.. 한옥스테이 여여"
   },
   "yeoyeo": "「한옥스테이 여여」",
+  "yeoyeo-normal": "한옥스테이 여여",
   "registration-number": "사업자등록번호 689-31-01484",
   "ecommerce-registration": "통신판매업신고번호 제 2023-경북경주-0244호",
   "owner": "대표자 김명숙 | 관리자 박정웅",
@@ -59,6 +60,11 @@
   "reservation": {
     "checkoutOnly": "체크아웃만 가능",
     "soldOut": "예약완료",
-    "notAvailable": "예약불가"
+    "notAvailable": "예약불가",
+    "product": {
+      "chooseRoom": "방을 선택해 주세요",
+      "roomA": "여유",
+      "roomB": "여행"
+    }
   }
 }

@@ -153,14 +153,14 @@ function DateCell({
             {/* {selectedRoom} */}
             {!isPassed && (selectedRoom === "여유" || selectedRoom === null) && (
               <li className={cn("room-item", cellData[0].reservationState === 0 && "available" || "notAvailable")}>
-                <strong className={cn("room-name")}>여유</strong>
+                <strong className={cn("room-name")}>{t("reservation.product.roomA")}</strong>
                 <span className={cn("price")}>{cellData[0].price / 10000}</span>
               </li>
             )}
             {!isPassed && (selectedRoom === "여행" || selectedRoom === null) && (
               <li className={cn("room-item", cellData[1].reservationState === 0 && "available" || "notAvailable")}>
                 <div className={cn(cellData[1].reservationState === 0 && "available-date" || "notAvailable-date")}>
-                  <strong className={cn("room-name")}>여행</strong>
+                  <strong className={cn("room-name")}>{t("reservation.product.roomB")}</strong>
                   <span className={cn("price")}>{cellData[1].price / 10000}</span>
                 </div>
               </li>

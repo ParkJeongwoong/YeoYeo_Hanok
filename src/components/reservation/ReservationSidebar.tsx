@@ -1,6 +1,7 @@
 import InputForm from "@components/common/InputForm";
 import cn from "classnames";
 import i18next, { TFunction } from "i18next";
+import { useTranslation } from "react-i18next";
 import dayjs, { Dayjs } from "dayjs";
 import "dayjs/locale/ko";
 import ReservationInfo from "./ReservationInfo";
@@ -24,12 +25,17 @@ function ReservationSidebar({
   translation,
 }: ReservationSidebarProps) {
   dayjs.locale("ko");
-  const tmpStartDate = dayjs(startDate).format(`YYYY년 MM월 DD일(ddd)`);
-  const tmpEndDate = dayjs(endDate).format(`YYYY년 MM월 DD일(ddd)`);
+  const tmpStartDate = i18next.language === "en"
+    ? dayjs(startDate).locale("en").format(`DD MMM YYYY (ddd)`)
+    : dayjs(startDate).locale("ko").format(`YYYY년 MM월 DD일 (ddd)`);
+  const tmpEndDate = i18next.language === "en"
+    ? dayjs(endDate).locale("en").format(`DD MMM YYYY (ddd)`)
+    : dayjs(endDate).locale("ko").format(`YYYY년 MM월 DD일 (ddd)`);
+  const { t } = useTranslation("common");
 
   return (
     <div className={cn("reservation-sidebar-wrap")}>
-      <strong style={{ fontSize: 24, fontWeight: 600 }}>한옥스테이 여여 - 「{selectedRoom}」</strong>
+      <strong style={{ fontSize: 24, fontWeight: 600 }}>{t("yeoyeo-normal")} - {selectedRoom=="여유"?t("floorPlan.roomA.name"):t("floorPlan.roomB.name")}</strong>
 
       <InputForm title={translation("sidebar.date")}>
         <div className={cn("reservation-info-box")}>

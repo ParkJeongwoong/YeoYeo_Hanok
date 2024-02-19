@@ -34,6 +34,7 @@
     "serviceDescription": "Gift to those who need sound rest.. Traditional Korean stay YeoYeo"
   },
   "yeoyeo": "「Hanok stay Yeoyeo」",
+  "yeoyeo-normal": "Hanok stay Yeoyeo",
   "registration-number": "Business registration number 689-31-01484",
   "ecommerce-registration": "Korean ecommerce registration number 제 2023-경북경주-0244호",
   "owner": "Owner Kim Myoungsug | Manager Park Jeongwoong",
@@ -59,6 +60,11 @@
   "reservation": {
     "checkoutOnly": "Checkout Only",
     "soldOut": "Sold Out",
-    "notAvailable": "Not Available"
+    "notAvailable": "Not Available",
+    "product": {
+      "chooseRoom": "Choose a Room",
+      "roomA": "Y.  yu",
+      "roomB": "Y.hang"
+    }
   }
 }

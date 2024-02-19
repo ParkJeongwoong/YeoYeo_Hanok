@@ -1,10 +1,12 @@
 import { useEffect } from "react";
 import cn from "classnames";
 import { useSetAtom } from "jotai";
+import { useTranslation } from "react-i18next";
 import modalStatus from "src/state/modalStatus";
 
 function RoomSelectModal({ setSelectedRoom, setIsModal, handleCellClick }: RoomSelectModalProps) {
   const setModal = useSetAtom(modalStatus);
+  const { t } = useTranslation("common");
 
   const pushEscape = (e: KeyboardEvent) => {
     if (e.key === "Escape") {
@@ -28,7 +30,7 @@ function RoomSelectModal({ setSelectedRoom, setIsModal, handleCellClick }: RoomS
       aria-hidden
     >
       <div className={cn("room-select-modal")}>
-        <strong>방을 선택해주세요</strong>
+        <strong>{t("reservation.product.chooseRoom")}</strong>
         <div className={cn("room-select")}>
           <button
             type="button"
@@ -40,7 +42,7 @@ function RoomSelectModal({ setSelectedRoom, setIsModal, handleCellClick }: RoomS
               handleCellClick();
             }}
           >
-            여유
+            {t("floorPlan.roomA.name")}
           </button>
           <button
             type="button"
@@ -52,7 +54,7 @@ function RoomSelectModal({ setSelectedRoom, setIsModal, handleCellClick }: RoomS
               handleCellClick();
             }}
           >
-            여행
+          {t("floorPlan.roomB.name")}
           </button>
         </div>
       </div>
