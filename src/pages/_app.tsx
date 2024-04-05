@@ -60,6 +60,8 @@ function App({ Component, pageProps }: AppProps) {
         <meta property="og:description" content="그와 같이 아름다운, 여여(如麗)" />
         <meta property="og:image" content="https://yeoyeo.kr/logo192.png" />
         <meta property="og:url" content="https://yeoyeo.kr" />
+        <meta name="naver-site-verification" content="d932cb4fe0d3d9db6dcc599c97f8e580eb769338" />
+        <meta name="naver-site-verification" content="e99d8fbe7868187b90e8afefe7a4595f55da7b31" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
