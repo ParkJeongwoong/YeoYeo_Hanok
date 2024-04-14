@@ -31,7 +31,7 @@ function Footer() {
       <span>{t("ecommerce-registration")}</span>
       <span>{t("address")}</span>
       <span>{t("owner")}</span>
-      <span>010-4695-9094</span>
+      <span>{t("contact")}010-4695-9094</span>
       <span>pinokio775@daum.net | dvlprjw@gmail.com</span>
       {isModal && (
         <LinkSelectModal setIsModal={setIsModal} />
