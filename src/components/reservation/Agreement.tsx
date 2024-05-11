@@ -9,8 +9,8 @@ interface AgreementProps {
 }
 
 function Agreement({ setAgreementCompleted }: AgreementProps) {
-  const ChevronDown = "/assets/icons/ico_chevrondown2.svg";
-  
+  const ChevronDown = "/assets/icons/ico_down_chevron.svg";
+
   const contentRef = useRef<HTMLDivElement>(null);
   const contentRef2 = useRef<HTMLDivElement>(null);
 
@@ -231,7 +231,7 @@ function Agreement({ setAgreementCompleted }: AgreementProps) {
           <div className={cn("btn-wrap")}>
             <button type="button" aria-label="menu close" onClick={() => handleAgreementOpen(contentRef)}>
               <span>{t("agreement.seeDetails")}</span>
-              <Image loader={imageLoader} src={ChevronDown} width={13.33} height={13.33} alt="약관 열기" />
+              <Image loader={imageLoader} src={ChevronDown} width={12} height={12} alt="약관 열기" />
             </button>
           </div>
 
@@ -273,7 +273,7 @@ function Agreement({ setAgreementCompleted }: AgreementProps) {
           <div className={cn("btn-wrap")}>
             <button type="button" aria-label="menu close" onClick={() => handleAgreementOpen(contentRef2)}>
               <span>{t("agreement.seeDetails")}</span>
-              <Image loader={imageLoader} src={ChevronDown} width={13.33} height={13.33} alt="약관 열기" />
+              <Image loader={imageLoader} src={ChevronDown} width={12} height={12} alt="약관 열기" />
             </button>
           </div>
           <div className={cn("agreement-content-wrap border-none")} ref={contentRef2}>

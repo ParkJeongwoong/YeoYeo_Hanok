@@ -59,11 +59,11 @@ function Reservation({ fadeState }: ReservationProps) {
         merchant_uid: response.merchant_uid,
       },
     })
-    .then(() => {
-      alert("예약이 완료되었습니다.")
-      router.push(`/reservation/success/${response.merchant_uid}`);
-    })
-    .catch(() => console.log("서버 전송 결과에 문제가 있습니다."));
+      .then(() => {
+        alert("예약이 완료되었습니다.");
+        router.push(`/reservation/success/${response.merchant_uid}`);
+      })
+      .catch(() => console.log("서버 전송 결과에 문제가 있습니다."));
   }
 
   function onClickPayment(merchantUid: number) {
@@ -90,7 +90,7 @@ function Reservation({ fadeState }: ReservationProps) {
         bypass: {
           tosspayments: {
             useInternationalCardOnly: i18next.language === "en", // 영어 결제창 활성화
-          }
+          },
         },
       };
 
@@ -133,11 +133,7 @@ function Reservation({ fadeState }: ReservationProps) {
 
   return (
     <>
-      <SEO
-        title="예약하기"
-        description="한옥스테이 여여의 실시간 예약 페이지입니다."
-        siteTitle="한옥스테이 여여"
-      />
+      <SEO title="예약하기" description="한옥스테이 여여의 실시간 예약 페이지입니다." siteTitle="한옥스테이 여여" />
       <div className={cn(`reservation-wrap ${fadeState}`)}>
         <div className={cn("reservation-inner")}>
           <h2 className={cn("title")}>Reservation</h2>
@@ -195,9 +191,7 @@ function Reservation({ fadeState }: ReservationProps) {
             aria-label="close modal"
           />
         )}
-        {isModal && (
-          <LinkSelectModal setIsModal={setIsModal} />
-        )}
+        {isModal && <LinkSelectModal setIsModal={setIsModal} />}
       </div>
     </>
   );

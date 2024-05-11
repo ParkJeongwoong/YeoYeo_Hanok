@@ -49,14 +49,16 @@ function SNB({ open, setOpen, setFadeState }: SNBProps): ReactElement {
 
   const fadeMove = () => {
     setFadeState("fade-out");
-    setOpen(false)
-    setTimeout(()=>{
+    setOpen(false);
+    setTimeout(() => {
       setFadeState("fade-in");
-    }, 700)
-  }
+    }, 700);
+  };
 
   return (
     <div className={cn("snb-wrap", open && "open")}>
+      {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+      <div className={cn("dim")} onClick={() => setOpen(false)} />
       <div className={cn("snb-inner")}>
         <div className={cn("btn-wrap")}>
           <button type="button" aria-label="menu close" onClick={() => setOpen(false)}>
