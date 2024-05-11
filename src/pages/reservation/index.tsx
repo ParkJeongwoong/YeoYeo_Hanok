@@ -150,7 +150,7 @@ function Reservation({ fadeState }: ReservationProps) {
             translation={t}
             setIsModal={setIsModal}
           />
-          {!startDate && !endDate && (
+          {startDate && endDate && (
             <>
               <div ref={reservationFormRef} className={cn("reservation-form-wrap")}>
                 <CustomerForm
