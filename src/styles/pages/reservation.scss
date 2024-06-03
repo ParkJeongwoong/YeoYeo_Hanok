@@ -115,7 +115,7 @@
             cursor: pointer;
             transition: background-color 0.2s;
             border: 1px solid #d0d0d0;
-            
+
             @include sm {
               font-size: 13px;
               padding-top: 5px;
@@ -168,7 +168,7 @@
             &.between-day {
               background-color: antiquewhite;
             }
-            
+
             &.soldOut {
               background-color: #b9b9b9;
               cursor: no-drop;
@@ -426,12 +426,12 @@
         -webkit-text-fill-color: rgb(214, 214, 214);
         opacity: 1;
         width: 133px;
-        
+
         @include sm {
           width: 100%;
         }
       }
-        
+
       @include sm {
         width: 100%;
       }
@@ -907,8 +907,13 @@
       width: 100%;
     }
     .btn-wrap {
-      margin-left: 5px;
-      margin-top: 5px;
+      padding: 5px;
+
+      > button {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
     }
     .agreement-title {
       display: flex;
@@ -1133,7 +1138,6 @@
       border-radius: 4px;
       transition: all 0.3s;
       margin: 0 10px;
-
 
       &:hover {
         background-color: #918f8f;

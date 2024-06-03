@@ -50,12 +50,17 @@
   position: fixed;
   left: 0;
   top: 0;
-  width: 100%;
   height: 100%;
   z-index: -1;
-  background: transparent;
-  transition: z-index 0.2s step-end, background 0.2s ease-in-out;
-  will-change: z-index, background;
+
+  .dim {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    transition: background 0.2s ease-in-out;
+    will-change: background;
+  }
 
   .snb-inner {
     position: fixed;
@@ -107,6 +112,10 @@
     background: rgba(0, 0, 0, 0.4);
     transition: z-index 0.2s step-start, background 0.2s ease-in-out;
     will-change: z-index, background;
+
+    .dim {
+      background: rgba(0, 0, 0, 0.4);
+    }
 
     .snb-inner {
       transform: translateX(0);
