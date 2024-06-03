@@ -41,6 +41,7 @@ const ROOM_A_BATH_1 = "/assets/images/room/roomA_bath1.jpg";
 const ROOM_A_BATH_2 = "/assets/images/room/roomA_bath2.jpg";
 const ROOM_A_BATH_3 = "/assets/images/room/roomA_bath3.jpg";
 const ROOM_A_YARD_1 = '/assets/images/room/roomA_yard1.jpg'
+const ROOM_A_YARD_2 = '/assets/images/room/roomA_yard2.jpg'
 
 const ROOM_B_LIVING_1 = "/assets/images/room/roomB_living1.jpg";
 const ROOM_B_LIVING_2 = "/assets/images/room/roomB_living2.jpg";
@@ -55,14 +56,11 @@ const ROOM_B_KITCHEN_1 = '/assets/images/room/roomB_kitchen1.jpg';
 const ROOM_B_KITCHEN_2 = '/assets/images/room/roomB_kitchen2.jpg';
 const ROOM_B_KITCHEN_3 = '/assets/images/room/roomB_kitchen3.jpg';
 const ROOM_B_KITCHEN_4 = '/assets/images/room/roomB_kitchen4.jpg';
-const ROOM_B_KITCHEN_5 = '/assets/images/room/roomB_kitchen5.jpg';
 const ROOM_B_BATH_1 = "/assets/images/room/roomB_bath1.jpg";
 const ROOM_B_BATH_2 = "/assets/images/room/roomB_bath2.jpg";
 const ROOM_B_BATH_3 = "/assets/images/room/roomB_bath3.jpg";
 const ROOM_B_YARD_1 = '/assets/images/room/roomB_yard1.jpg';
 const ROOM_B_YARD_2 = '/assets/images/room/roomB_yard2.jpg';
-const ROOM_B_YARD_3 = '/assets/images/room/roomB_yard3.jpg';
-const ROOM_B_YARD_4 = '/assets/images/room/roomB_yard4.jpg';
 
 // import { debounce } from "lodash";
 
@@ -143,7 +141,7 @@ function Room({ fadeState }: RoomProps) {
               ROOM_A_BED_1, ROOM_A_BED_2, ROOM_A_BED_3, ROOM_A_BED_4,
               ROOM_A_KITCHEN_1, ROOM_A_KITCHEN_2,
               ROOM_A_BATH_1, ROOM_A_BATH_2, ROOM_A_BATH_3,
-              ROOM_A_YARD_1])
+              ROOM_A_YARD_1, ROOM_A_YARD_2])
             break;
           case "A1":
             setImgList([ROOM_A_LIVING_1, ROOM_A_LIVING_2, ROOM_A_LIVING_3, ROOM_A_LIVING_4])
@@ -158,15 +156,15 @@ function Room({ fadeState }: RoomProps) {
             setImgList([ROOM_A_BATH_1, ROOM_A_BATH_2, ROOM_A_BATH_3])
             break;
           case "A5":
-            setImgList([ROOM_A_YARD_1])
+            setImgList([ROOM_A_YARD_1, ROOM_A_YARD_2])
             break;
           case "B0":
             setImgList([OUTSIDE_1, OUTSIDE_2, OUTSIDE_3, OUTSIDE_4, OUTSIDE_5, OUTSIDE_6,
               ROOM_B_LIVING_1, ROOM_B_LIVING_2, ROOM_B_LIVING_3, ROOM_B_LIVING_4,ROOM_B_LIVING_5, ROOM_B_LIVING_6,
               ROOM_B_BED_1, ROOM_B_BED_2, ROOM_B_BED_3,
-              ROOM_B_KITCHEN_1, ROOM_B_KITCHEN_2, ROOM_B_KITCHEN_3, ROOM_B_KITCHEN_4, ROOM_B_KITCHEN_5,
+              ROOM_B_KITCHEN_1, ROOM_B_KITCHEN_2, ROOM_B_KITCHEN_3, ROOM_B_KITCHEN_4,
               ROOM_B_BATH_1, ROOM_B_BATH_2, ROOM_B_BATH_3,
-              ROOM_B_YARD_1, ROOM_B_YARD_2, ROOM_B_YARD_3, ROOM_B_YARD_4])
+              ROOM_B_YARD_1, ROOM_B_YARD_2])
             break;
           case "B1":
             setImgList([ROOM_B_LIVING_1, ROOM_B_LIVING_2, ROOM_B_LIVING_3, ROOM_B_LIVING_4, ROOM_B_LIVING_5, ROOM_B_LIVING_6])
@@ -175,13 +173,13 @@ function Room({ fadeState }: RoomProps) {
             setImgList([ROOM_B_BED_1, ROOM_B_BED_2, ROOM_B_BED_3])
             break;
           case "B3":
-            setImgList([ROOM_B_KITCHEN_1, ROOM_B_KITCHEN_2, ROOM_B_KITCHEN_3, ROOM_B_KITCHEN_4, ROOM_B_KITCHEN_5])
+            setImgList([ROOM_B_KITCHEN_1, ROOM_B_KITCHEN_2, ROOM_B_KITCHEN_3, ROOM_B_KITCHEN_4])
             break;
           case "B4":
             setImgList([ROOM_B_BATH_1, ROOM_B_BATH_2, ROOM_B_BATH_3])
             break;
           case "B5":
-            setImgList([ROOM_B_YARD_1, ROOM_B_YARD_2, ROOM_B_YARD_3, ROOM_B_YARD_4])
+            setImgList([ROOM_B_YARD_1, ROOM_B_YARD_2])
             break;
           default:
             console.log("올바르지 않은 접근입니다.")
