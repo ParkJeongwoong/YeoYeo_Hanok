@@ -12,12 +12,10 @@
   .expandable-btn {
     width: 60px;
     height: 60px;
-    padding: 10px 20px;
     border: none;
     border-radius: 30px; /* Makes the button edges rounded */
     background-color: #c5c5c5;
     color: white;
-    font-size: 30px;
     cursor: pointer;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s;
@@ -33,24 +31,30 @@
   }
   
   .btn-right {
-    top: 5px;
-    right: 10px;
+    right: 15px;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    width: 35px;
+    height: 35px;
   }
   
   .btn-left {
-    top: 5px;
-    left: 10px;
+    left: 15px;
+    top: 50%;
+    transform: translate3d(0, -50%, 0);
+    width: 35px;
+    height: 35px;
   }
   
   .click-icon {
-      position: absolute;
-      left: 10px;
-      margin: auto;
-      top: 5px;
-      display: inline-block;
-      animation: click-move 1s infinite;
-      font-size: 30px;
-      transition: opacity 0.3s ease;
+    position: relative;
+    top: 10px;
+    width: 35px;
+    height: 35px;
+    margin: auto;
+    display: inline-block;
+    animation: click-move 1s infinite;
+    transition: opacity 0.3s ease;
   }
   
   .func-btn{
@@ -59,7 +63,6 @@
     white-space: nowrap;
     transition: opacity 0.3s ease;
     position: absolute;
-    font-size: 30px;
     text-decoration-line: none;
   }
 
