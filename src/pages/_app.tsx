@@ -6,12 +6,12 @@ import axios from "axios";
 import ScrollToTop from "@components/common/ScrollRestoration";
 import Header from "@components/layout/Header";
 import Footer from "@components/layout/Footer";
+import MasterBtn from "@components/v2/master_btn";
 import "../i18n";
 import { useState } from "react";
 import Script from "next/script";
 import { MediaQueryProvider } from "../hooks/useMediaQuery";
 import * as gtag from '../lib/gtag';
-import MasterBtn from "@components/v2/master_btn";
 
 axios.defaults.baseURL = "https://api.yeoyeo.co.kr";
 

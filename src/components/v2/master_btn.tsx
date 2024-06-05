@@ -1,14 +1,13 @@
-import React, { useState } from 'react';
+import { ReactElement, useState } from 'react';
 import Link from 'next/link';
 
 interface MasterBtnProps {
-  fadeState: String;
-  setFadeState: Function;
+  setFadeState: (fadeState: string) => void;
 }
 
-const MasterBtn = ({ setFadeState}: MasterBtnProps) => {
+function MasterBtn({ setFadeState }: MasterBtnProps): ReactElement {
 
-  const [expand, setExpand] = useState("not-expand");
+  const [expand, setExpand] = useState<string>("not-expand");
   const [timerId, setTimerId] = useState<number | null>(null);
 
   const moveToInfo = () => {
@@ -49,10 +48,10 @@ const MasterBtn = ({ setFadeState}: MasterBtnProps) => {
   return (
     <div className="master-btn-container">
       {/* Your button content goes here */}
-      <button className={`expandable-btn ${expand}`}>
-            <span className="click-icon" onClick={expandSeconds}>🛎️</span>
-            <Link className="func-btn btn-right" href={"/reservation"} onClick={moveToReservation}>📅</Link>
-            <Link className="func-btn btn-left" href={"/room"} onClick={moveToInfo}>ℹ️</Link>
+      <button type="button" className={`expandable-btn ${expand}`}>
+        <button type="button" className="click-icon" onClick={expandSeconds}>🛎️</button>
+        <Link className="func-btn btn-right" href="/reservation" onClick={moveToReservation}>📅</Link>
+        <Link className="func-btn btn-left" href="/room" onClick={moveToInfo}>ℹ️</Link>
       </button>
     </div>
   );
