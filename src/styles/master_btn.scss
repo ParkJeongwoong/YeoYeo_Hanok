@@ -1,0 +1,96 @@
+.master-btn-container {
+  all: unset;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translate(-50%);
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  .expandable-btn {
+    width: 60px;
+    height: 60px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 30px; /* Makes the button edges rounded */
+    background-color: #c5c5c5;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+    transition: width 0.3s ease, border-radius 0.3s ease, padding 0.3s ease;
+  
+    /* Remove any default appearance that might add unwanted styles */
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  
+    /* Remove any additional unwanted styling */
+    background-clip: padding-box;
+  }
+  
+  .btn-right {
+    top: 5px;
+    right: 10px;
+  }
+  
+  .btn-left {
+    top: 5px;
+    left: 10px;
+  }
+  
+  .click-icon {
+      position: absolute;
+      left: 10px;
+      margin: auto;
+      top: 5px;
+      display: inline-block;
+      animation: click-move 1s infinite;
+      font-size: 30px;
+      transition: opacity 0.3s ease;
+  }
+  
+  .func-btn{
+    opacity: 0;
+    display: none;
+    white-space: nowrap;
+    transition: opacity 0.3s ease;
+    position: absolute;
+    font-size: 30px;
+    text-decoration-line: none;
+  }
+
+  .expand {
+    background-color: #a0a0a0;
+    width: 120px;
+    border-radius: 25px;
+
+    .click-icon {
+      opacity: 0;
+      display: none;
+    }
+  
+    .func-btn {
+        opacity: 1;
+        transition-delay: 0.2s; /* Delay to match the width expansion */
+        display: inline-block;
+    }
+  }
+  
+  @keyframes click-move {
+      0%, 100% {
+          transform: translateY(0);
+      }
+      50% {
+          transform: translateY(-3px);
+      }
+  }
+  
+  
+  @include sm {
+    display: flex;
+  }
+}

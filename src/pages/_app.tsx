@@ -11,6 +11,7 @@ import { useState } from "react";
 import Script from "next/script";
 import { MediaQueryProvider } from "../hooks/useMediaQuery";
 import * as gtag from '../lib/gtag';
+import MasterBtn from "@components/v2/master_btn";
 
 axios.defaults.baseURL = "https://api.yeoyeo.co.kr";
 
@@ -96,6 +97,7 @@ function App({ Component, pageProps }: AppProps) {
           <Header setFadeState={setFadeState} />
           {/* eslint-disable react/jsx-props-no-spreading */}
           <Component {...pageProps} fadeState={fadeState} setFadeState={setFadeState} />
+          <MasterBtn {...pageProps} fadeState={fadeState} setFadeState={setFadeState} />
           <Footer />
           <ScrollToTop />
         </MediaQueryProvider>
