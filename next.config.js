@@ -1,5 +1,6 @@
-const withImages = require("next-images");
-const nextConfig = {
+var withImages = require("next-images");
+
+var nextConfig = {
   reactStrictMode: true,
   distDir: "build",
   env: {

@@ -62,7 +62,7 @@ function SNB({ open, setOpen, setFadeState }: SNBProps): ReactElement {
       <div className={cn("snb-inner")}>
         <div className={cn("btn-wrap")}>
           <button type="button" aria-label="menu close" onClick={() => setOpen(false)}>
-            <Image loader={imageLoader} src={IcoCross} width={40} height={40} alt="햄버거 아이콘" />
+            <Image loader={imageLoader} src={IcoCross} unoptimized width={40} height={40} alt="햄버거 아이콘" />
           </button>
         </div>
         <ul className={cn("link-list")}>

@@ -17,13 +17,13 @@ function Footer() {
     <div className={cn("footer-wrap")}>
       <div className={cn("footer-wrap-link")}>
         <a type="button" href="https://www.instagram.com/yeoyeo9091/">
-          <Image loader={imageLoader} src={instagram} width={25} height={25} alt="인스타그램 바로가기" />
+          <Image loader={imageLoader} src={instagram} unoptimized width={25} height={25} alt="인스타그램 바로가기" />
         </a>
         <button type="button" onClick={()=>{setIsModal(true)}}>
-          <Image loader={imageLoader} src={airbnb} width={25} height={25} alt="에어비앤비 바로가기" />
+          <Image loader={imageLoader} src={airbnb} unoptimized width={25} height={25} alt="에어비앤비 바로가기" />
         </button>
         <a type="button" href="https://naver.me/GTS3ZojS">
-          <Image loader={imageLoader} src={naver} width={25} height={25} alt="네이버 바로가기" />
+          <Image loader={imageLoader} src={naver} unoptimized width={25} height={25} alt="네이버 바로가기" />
         </a>
       </div>
       <h1>{t("yeoyeo")}</h1>

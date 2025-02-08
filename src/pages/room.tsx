@@ -209,7 +209,15 @@ function Room({ fadeState }: RoomProps) {
           // onTouchStart={(e) => handleTouchStart(e)}
         >
           <h2 className={cn("room-main-title")}>{t("floorPlan.name")}</h2>
-          <Image loader={imageLoader} src={RoomBanner} fill alt="yeoyeo-outside" />
+          <Image 
+            loader={imageLoader} 
+            src={RoomBanner} 
+            fill 
+            sizes="100vw"
+            unoptimized
+            priority
+            alt="yeoyeo-outside" 
+          />
         </div>
 
         <section className={cn("room-inner")}>
@@ -219,13 +227,27 @@ function Room({ fadeState }: RoomProps) {
               role="presentation" 
               onClick={() => selectRoom("A")}>
               <span>{t("floorPlan.roomA.name")}</span>
-              <Image loader={imageLoader} src={RoomAIntro} fill alt="roomA-intro" />
+              <Image 
+                loader={imageLoader} 
+                src={RoomAIntro} 
+                fill 
+                sizes="(max-width: 768px) 100vw, 50vw"
+                unoptimized
+                alt="roomA-intro" 
+              />
             </div>
             <div
               role="presentation" 
               onClick={() => selectRoom("B")}>
               <span>{t("floorPlan.roomB.name")}</span>
-              <Image loader={imageLoader} src={RoomBIntro} fill alt="roomB-intro" />
+              <Image 
+                loader={imageLoader} 
+                src={RoomBIntro} 
+                fill 
+                sizes="(max-width: 768px) 100vw, 50vw"
+                unoptimized
+                alt="roomB-intro" 
+              />
             </div>
           </div>
 
@@ -244,7 +266,16 @@ function Room({ fadeState }: RoomProps) {
                   role="presentation" onClick={()=>selectSpace(4)} />
                 <div ref={spaceA5} className={cn("floor-plan-A-yard", selectedSpace===5 && "selected")}
                   role="presentation" onClick={()=>selectSpace(5)} />
-                <Image loader={imageLoader} src={FloorPlanA} width={647.111} height={316.556} role="presentation" onClick={()=>selectSpace(0)} alt="floor-plan" />
+                <Image 
+                  loader={imageLoader} 
+                  src={FloorPlanA} 
+                  width={647.111} 
+                  height={316.556} 
+                  role="presentation" 
+                  onClick={()=>selectSpace(0)} 
+                  unoptimized
+                  alt="floor-plan" 
+                />
               </div>
             </div>
 
@@ -279,10 +310,17 @@ function Room({ fadeState }: RoomProps) {
                   swiperRef1.current = swiper;
                 }}
               >
-                {ImgList.map((el) => (
-                  <SwiperSlide>
+                {ImgList.map((el, index) => (
+                  <SwiperSlide key={`slide-${index}`}>
                     <div className="img-wrap">
-                      <Image loader={imageLoader} src={el} fill alt="여유 방 사진" />
+                      <Image 
+                        loader={imageLoader} 
+                        src={el} 
+                        fill 
+                        sizes="100vw"
+                        unoptimized
+                        alt="여유 방 사진" 
+                      />
                     </div>
                   </SwiperSlide>
                 ))}
@@ -311,7 +349,16 @@ function Room({ fadeState }: RoomProps) {
                   role="presentation" onClick={()=>selectSpace(4)} />
                 <div ref={spaceA5} className={cn("floor-plan-B-yard", selectedSpace===5 && "selected")}
                   role="presentation" onClick={()=>selectSpace(5)} />
-                <Image loader={imageLoader} src={FloorPlanB} width={540} height={392} role="presentation" onClick={()=>selectSpace(0)} alt="floor-plan" />
+                <Image 
+                  loader={imageLoader} 
+                  src={FloorPlanB} 
+                  width={540} 
+                  height={392} 
+                  role="presentation" 
+                  onClick={()=>selectSpace(0)} 
+                  unoptimized
+                  alt="floor-plan" 
+                />
               </div>
             </div>
 
@@ -346,10 +393,17 @@ function Room({ fadeState }: RoomProps) {
                   swiperRef2.current = swiper;
                 }}
               >
-                {ImgList.map((el) => (
-                  <SwiperSlide>
+                {ImgList.map((el, index) => (
+                  <SwiperSlide key={`slide-B-${index}`}>
                     <div className="img-wrap">
-                      <Image loader={imageLoader} src={el} fill alt="여행 방 사진" />
+                      <Image 
+                        loader={imageLoader} 
+                        src={el} 
+                        fill 
+                        sizes="100vw"
+                        unoptimized
+                        alt="여행 방 사진" 
+                      />
                     </div>
                   </SwiperSlide>
                 ))}

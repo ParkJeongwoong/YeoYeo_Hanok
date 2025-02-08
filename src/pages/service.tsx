@@ -35,7 +35,14 @@ function Service({ fadeState }: ServiceProps) {
         {/* 배너 */}
         <div className={cn("banner-img-wrap")}>
           <h2 className={cn("service-main-title")}>{t("service.name")}</h2>
-          <Image loader={imageLoader} src={ServiceBanner} fill alt="services" />
+          <Image 
+            loader={imageLoader} 
+            src={ServiceBanner} 
+            fill 
+            sizes="100vw"
+            unoptimized
+            alt="services" 
+          />
         </div>
 
         <section className={cn("service-inner")}>
@@ -50,11 +57,26 @@ function Service({ fadeState }: ServiceProps) {
             </div>
             <div className={cn("service-detail-pictures")}>
               <div className={cn("service-detail-grid-item")}>
-                <Image loader={imageLoader} src={Bread} fill alt="야외 커피, 빵 이미지" />
+                <Image 
+                  loader={imageLoader} 
+                  src={Bread} 
+                  fill 
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  unoptimized
+                  alt="야외 커피, 빵 이미지" 
+                />
               </div>
               <div className={cn("service-detail-grid-item")}>
-                <Image loader={imageLoader} src={Table} fill alt="실내 커피, 빵 이미지" />
+                <Image 
+                  loader={imageLoader} 
+                  src={Table} 
+                  fill 
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  unoptimized
+                  alt="실내 커피, 빵 이미지" 
+                />
               </div>
+
             </div>
           </div>
 
@@ -69,12 +91,27 @@ function Service({ fadeState }: ServiceProps) {
             </div>
             <div className={cn("service-detail-pictures")}>
               <div className={cn("service-detail-grid-item")}>
-                <Image loader={imageLoader} src={Projector1} fill alt="빔프로젝터 1" />
+                <Image 
+                  loader={imageLoader} 
+                  src={Projector1} 
+                  fill 
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  unoptimized
+                  alt="빔프로젝터 1" 
+                />
               </div>
               <div className={cn("service-detail-grid-item")}>
-                <Image loader={imageLoader} src={Projector2} fill alt="빔프로젝터 2 " />
+                <Image 
+                  loader={imageLoader} 
+                  src={Projector2} 
+                  fill 
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  unoptimized
+                  alt="빔프로젝터 2" 
+                />
               </div>
             </div>
+
           </div>
 
           {/* 욕실 */}
@@ -87,10 +124,25 @@ function Service({ fadeState }: ServiceProps) {
             </div>
             <div className={cn("service-detail-pictures")}>
               <div className={cn("service-detail-grid-item")}>
-                <Image loader={imageLoader} src={Bath1} fill alt="욕실 이미지 1" />
+                <Image 
+                  loader={imageLoader} 
+                  src={Bath1} 
+                  fill 
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  unoptimized
+                  alt="욕실 이미지 1" 
+                />
               </div>
               <div className={cn("service-detail-grid-item")}>
-                <Image loader={imageLoader} src={Bath2} fill alt="욕실 이미지 2 " />
+
+                <Image 
+                  loader={imageLoader} 
+                  src={Bath2} 
+                  fill 
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  unoptimized
+                  alt="욕실 이미지 2" 
+                />
               </div>
             </div>
           </div>
@@ -104,11 +156,25 @@ function Service({ fadeState }: ServiceProps) {
               </div>
             </div>
             <div className={cn("service-detail-pictures")}>
-              <div className={cn("service-detail-grid-item")} style={{widows: '100%'}}>
-                <Image loader={imageLoader} src={Cloth1} fill alt="생활한복 이미지 1" />
+              <div className={cn("service-detail-grid-item")}>
+                <Image 
+                  loader={imageLoader} 
+                  src={Cloth1} 
+                  fill 
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  unoptimized
+                  alt="생활한복 이미지 1" 
+                />
               </div>
               <div className={cn("service-detail-grid-item")}>
-                <Image loader={imageLoader} src={Cloth2} fill alt="생활한복 이미지 2 " />
+                <Image 
+                  loader={imageLoader} 
+                  src={Cloth2} 
+                  fill 
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  unoptimized
+                  alt="생활한복 이미지 2" 
+                />
               </div>
             </div>
           </div>

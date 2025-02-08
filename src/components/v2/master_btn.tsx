@@ -22,7 +22,6 @@ function MasterBtn({ setFadeState }: MasterBtnProps): ReactElement {
     setTimeout(() => {
       setFadeState("fade-in");
     }, 1000);
-    console.log("moveToInfo");
     setExpand("not-expand");
     if (timerId) {
       clearTimeout(timerId);
@@ -35,7 +34,6 @@ function MasterBtn({ setFadeState }: MasterBtnProps): ReactElement {
     setTimeout(() => {
       setFadeState("fade-in");
     }, 500);
-    console.log("moveToReservation");
     setExpand("not-expand");
     if (timerId) {
       clearTimeout(timerId);
@@ -54,9 +52,9 @@ function MasterBtn({ setFadeState }: MasterBtnProps): ReactElement {
   return (
     <div className="master-btn-container">
       <div className={`expandable-btn ${expand}`}>
-        <button type="button" className="click-icon" onClick={expandSeconds}><Image loader={imageLoader} src={BellBtn} fill alt="마스터 버튼" /></button>
-        <button type="button" className="func-btn btn-right" onClick={moveToReservation}><Image loader={imageLoader} src={CalendarBtn} fill alt="예약 버튼" /></button>
-        <button type="button" className="func-btn btn-left" onClick={moveToInfo}><Image loader={imageLoader} src={InfoBtn} fill alt="정보 버튼" /></button>
+        <button type="button" className="click-icon" onClick={expandSeconds}><Image loader={imageLoader} src={BellBtn} unoptimized fill alt="마스터 버튼" /></button>
+        <button type="button" className="func-btn btn-right" onClick={moveToReservation}><Image loader={imageLoader} src={CalendarBtn} unoptimized fill alt="예약 버튼" /></button>
+        <button type="button" className="func-btn btn-left" onClick={moveToInfo}><Image loader={imageLoader} src={InfoBtn} unoptimized fill alt="정보 버튼" /></button>
       </div>
     </div>
   );

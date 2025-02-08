@@ -37,7 +37,7 @@ function LinkSelectModal({ setIsModal }: LinkSelectModalProps) {
         aria-hidden
       >
         <div className={cn("link-select-modal")}>
-          <Image className={cn("link-select-icon")} loader={imageLoader} src={airbnb} width={35} height={35} alt="에어비앤비 아이콘" />
+          <Image className={cn("link-select-icon")} loader={imageLoader} src={airbnb} unoptimized width={35} height={35} alt="에어비앤비 아이콘" />
           <strong>{t("reservation.product.chooseRoom")}</strong>
           <div className={cn("link-select")}>
             <a type="button" className={cn("link-button")} href="https://airbnb.co.kr/h/yeoyeo1">

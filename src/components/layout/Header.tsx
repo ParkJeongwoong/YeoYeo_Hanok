@@ -61,12 +61,20 @@ function Header({setFadeState}: HeaderProps): ReactElement {
       <div className={`header-wrap ${scroll ? "scroll" : "top"}`} ref={headerRef}>
         <div className="header">
           <button type="button" aria-label="SNB button" onClick={() => setIsSNB(!isSNB)}>
-            <Image loader={imageLoader} src={IcoHamburger} width={24} height={24} alt="햄버거 버튼" />
+            <Image loader={imageLoader} src={IcoHamburger} unoptimized width={24} height={24} alt="햄버거 버튼" />
             {/* <IcoHamburger /> */}
           </button>
           <div className="logo">
             <button type="button" aria-label="Header Home button" onClick={() => pageMove("/")}>
-              <Image loader={imageLoader} src={logo} width={276.486} height={120} alt="홈 아이콘" />
+              <Image 
+                loader={imageLoader} 
+                src={logo} 
+                unoptimized 
+                width={276} 
+                height={120} 
+                priority
+                alt="홈 아이콘" 
+              />
             </button>
           </div>
           <button type="button" aria-label="language button" className="lang-btn" onClick={() => handleLang()}>
