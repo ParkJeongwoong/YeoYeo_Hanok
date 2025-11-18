@@ -71,7 +71,7 @@ function ReservationSidebar({
             left={translation("sidebar.discount")}
             middle={`${
               periodData.period >= 2
-                ? `20,000${i18next.language === "en" ? " Won" : "원"} * ${(periodData.period - 1)?.toLocaleString()}`
+                ? `10,000${i18next.language === "en" ? " Won" : "원"} * ${(periodData.period - 1)?.toLocaleString()}`
                 : "-"
             }`}
             right={`${
