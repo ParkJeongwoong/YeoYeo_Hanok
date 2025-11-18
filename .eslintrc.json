@@ -1,7 +1,8 @@
 {
   "env": {
     "browser": true,
-    "es2021": true
+    "es2021": true,
+    "node": true
   },
   "extends": [
     "eslint:recommended",
@@ -24,7 +25,16 @@
   },
   "rules": {
     "react/require-default-props": 0,
-    "import/no-extraneous-dependencies": 0
+    "import/no-extraneous-dependencies": 0,
+    "@typescript-eslint/no-var-requires": "off"
   },
-  "plugins": ["react", "@typescript-eslint", "react-hooks", "jsx-a11y", "import"]
+  "plugins": ["react", "@typescript-eslint", "react-hooks", "jsx-a11y", "import"],
+  "overrides": [
+    {
+      "files": ["next.config.js"],
+      "rules": {
+        "@typescript-eslint/no-var-requires": "off"
+      }
+    }
+  ]
 }

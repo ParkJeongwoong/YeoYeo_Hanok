@@ -310,8 +310,8 @@ function Room({ fadeState }: RoomProps) {
                   swiperRef1.current = swiper;
                 }}
               >
-                {ImgList.map((el, index) => (
-                  <SwiperSlide key={`slide-${index}`}>
+                {ImgList.map((el) => (
+                  <SwiperSlide key={`slide-${el.replace(/[^a-zA-Z0-9]/g, '-')}`}>
                     <div className="img-wrap">
                       <Image 
                         loader={imageLoader} 
@@ -393,8 +393,8 @@ function Room({ fadeState }: RoomProps) {
                   swiperRef2.current = swiper;
                 }}
               >
-                {ImgList.map((el, index) => (
-                  <SwiperSlide key={`slide-B-${index}`}>
+                {ImgList.map((el) => (
+                  <SwiperSlide key={`slide-B-${el.replace(/[^a-zA-Z0-9]/g, '-')}`}>
                     <div className="img-wrap">
                       <Image 
                         loader={imageLoader} 

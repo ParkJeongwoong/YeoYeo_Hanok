@@ -11,18 +11,27 @@ jobs:
 
     steps:
       - name: Git Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Use Node.js version 18.14.x
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: 18.14.x
+          cache: 'yarn'
 
-      - name: Build
+      - name: Clear build cache
+        run: |
+          rm -rf .next
+          rm -rf build
+          rm -rf out
+
+      - name: Install dependencies
         run: |
           npm install -g yarn
           yarn install --frozen-lockfile
-          yarn export
+
+      - name: Build
+        run: yarn export
 
       - name: Configure AWS credentials
         uses: aws-actions/configure-aws-credentials@v1

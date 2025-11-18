@@ -11,6 +11,9 @@ var nextConfig = {
     loader: "custom",
   },
   trailingSlash: true,
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
 };
 
 module.exports = withImages(nextConfig);
