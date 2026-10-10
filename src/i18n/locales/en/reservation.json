@@ -1,4 +1,10 @@
 {
+  "externalBooking": {
+    "title": "Book on Airbnb",
+    "description": "Please check available dates and rates on Airbnb.",
+    "existingBooking": "Already booked through our website? You can still view or cancel your existing reservation below.",
+    "checkBooking": "View or cancel an existing website reservation"
+  },
   "datePicker": {
     "reset": "Reset",
     "prev": "Prev",

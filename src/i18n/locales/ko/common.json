@@ -4,7 +4,7 @@
     "intro": "인트로",
     "service": "서비스",
     "room": "객실",
-    "reservation": "예약하기",
+    "reservation": "에어비앤비 예약",
     "reservation/check": "예약조회"
   },
   "floorPlan": {
@@ -59,6 +59,8 @@
     }
   },
   "reservation": {
+    "airbnb": "에어비앤비 예약",
+    "close": "닫기",
     "checkoutOnly": "체크아웃만 가능",
     "soldOut": "예약완료",
     "notAvailable": "예약불가",

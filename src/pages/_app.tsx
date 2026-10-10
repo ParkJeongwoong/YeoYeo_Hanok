@@ -88,11 +88,6 @@ function App({ Component, pageProps }: AppProps) {
             `,
           }}
         />
-        {/* iamport.payment.js */}
-        <Script
-          strategy="afterInteractive"
-          src="https://cdn.iamport.kr/v1/iamport.js"
-        />
         <MediaQueryProvider>
           <Header setFadeState={setFadeState} />
           {/* eslint-disable react/jsx-props-no-spreading */}

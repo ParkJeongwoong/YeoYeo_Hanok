@@ -4,7 +4,7 @@
     "intro": "Intro",
     "service": "Service",
     "room": "Room",
-    "reservation": "Reservation",
+    "reservation": "Book on Airbnb",
     "reservation/check": "Reservation Check"
   },
   "floorPlan": {
@@ -59,6 +59,8 @@
     }
   },
   "reservation": {
+    "airbnb": "Book on Airbnb",
+    "close": "Close",
     "checkoutOnly": "Checkout Only",
     "soldOut": "Sold Out",
     "notAvailable": "Not Available",

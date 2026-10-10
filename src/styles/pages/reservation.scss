@@ -28,6 +28,66 @@
   }
 }
 
+.external-booking {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 56px 0;
+  text-align: center;
+
+  .airbnb-mark {
+    display: block;
+    margin: 0 auto 24px;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.8;
+    margin-bottom: 16px;
+    word-break: keep-all;
+  }
+
+  .existing-booking {
+    margin-top: 40px;
+    padding-top: 24px;
+    border-top: 1px solid #cecece;
+
+    a {
+      display: inline-block;
+      text-decoration: underline;
+      padding: 12px;
+    }
+  }
+}
+
+.airbnb-room-links {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 24px;
+
+  .link-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    min-height: 60px;
+    padding: 12px;
+    border: 1px solid #d8d8d8;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    line-height: 1.5;
+
+    &:hover,
+    &:focus-visible {
+      background-color: #e6e6e6;
+    }
+  }
+
+  @include sm {
+    flex-direction: column;
+  }
+}
+
 .date-picker-wrap {
   display: flex;
   // justify-content: center;
@@ -1075,7 +1135,7 @@
   border-radius: 4px;
   z-index: 100;
   width: 100vw;
-  height: 200px;
+  min-height: 200px;
   border: none;
   box-sizing: border-box;
   padding: 20px 12px;
@@ -1085,6 +1145,15 @@
   .link-select-icon {
     display: inline;
     margin-bottom: 15px;
+  }
+
+  .link-select-close {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
   }
 
   strong {
@@ -1122,26 +1191,7 @@
     }
   }
 
-  .link-select {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px;
-
-    .link-button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: 50%;
-      height: 60px;
-      background-color: #f9f9f9;
-      border: 1px solid #d8d8d8;
-      border-radius: 4px;
-      transition: all 0.3s;
-      margin: 0 10px;
-
-      &:hover {
-        background-color: #918f8f;
-      }
-    }
+  .airbnb-room-links {
+    margin-top: 10px;
   }
 }

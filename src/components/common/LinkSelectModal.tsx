@@ -3,6 +3,7 @@ import cn from "classnames";
 import Image from "next/image";
 import imageLoader from "src/utils/loader";
 import { useTranslation } from "react-i18next";
+import AirbnbRoomLinks from "./AirbnbRoomLinks";
 
 function LinkSelectModal({ setIsModal }: LinkSelectModalProps) {
   const airbnb = "/assets/icons/ico_airbnb.png";
@@ -32,21 +33,15 @@ function LinkSelectModal({ setIsModal }: LinkSelectModalProps) {
         className={cn("link-select-modal-mask")}
         onClick={(e) => {
           e.stopPropagation();
-          setIsModal(false);
         }}
-        aria-hidden
       >
-        <div className={cn("link-select-modal")}>
+        <div className={cn("link-select-modal")} role="dialog" aria-modal="true" aria-labelledby="airbnb-room-heading">
+          <button type="button" className="link-select-close" onClick={() => setIsModal(false)} aria-label={t("reservation.close") || undefined}>
+            ×
+          </button>
           <Image className={cn("link-select-icon")} loader={imageLoader} src={airbnb} unoptimized width={35} height={35} alt="에어비앤비 아이콘" />
-          <strong>{t("reservation.product.chooseRoom")}</strong>
-          <div className={cn("link-select")}>
-            <a type="button" className={cn("link-button")} href="https://airbnb.co.kr/h/yeoyeo1">
-            {t("floorPlan.roomA.name")}
-            </a>
-            <a type="button" className={cn("link-button")} href="https://airbnb.co.kr/h/yeoyeo2">
-            {t("floorPlan.roomB.name")}
-            </a>
-          </div>
+          <strong id="airbnb-room-heading">{t("reservation.product.chooseRoom")}</strong>
+          <AirbnbRoomLinks />
         </div>
       </div>
     </div>
