@@ -2,7 +2,6 @@ import cn from "classnames";
 import Image from "next/image";
 import { useTranslation } from "react-i18next";
 import imageLoader from "src/utils/loader";
-import SEO from "src/utils/seo";
 
 // 서비스 배너
 const ServiceBanner = "/assets/images/service/service_banner.jpg";
@@ -25,23 +24,17 @@ function Service({ fadeState }: ServiceProps) {
   const { t } = useTranslation("common");
 
   return (
-    <>
-      <SEO
-        title="서비스"
-        description="한옥스테이 여여에서 제공하는 서비스입니다."
-        siteTitle="한옥스테이 여여"
-      />
-      <div className={cn(`service-wrap ${fadeState}`)}>
+      <main className={cn(`service-wrap ${fadeState}`)}>
         {/* 배너 */}
         <div className={cn("banner-img-wrap")}>
-          <h2 className={cn("service-main-title")}>{t("service.name")}</h2>
+          <h1 className={cn("service-main-title")}>{t("service.name")}</h1>
           <Image 
             loader={imageLoader} 
             src={ServiceBanner} 
             fill 
             sizes="100vw"
             unoptimized
-            alt="services" 
+            alt={t("imageAlt.serviceBanner")}
           />
         </div>
 
@@ -49,7 +42,7 @@ function Service({ fadeState }: ServiceProps) {
           {/* 커피와 빵 */}
           <div className={cn("service-detail")}>
             <div className={cn("service-detail-description")}>
-              <h3 className={cn("service-title")}>{t("service.features.0")}</h3>
+              <h2 className={cn("service-title")}>{t("service.features.0")}</h2>
               <div className={cn("service-features")}>
                 <span>{t("service.coffeeBread.0")}</span>
                 <span className={cn("service-features-comment")}>{t("service.coffeeBread.1")}</span>
@@ -63,7 +56,7 @@ function Service({ fadeState }: ServiceProps) {
                   fill 
                   sizes="(max-width: 768px) 100vw, 50vw"
                   unoptimized
-                  alt="야외 커피, 빵 이미지" 
+                  alt={t("imageAlt.bread")}
                 />
               </div>
               <div className={cn("service-detail-grid-item")}>
@@ -73,7 +66,7 @@ function Service({ fadeState }: ServiceProps) {
                   fill 
                   sizes="(max-width: 768px) 100vw, 50vw"
                   unoptimized
-                  alt="실내 커피, 빵 이미지" 
+                  alt={t("imageAlt.table")}
                 />
               </div>
 
@@ -83,7 +76,7 @@ function Service({ fadeState }: ServiceProps) {
           {/* 빔프로젝터 */}
           <div className={cn("service-detail service-detail2")}>
             <div className={cn("service-detail-description service-order")}>
-              <h3 className={cn("service-title")}>{t("service.features.1")}</h3>
+              <h2 className={cn("service-title")}>{t("service.features.1")}</h2>
               <div className={cn("service-features")}>
                 <span>{t("service.projector.0")}</span>
                 <span className={cn("service-features-comment")}>{t("service.projector.1")}</span>
@@ -97,7 +90,7 @@ function Service({ fadeState }: ServiceProps) {
                   fill 
                   sizes="(max-width: 768px) 100vw, 50vw"
                   unoptimized
-                  alt="빔프로젝터 1" 
+                  alt={t("imageAlt.projector1")}
                 />
               </div>
               <div className={cn("service-detail-grid-item")}>
@@ -107,7 +100,7 @@ function Service({ fadeState }: ServiceProps) {
                   fill 
                   sizes="(max-width: 768px) 100vw, 50vw"
                   unoptimized
-                  alt="빔프로젝터 2" 
+                  alt={t("imageAlt.projector2")}
                 />
               </div>
             </div>
@@ -117,7 +110,7 @@ function Service({ fadeState }: ServiceProps) {
           {/* 욕실 */}
           <div className={cn("service-detail")}>
             <div className={cn("service-detail-description")}>
-              <h3 className={cn("service-title")}>{t("service.features.2")}</h3>
+              <h2 className={cn("service-title")}>{t("service.features.2")}</h2>
               <div className={cn("service-features")}>
                 <span>{t("service.bath.0")}</span>
               </div>
@@ -130,7 +123,7 @@ function Service({ fadeState }: ServiceProps) {
                   fill 
                   sizes="(max-width: 768px) 100vw, 50vw"
                   unoptimized
-                  alt="욕실 이미지 1" 
+                  alt={t("imageAlt.bath1")}
                 />
               </div>
               <div className={cn("service-detail-grid-item")}>
@@ -141,7 +134,7 @@ function Service({ fadeState }: ServiceProps) {
                   fill 
                   sizes="(max-width: 768px) 100vw, 50vw"
                   unoptimized
-                  alt="욕실 이미지 2" 
+                  alt={t("imageAlt.bath2")}
                 />
               </div>
             </div>
@@ -150,7 +143,7 @@ function Service({ fadeState }: ServiceProps) {
           {/* 생활한복 */}
           <div className={cn("service-detail service-detail2")}>
             <div className={cn("service-detail-description service-order")}>
-              <h3 className={cn("service-title")}>{t("service.features.3")}</h3>
+              <h2 className={cn("service-title")}>{t("service.features.3")}</h2>
               <div className={cn("service-features")}>
                 <span>{t("service.cloth.0")}</span>
               </div>
@@ -163,7 +156,7 @@ function Service({ fadeState }: ServiceProps) {
                   fill 
                   sizes="(max-width: 768px) 100vw, 50vw"
                   unoptimized
-                  alt="생활한복 이미지 1" 
+                  alt={t("imageAlt.cloth1")}
                 />
               </div>
               <div className={cn("service-detail-grid-item")}>
@@ -173,14 +166,13 @@ function Service({ fadeState }: ServiceProps) {
                   fill 
                   sizes="(max-width: 768px) 100vw, 50vw"
                   unoptimized
-                  alt="생활한복 이미지 2" 
+                  alt={t("imageAlt.cloth2")}
                 />
               </div>
             </div>
           </div>
         </section>
-      </div>
-    </>
+      </main>
   );
 }
 

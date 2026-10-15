@@ -8,7 +8,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { useTranslation } from "react-i18next";
 import imageLoader from "src/utils/loader";
-import SEO from "src/utils/seo";
 
 // 배너
 const RoomBanner = "/assets/images/room/room_banner1.jpg";
@@ -94,6 +93,18 @@ function Room({ fadeState }: RoomProps) {
   const swiperWrap1 = useRef<HTMLDivElement>(null);
   const swiperWrap2 = useRef<HTMLDivElement>(null);
   const { t } = useTranslation("common");
+
+  function getImageAlt(src: string) {
+    const photo = src.match(/room([AB])_(living|bed|kitchen|bath|yard)(\d+)/);
+    if (!photo) return t("imageAlt.outside", { number: src.match(/(\d+)\.jpg$/)?.[1] || "1" });
+    const [, room, space, number] = photo;
+    const spaceIndex: Record<string, number> = { living: 1, bed: 2, kitchen: 3, bath: 4, yard: 5 };
+    return t("imageAlt.gallery", {
+      room: t(`floorPlan.room${room}.name`),
+      space: t(`floorPlan.room${room}.titles.${spaceIndex[space]}`),
+      number,
+    });
+  }
 
   const swiperRef1 = useRef<swiperRef>();
   const swiperRef2 = useRef<swiperRef>();
@@ -195,20 +206,14 @@ function Room({ fadeState }: RoomProps) {
   }, [selectedRoom, selectedSpace, ImgList, isChanged])
 
   return (
-    <>
-      <SEO
-        title="객실"
-        description='한옥스테이 여여의 객실, "여유"와 "여행"을 소개합니다.'
-        siteTitle="한옥스테이 여여"
-      />
-      <div className={cn(`room-wrap ${fadeState}`)}>
+      <main className={cn(`room-wrap ${fadeState}`)}>
         {/* 배너 */}
         <div
           ref={introRef} 
           className={cn("banner-img-wrap")}
           // onTouchStart={(e) => handleTouchStart(e)}
         >
-          <h2 className={cn("room-main-title")}>{t("floorPlan.name")}</h2>
+          <h1 className={cn("room-main-title")}>{t("floorPlan.name")}</h1>
           <Image 
             loader={imageLoader} 
             src={RoomBanner} 
@@ -216,7 +221,7 @@ function Room({ fadeState }: RoomProps) {
             sizes="100vw"
             unoptimized
             priority
-            alt="yeoyeo-outside" 
+            alt={t("imageAlt.roomBanner")}
           />
         </div>
 
@@ -233,7 +238,7 @@ function Room({ fadeState }: RoomProps) {
                 fill 
                 sizes="(max-width: 768px) 100vw, 50vw"
                 unoptimized
-                alt="roomA-intro" 
+                alt={t("imageAlt.roomAIntro")}
               />
             </div>
             <div
@@ -246,7 +251,7 @@ function Room({ fadeState }: RoomProps) {
                 fill 
                 sizes="(max-width: 768px) 100vw, 50vw"
                 unoptimized
-                alt="roomB-intro" 
+                alt={t("imageAlt.roomBIntro")}
               />
             </div>
           </div>
@@ -274,7 +279,7 @@ function Room({ fadeState }: RoomProps) {
                   role="presentation" 
                   onClick={()=>selectSpace(0)} 
                   unoptimized
-                  alt="floor-plan" 
+                  alt={t("imageAlt.floorPlanA")}
                 />
               </div>
             </div>
@@ -319,7 +324,7 @@ function Room({ fadeState }: RoomProps) {
                         fill 
                         sizes="100vw"
                         unoptimized
-                        alt="여유 방 사진" 
+                        alt={getImageAlt(el)}
                       />
                     </div>
                   </SwiperSlide>
@@ -357,7 +362,7 @@ function Room({ fadeState }: RoomProps) {
                   role="presentation" 
                   onClick={()=>selectSpace(0)} 
                   unoptimized
-                  alt="floor-plan" 
+                  alt={t("imageAlt.floorPlanB")}
                 />
               </div>
             </div>
@@ -402,7 +407,7 @@ function Room({ fadeState }: RoomProps) {
                         fill 
                         sizes="100vw"
                         unoptimized
-                        alt="여행 방 사진" 
+                        alt={getImageAlt(el)}
                       />
                     </div>
                   </SwiperSlide>
@@ -417,8 +422,7 @@ function Room({ fadeState }: RoomProps) {
             <p className={cn("space-description", selectedSpace===5 && "selected")}>{t("floorPlan.roomB.descriptions.4")}</p>
           </div>
         </section>
-      </div>
-    </>
+      </main>
   );
 }
 

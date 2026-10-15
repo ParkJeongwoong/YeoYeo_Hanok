@@ -38,7 +38,8 @@
     "start": "next start -p 3005",
     "build": "next build",
     "export": "next build && next export",
-    "eject": "next eject"
+    "eject": "next eject",
+    "test:seo": "node scripts/check-seo.cjs"
   },
   "browserslist": {
     "production": [

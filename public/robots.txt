@@ -2,4 +2,4 @@
 User-agent: *
 Allow: /
 
-# Sitemap: https://yeoyeo.co.kr/sitemap.xml
+Sitemap: https://yeoyeo.kr/sitemap.xml
