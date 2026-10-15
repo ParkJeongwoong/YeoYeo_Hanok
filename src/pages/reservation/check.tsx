@@ -5,7 +5,6 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { useRouter } from "next/router";
 import { validReservationNumberPatter, validUserMobileNumber } from "src/utils/regEx";
-import SEO from "src/utils/seo";
 
 interface ReservationCheckProps {
   fadeState: string;
@@ -73,12 +72,6 @@ function ReservationCheck({ fadeState, setFadeState }: ReservationCheckProps) {
   };
 
   return (
-    <>
-      <SEO
-        title="예약 조회"
-        description="한옥스테이 여여의 예약 조회 페이지입니다."
-        siteTitle="한옥스테이 여여"
-      />
       <div className={cn(`reservation-check-wrap ${fadeState}`)}>
         <div className="section-wrap">
           <div className={cn("header")}>
@@ -119,7 +112,6 @@ function ReservationCheck({ fadeState, setFadeState }: ReservationCheckProps) {
           </div>
         </div>
       </div>
-    </>
   );
 }
 

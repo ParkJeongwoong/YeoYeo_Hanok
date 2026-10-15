@@ -1,7 +1,6 @@
 import cn from "classnames";
 import { useRouter } from "next/router";
 import { useTranslation } from "react-i18next";
-import SEO from "src/utils/seo";
 
 function ReservationSuccess() {
   const router = useRouter();
@@ -9,12 +8,6 @@ function ReservationSuccess() {
   const { t } = useTranslation("reservation");
 
   return (
-    <>
-      <SEO
-        title="예약에 성공하셨습니다"
-        description="예약이 완료되었습니다."
-        siteTitle="한옥스테이 여여"
-      />
       <div className="reservation-success-wrap">
         <div className="section-wrap">
           <div className={cn("header")}>
@@ -41,7 +34,6 @@ function ReservationSuccess() {
           </div>
         </div>
       </div>
-    </>
   );
 }
 

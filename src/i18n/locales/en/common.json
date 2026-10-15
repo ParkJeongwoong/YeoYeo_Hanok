@@ -73,5 +73,65 @@
       "checkIn": "Check-in",
       "checkOut": "Check-out"
     }
+  },
+  "seo": {
+    "home": {
+      "title": "Hanok Stay YeoYeo | Gyeongju Namsan",
+      "description": "Discover Hanok Stay YeoYeo below Namsan in Gyeongju: Yeo Yu and Yeo Hang rooms, coffee and salt bread, projectors, bathtubs, and modern hanbok. Book on Airbnb."
+    },
+    "room": {
+      "title": "Yeo Yu & Yeo Hang Rooms | Hanok Stay YeoYeo",
+      "description": "Explore Yeo Yu and Yeo Hang at Hanok Stay YeoYeo. View room photos and floor plans for the living rooms, bedrooms, kitchens, bathrooms, and backyards."
+    },
+    "service": {
+      "title": "Services & Amenities | Hanok Stay YeoYeo",
+      "description": "Explore coffee and salt bread, projectors, bathtubs, and modern hanbok at Hanok Stay YeoYeo, with photos of the amenities."
+    },
+    "reservation": {
+      "title": "Book a Room on Airbnb | Hanok Stay YeoYeo",
+      "description": "Check available dates and rates for Yeo Yu and Yeo Hang on Airbnb. Look up existing website bookings through Reservation Check."
+    },
+    "check": {
+      "title": "Existing Reservation Lookup | Hanok Stay YeoYeo",
+      "description": "Look up an existing Hanok Stay YeoYeo website reservation."
+    },
+    "detail": {
+      "title": "Existing Reservation Details | Hanok Stay YeoYeo",
+      "description": "Details of an existing Hanok Stay YeoYeo website reservation."
+    },
+    "success": {
+      "title": "Reservation Complete | Hanok Stay YeoYeo",
+      "description": "Hanok Stay YeoYeo reservation confirmation."
+    },
+    "notFound": {
+      "title": "Page Not Found | Hanok Stay YeoYeo",
+      "description": "The requested page could not be found."
+    }
+  },
+  "imageAlt": {
+    "roomBanner": "Hanok Stay YeoYeo surrounded by pine trees and a lawn",
+    "roomAIntro": "Tiled eaves and wooden doors of the Yeo Yu room",
+    "roomBIntro": "Wooden entrance and porch of the Yeo Hang room",
+    "floorPlanA": "Yeo Yu floor plan showing the living room, bedroom, kitchen, bathroom, and backyard",
+    "floorPlanB": "Yeo Hang floor plan showing the living room, bedroom, kitchen, bathroom, and backyard",
+    "serviceBanner": "Tea being poured into a cup beside a hanok window",
+    "bread": "Salt bread and coffee on an outdoor table beside the hanok eaves",
+    "table": "Tea set on an indoor table beside a hanok window",
+    "projector1": "A projected film beside a bed and a window overlooking pine trees",
+    "projector2": "A film projected onto the hanok living room wall",
+    "bath1": "Bathtub beside a window overlooking the forest",
+    "bath2": "Bathroom tub overlooking a stone wall and forest",
+    "cloth1": "Modern hanbok and flowers laid on a bed",
+    "cloth2": "Two neatly folded sets of modern hanbok",
+    "gallery": "{{room}} {{space}} photo {{number}}",
+    "outside": "Hanok Stay YeoYeo exterior photo {{number}}"
+  },
+  "stayOverview": {
+    "title": "A hanok stay below Namsan in Gyeongju",
+    "description": "Hanok Stay YeoYeo sits below Namsan in Gyeongju. Explore the Yeo Yu and Yeo Hang rooms, with coffee and salt bread, projectors, bathtubs, and modern hanbok. Check available dates and rates on Airbnb.",
+    "navigation": "Plan your YeoYeo stay",
+    "rooms": "Explore Yeo Yu & Yeo Hang",
+    "services": "Explore services & amenities",
+    "booking": "Booking on Airbnb"
   }
 }

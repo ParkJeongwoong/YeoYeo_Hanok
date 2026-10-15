@@ -1,7 +1,8 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { useTranslation } from "react-i18next";
 import Section from "@components/Intro/Section";
 import cn from "classnames";
+import Link from "next/link";
 
 interface IntroProps {
   fadeState: string;
@@ -12,21 +13,18 @@ function Intro({ fadeState }: IntroProps) {
   const introRef = useRef<HTMLDivElement>(null);
   const { t } = useTranslation("common");
 
-  useEffect(() => {
-    const {referrer} = document;
-    console.log(referrer);
-  }, []);
-
   return (
-    <div className={cn(`intro ${fadeState}`)}>
+    <main className={cn(`intro ${fadeState}`)}>
       <div ref={sectionWrapRef} className="section-wrap">
         <Section sectionType="intro-top" ref={introRef}>
           <div className="section-wrap">
             <div className={cn("section-inner")}>
               <div className="top">
               {/* <div className="top" data-aos="fade-down" data-aos-duration="1500"> */}
-                <h2 className={cn("section-title1")}>{t("intro.intro.title1")}</h2>
-                <h2 className={cn("section-title2")}>{t("intro.intro.title2")}</h2>
+                <h1>
+                  <span className="section-title1">{t("intro.intro.title1")}</span>{" "}
+                  <span className="section-title2">{t("intro.intro.title2")}</span>
+                </h1>
               </div>
               <div className="body">
               {/* <div className="body" data-aos="fade-left" data-aos-duration="1500" data-aos-delay="1000"> */}
@@ -40,7 +38,16 @@ function Intro({ fadeState }: IntroProps) {
           </div>
         </Section>
       </div>
-    </div>
+      <section className="stay-overview" aria-labelledby="stay-overview-title">
+        <h2 id="stay-overview-title">{t("stayOverview.title")}</h2>
+        <p>{t("stayOverview.description")}</p>
+        <nav aria-label={String(t("stayOverview.navigation"))}>
+          <Link href="/room/">{t("stayOverview.rooms")}</Link>
+          <Link href="/service/">{t("stayOverview.services")}</Link>
+          <Link href="/reservation/">{t("stayOverview.booking")}</Link>
+        </nav>
+      </section>
+    </main>
   );
 }
 

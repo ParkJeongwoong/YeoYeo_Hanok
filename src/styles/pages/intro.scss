@@ -94,3 +94,43 @@
     }
   }
 }
+
+.stay-overview {
+  background-color: #f5f4f0;
+  font-family: "Gowun Batang", serif;
+  padding: 64px 24px;
+  text-align: center;
+
+  h2 {
+    font-size: 24px;
+    line-height: 1.5;
+  }
+
+  p {
+    max-width: 720px;
+    margin: 24px auto;
+    line-height: 1.9;
+    word-break: keep-all;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px 24px;
+  }
+
+  a {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    line-height: 1.6;
+  }
+
+  @include sm {
+    padding: 40px 20px;
+
+    h2 {
+      font-size: 20px;
+    }
+  }
+}

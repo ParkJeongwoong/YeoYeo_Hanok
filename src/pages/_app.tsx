@@ -1,5 +1,6 @@
 import type { AppProps } from "next/app";
 import Head from "next/head";
+import SEO from "src/utils/seo";
 import '@styles/App.css';
 import "@styles/common.scss";
 import axios from "axios";
@@ -18,56 +19,17 @@ axios.defaults.baseURL = "https://api.yeoyeo.co.kr";
 function App({ Component, pageProps }: AppProps) {
   const [fadeState, setFadeState] = useState("fade-in");
 
-  const searchKeywords = "경주한옥숙소, 경주여여, 한옥스테이여여, 한옥스테이 여여, 경주 한옥스테이 여여, 경주한옥스테이, 경주한옥스테이여여, 경주한옥펜션,경주한옥숙소,경주힐링펜션,경주힐링한옥,경주조용한펜션";
-
-  const structuredData = {
-    "@context": "https://schema.org", // 데이터가 Schema.org 어휘를 사용하여 설명되고 있음을 나타냅니다.
-    "@type": ["Hotel","HotelRoom","House"],
-    name: "한옥스테이 여여",
-    description: "그와 같이 아름다운, 여여(如麗)",
-    keywords: searchKeywords,
-    url: "https://yeoyeo.kr",
-    sameAs: [
-      "https://www.yeoyeo.kr",
-      "https://yeoyeo.co.kr",
-      "https://www.yeoyeo.co.kr",
-    ],
-    logo: "https://yeoyeo.kr/logo192.png",
-    telephone: "010-8959-9091",
-    email: "dvlprjw@gmail.com",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "갯마을길 53",
-      addressLocality: "경주시",
-      addressRegion: "경상북도",
-      postalCode: "38174",
-    },
-  };
-  
   return (
     <>
       <Head>
-        <title>한옥스테이 여여</title>
         <link rel="icon" href="/assets/temp/logo.png" />
-        <link rel="canonical" href="https://yeoyeo.kr" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="subject" content={searchKeywords} />
-        <meta name="keywords" content={searchKeywords} />
         <meta name="theme-color" content="#000000" />
-        <meta name="description" content="그와 같이 아름다운, 여여(如麗)" />
         <meta name="author" content="dvlprjw" />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content="한옥스테이 여여(如麗)" />
-        <meta property="og:description" content="그와 같이 아름다운, 여여(如麗)" />
-        <meta property="og:image" content="https://yeoyeo.kr/logo192.png" />
-        <meta property="og:url" content="https://yeoyeo.kr" />
         <meta name="naver-site-verification" content="d932cb4fe0d3d9db6dcc599c97f8e580eb769338" />
         <meta name="naver-site-verification" content="e99d8fbe7868187b90e8afefe7a4595f55da7b31" />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
       </Head>
+      <SEO />
       <div className="App">
         {/* Global Site Tag (gtag.js) - Google Analytics */}
         <Script

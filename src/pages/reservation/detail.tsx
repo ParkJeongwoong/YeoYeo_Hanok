@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import dayjs from "dayjs";
 import axios from "axios";
 import { useTranslation } from "react-i18next";
-import SEO from "src/utils/seo";
 
 interface ReservationDetailProps {
   fadeState: string;
@@ -55,12 +54,6 @@ function ReservationDetail({ fadeState }: ReservationDetailProps) {
 
   if (state) {
     return (
-      <>
-        <SEO
-          title="예약 정보"
-          description="한옥스테이 여여의 예약 정보 조회 페이지입니다."
-          siteTitle="한옥스테이 여여"
-        />
         <div className={cn(`reservation-detail-wrap ${fadeState}`)}>
           <div className="section-wrap">
             <div className={cn("content-wrap")}>
@@ -133,7 +126,6 @@ function ReservationDetail({ fadeState }: ReservationDetailProps) {
             </div>
           </div>
         </div>
-      </>
     );
   }
 
