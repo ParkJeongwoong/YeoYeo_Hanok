@@ -37,6 +37,18 @@
       padding: 0 20px;
     }
 
+    .room-overview {
+      max-width: 720px;
+      margin: 40px auto;
+      line-height: 1.9;
+      word-break: keep-all;
+
+      h2 {
+        font-size: 20px;
+        margin-bottom: 16px;
+      }
+    }
+
     .room-intro {
       border-top: 1px solid #e5e7eb;
       margin-top: 10px;

@@ -19,7 +19,7 @@ function Reservation({ fadeState }: ReservationProps) {
           <section className="external-booking">
             <Image className="airbnb-mark" loader={imageLoader} src="/assets/icons/ico_airbnb.png" unoptimized width={56} height={56} alt="Airbnb" />
             <p>{t("externalBooking.description")}</p>
-            <AirbnbRoomLinks />
+            <AirbnbRoomLinks linkLocation="reservation_page" />
             <div className="existing-booking">
               <p>{t("externalBooking.existingBooking")}</p>
               <Link href="/reservation/check">{t("externalBooking.checkBooking")}</Link>

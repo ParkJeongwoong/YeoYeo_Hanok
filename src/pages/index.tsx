@@ -41,6 +41,7 @@ function Intro({ fadeState }: IntroProps) {
       <section className="stay-overview" aria-labelledby="stay-overview-title">
         <h2 id="stay-overview-title">{t("stayOverview.title")}</h2>
         <p>{t("stayOverview.description")}</p>
+        <p>{t("address")}</p>
         <nav aria-label={String(t("stayOverview.navigation"))}>
           <Link href="/room/">{t("stayOverview.rooms")}</Link>
           <Link href="/service/">{t("stayOverview.services")}</Link>

@@ -143,8 +143,14 @@ check(
   "One stable LodgingBusiness entity",
 );
 check(entity.url === `${origin}/` && entity.name === "한옥스테이 여여", "Factual property name and URL");
-for (const key of ["aggregateRating", "review", "offers", "priceRange", "address", "starRating"])
+for (const key of ["aggregateRating", "review", "offers", "priceRange", "starRating"])
   check(!(key in entity), `No unverified ${key}`);
+check(entity.address?.["@type"] === "PostalAddress", "Verified PostalAddress type");
+check(entity.address.streetAddress === "갯마을길 53" && entity.address.addressLocality === "경주시" && entity.address.addressRegion === "경상북도" && entity.address.addressCountry === "KR", "Owner-confirmed guest arrival address");
+check(home.includes("경주시 갯마을길 53"), "Address is visible as well as structured");
+check(home.includes("성인 두 명") && home.includes("자쿠지"), "Factual Jacuzzi size visible on homepage");
+check(fs.readFileSync("out/service/index.html", "utf8").includes("성인 두 명"), "Service page describes tub size");
+check(fs.readFileSync("out/room/index.html", "utf8").includes("여유와 여행, 두 객실 둘러보기"), "Room overview is exported");
 for (const route of publicRoutes.slice(1))
   check(
     tags(home, "a").some((tag) => attribute(tag, "href") === route),

@@ -226,6 +226,10 @@ function Room({ fadeState }: RoomProps) {
         </div>
 
         <section className={cn("room-inner")}>
+          <div className="room-overview">
+            <h2>{t("floorPlan.overview.title")}</h2>
+            <p>{t("floorPlan.overview.description")}</p>
+          </div>
           {/* 객실 선택 */}
           <div ref={roomSelectionRef} className={cn("room-intro")}>
             <div

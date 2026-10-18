@@ -15,7 +15,7 @@
       "descriptions": [
         "soft, pure cotton bedding and daily hanbok.",
         "bedroom equipped with pure cotton bedding for sound sleep.",
-        "Home appliances for simple cooking, Balmuda toaster and nespresso coffee machine provided.",
+        "A Balmuda toaster and a Nespresso coffee machine are provided.",
         "Bathroom equipped with MoltonBrown toiletries, overlooking front yard.",
         "Private backyard to gaze upon the stars and rest under the eaves."
       ]
@@ -26,10 +26,14 @@
       "descriptions": [
         "soft, pure cotton bedding and daily hanbok.",
         "bedroom equipped with pure cotton bedding for sound sleep.",
-        "Home appliances for simple cooking, Balmuda toaster and nespresso coffee machine provided.",
+        "A Balmuda toaster and a Nespresso coffee machine are provided.",
         "Bathroom equipped with MoltonBrown toiletries, overlooking front yard.",
         "Private backyard to gaze upon the stars and rest under the eaves."
       ]
+    },
+    "overview": {
+      "title": "Explore Yeo Yu and Yeo Hang",
+      "description": "Yeo Yu and Yeo Hang each have a living room, bedroom, kitchen, bathroom, and backyard. Select a room below to explore its photos and floor plan. Check available dates and rates for each room on Airbnb."
     },
     "serviceDescription": "Gift to those who need sound rest.. Traditional Korean stay YeoYeo"
   },
@@ -45,7 +49,7 @@
     "features": ["Coffee and Bread", "Beam Projector", "Bath", "Modernized Hanbok"],
     "coffeeBread": ["Coffee and bread for breakfast", "Nespresso coffee machine & Salt Bread"],
     "projector": ["Movies at the end of the day", "Netflix & Youtube Premium"],
-    "bath": ["Bath with the pine forest"],
+    "bath": ["Relax in a bathroom overlooking the pine forest.\nThe Jacuzzi is sized for two adults."],
     "cloth": ["Comfortable and cozy indoor wear"]
   },
   "intro": {
@@ -77,7 +81,7 @@
   "seo": {
     "home": {
       "title": "Hanok Stay YeoYeo | Gyeongju Namsan",
-      "description": "Discover Hanok Stay YeoYeo below Namsan in Gyeongju: Yeo Yu and Yeo Hang rooms, coffee and salt bread, projectors, bathtubs, and modern hanbok. Book on Airbnb."
+      "description": "Discover Hanok Stay YeoYeo at 53 Gaenmaeul-gil below Namsan in Gyeongju. Explore Yeo Yu and Yeo Hang, a Jacuzzi sized for two adults, and Airbnb booking."
     },
     "room": {
       "title": "Yeo Yu & Yeo Hang Rooms | Hanok Stay YeoYeo",
@@ -85,7 +89,7 @@
     },
     "service": {
       "title": "Services & Amenities | Hanok Stay YeoYeo",
-      "description": "Explore coffee and salt bread, projectors, bathtubs, and modern hanbok at Hanok Stay YeoYeo, with photos of the amenities."
+      "description": "Explore coffee and salt bread, projectors, a Jacuzzi sized for two adults, and modern hanbok at Hanok Stay YeoYeo, with photos of the amenities."
     },
     "reservation": {
       "title": "Book a Room on Airbnb | Hanok Stay YeoYeo",
@@ -128,7 +132,7 @@
   },
   "stayOverview": {
     "title": "A hanok stay below Namsan in Gyeongju",
-    "description": "Hanok Stay YeoYeo sits below Namsan in Gyeongju. Explore the Yeo Yu and Yeo Hang rooms, with coffee and salt bread, projectors, bathtubs, and modern hanbok. Check available dates and rates on Airbnb.",
+    "description": "Hanok Stay YeoYeo is a traditional Korean stay below Namsan in Gyeongju. Explore photos and floor plans of its two rooms, Yeo Yu and Yeo Hang. Discover a Jacuzzi sized for two adults, coffee and salt bread, projectors, and modern hanbok. Check available dates and rates on Airbnb.",
     "navigation": "Plan your YeoYeo stay",
     "rooms": "Explore Yeo Yu & Yeo Hang",
     "services": "Explore services & amenities",

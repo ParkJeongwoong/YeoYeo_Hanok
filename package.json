@@ -39,7 +39,8 @@
     "build": "next build",
     "export": "next build && next export",
     "eject": "next eject",
-    "test:seo": "node scripts/check-seo.cjs"
+    "test:seo": "node scripts/check-seo.cjs",
+    "test:booking-analytics": "node scripts/check-booking-analytics.cjs"
   },
   "browserslist": {
     "production": [
