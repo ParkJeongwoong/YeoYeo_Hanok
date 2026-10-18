@@ -67,6 +67,13 @@ export default function SEO() {
     description,
     image,
     logo: `${SITE_URL}/logo192.png`,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "갯마을길 53",
+      addressLocality: "경주시",
+      addressRegion: "경상북도",
+      addressCountry: "KR",
+    },
     telephone: "+82-10-8959-9091",
     sameAs: ["https://www.instagram.com/yeoyeo9091/"],
   };

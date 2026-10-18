@@ -41,7 +41,7 @@ function LinkSelectModal({ setIsModal }: LinkSelectModalProps) {
           </button>
           <Image className={cn("link-select-icon")} loader={imageLoader} src={airbnb} unoptimized width={35} height={35} alt="에어비앤비 아이콘" />
           <strong id="airbnb-room-heading">{t("reservation.product.chooseRoom")}</strong>
-          <AirbnbRoomLinks />
+          <AirbnbRoomLinks linkLocation="booking_modal" />
         </div>
       </div>
     </div>

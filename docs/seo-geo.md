@@ -11,9 +11,10 @@ DNS/CDN changes, or crawler training-policy changes are part of this work.
 ## Content boundaries
 
 Use the existing, supported name, Gyeongju Namsan location, room names, and amenities.
-Street-address, cooking-policy, and parking discrepancies between channels need owner
-verification; do not add these to new descriptive copy or structured data. Existing
-visible property details remain unchanged. Do not add reviews, ratings, prices,
+The owner confirmed the guest arrival address as 경주시 갯마을길 53 on
+2026-10-18; it is now included in visible homepage copy and structured data. Cooking
+policy and parking still require verification; equipment alone does not imply cooking
+permission. See `verified-content-scope.md` for the current content and measurement scope. Do not add reviews, ratings, prices,
 availability, or ranking promises.
 
 ## Technical approach
@@ -81,3 +82,9 @@ translations remain unchanged. The address was omitted from the replacement
 structured data while the visible address is preserved, pending owner verification.
 The reservation title's SCSS selector was updated with its H1 change to retain the
 existing appearance. No payment, cancellation, analytics, or deployment logic changed.
+
+## Content and measurement follow-up (2026-10-18)
+
+The earlier validation section above records the foundation change, not this follow-up.
+See `verified-content-scope.md` for owner-confirmed address/Jacuzzi content, deferred
+room-specific facts, outbound booking measurement, and current validation results.
